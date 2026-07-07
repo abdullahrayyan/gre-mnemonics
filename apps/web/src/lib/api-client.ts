@@ -1,14 +1,23 @@
 import type {
   ApiError,
   ApiSuccess,
+  DashboardDto,
   MeDto,
   PaginatedResponse,
+  ProfileDto,
   ReviewCardDto,
   ReviewOutcomeDto,
   ReviewRatingValue,
   WordDto,
   WordSearchParams,
 } from '@mnemonic/types';
+
+type ProfileUpdate = Partial<
+  Pick<
+    ProfileDto,
+    'displayName' | 'nativeLanguage' | 'targetExam' | 'dailyWordGoal' | 'timezone' | 'bio'
+  >
+>;
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:4000';
 
@@ -67,7 +76,19 @@ export const api = {
     getBySlug: (slug: string, token?: string | null) =>
       request<ApiSuccess<WordDto>>(`/api/v1/words/slug/${slug}`, { token }),
   },
-  me: (token: string) => request<ApiSuccess<MeDto>>('/api/v1/me', { token }),
+  me: {
+    get: (token: string) => request<ApiSuccess<MeDto>>('/api/v1/me', { token }),
+    updateProfile: (body: ProfileUpdate, token: string) =>
+      request<ApiSuccess<ProfileDto>>('/api/v1/me/profile', { method: 'PATCH', body, token }),
+  },
+  stats: {
+    dashboard: (token: string) =>
+      request<ApiSuccess<DashboardDto>>('/api/v1/stats/dashboard', { token }),
+  },
+  analytics: {
+    track: (body: { name: string; properties?: Record<string, unknown> }) =>
+      request<ApiSuccess<{ accepted: boolean }>>('/api/v1/analytics', { method: 'POST', body }),
+  },
   reviews: {
     queue: (token: string, limit?: number) =>
       request<ApiSuccess<ReviewCardDto[]>>('/api/v1/reviews/queue', {

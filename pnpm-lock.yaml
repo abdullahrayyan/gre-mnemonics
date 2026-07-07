@@ -47,6 +47,9 @@ importers:
       '@mnemonic/logger':
         specifier: workspace:*
         version: link:../../packages/logger
+      '@mnemonic/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@mnemonic/validation':
         specifier: workspace:*
         version: link:../../packages/validation

@@ -13,8 +13,8 @@ verified before the next begins.
 | **4**  | **Auth & Users**                     | Clerk token verification + RBAC middleware, svix webhook user provisioning, `/me` + profile, subscription-gate middleware, secured word writes | ✅ done |
 | **5**  | **Web Foundation**                   | Next.js App Router app, `@mnemonic/ui` design system + `@mnemonic/types`, dark/light theming, React Query + Zustand, Clerk on web, typed API client, landing + words + dashboard | ✅ done |
 | **6**  | **Flashcards + SM-2 Spaced Repetition** | Complete SM-2 scheduler in `core`, review API (`/reviews/queue` + submit → schedule + progress + XP), animated flip flashcard UI (Again/Hard/Good/Easy) | ✅ done |
-| 7      | Daily Learning + Dashboard           | Goals (10/20/30/50/custom), XP, streaks, retention %, analytics                  | ⏭ next |
-| 8      | Quiz Engine                          | 9 quiz types, attempts, accuracy/speed/weak-word tracking                        |        |
+| **7**  | **Daily Learning + Dashboard**       | XP↔level math in `core`, `/stats/dashboard` aggregation (goal/streak/retention/reviews-due/weekly), analytics events, dashboard UI (goal ring + selector + weekly chart) | ✅ done |
+| 8      | Quiz Engine                          | 9 quiz types, attempts, accuracy/speed/weak-word tracking                        | ⏭ next |
 | 9      | AI Tutor                             | Streaming chat, explain/another-mnemonic/compare/etc.                            |        |
 | 10     | Gamification                         | XP, levels, streaks, badges, leaderboards                                        |        |
 | 11     | Community                            | Submit mnemonics, votes, comments, reports, moderation                          |        |
@@ -35,6 +35,19 @@ verified before the next begins.
 - **Performance & scale** — caching, pagination, connection pooling, idempotent AI.
 
 ---
+
+## Phase 7 — completed
+
+- `@mnemonic/core`: XP↔level math (`levelFromXp`, `xpForLevel`, `levelProgress`,
+  quadratic curve) with tests.
+- API: `stats` module — `GET /api/v1/stats/dashboard` aggregates daily goal +
+  completed/remaining, reviews due, XP/level, streak (grace-day rule), retention
+  %, words learned/mastered, and 7-day activity in one read transaction.
+  `analytics` module — `POST /api/v1/analytics` (auth optional) records events.
+  Integration tests.
+- Web `/dashboard`: animated goal ring, 10/20/30/50 goal selector (updates the
+  profile), stat cards (level/streak/retention/reviews-due), dependency-free
+  weekly bar chart. Verified: typecheck, tests, lint, format, `next build`.
 
 ## Phase 6 — completed
 

@@ -37,6 +37,11 @@ import {
   SubmitReviewUseCase,
 } from '../modules/reviews/application/review.usecases.js';
 import { PrismaReviewStore } from '../modules/reviews/infrastructure/prisma-review.store.js';
+import type { AnalyticsRecorder } from '../modules/analytics/analytics-recorder.port.js';
+import { PrismaAnalyticsRecorder } from '../modules/analytics/prisma-analytics.recorder.js';
+import { GetDashboardUseCase } from '../modules/stats/application/get-dashboard.usecase.js';
+import type { StatsStore } from '../modules/stats/application/stats-store.port.js';
+import { PrismaStatsStore } from '../modules/stats/infrastructure/prisma-stats.store.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -58,6 +63,10 @@ export interface ReviewUseCases {
   submit: SubmitReviewUseCase;
 }
 
+export interface StatsUseCases {
+  getDashboard: GetDashboardUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -70,10 +79,13 @@ export interface Container {
   userRepository: UserRepository;
   profileRepository: ProfileRepository;
   reviewStore: ReviewStore;
+  statsStore: StatsStore;
+  analyticsRecorder: AnalyticsRecorder;
   generateId: () => string;
   words: WordUseCases;
   users: UserUseCases;
   reviews: ReviewUseCases;
+  stats: StatsUseCases;
 }
 
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
@@ -147,6 +159,12 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     submit: new SubmitReviewUseCase(reviewStore),
   };
 
+  const statsStore = overrides.statsStore ?? new PrismaStatsStore(prisma);
+  const analyticsRecorder = overrides.analyticsRecorder ?? new PrismaAnalyticsRecorder(prisma);
+  const stats: StatsUseCases = overrides.stats ?? {
+    getDashboard: new GetDashboardUseCase(statsStore),
+  };
+
   return {
     prisma,
     redis,
@@ -159,9 +177,12 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     userRepository,
     profileRepository,
     reviewStore,
+    statsStore,
+    analyticsRecorder,
     generateId,
     words,
     users,
     reviews,
+    stats,
   };
 }

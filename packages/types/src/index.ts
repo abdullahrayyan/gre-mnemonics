@@ -95,6 +95,29 @@ export interface MeDto {
   profile: ProfileDto | null;
 }
 
+export interface WeeklyActivityPoint {
+  date: string;
+  reviews: number;
+}
+
+/** Aggregated learner dashboard (`GET /api/v1/stats/dashboard`). */
+export interface DashboardDto {
+  dailyGoal: number;
+  completedToday: number;
+  remainingToday: number;
+  reviewsDue: number;
+  totalXp: number;
+  level: number;
+  levelFraction: number;
+  currentStreak: number;
+  longestStreak: number;
+  wordsLearned: number;
+  wordsMastered: number;
+  retentionPercent: number;
+  monthlyReviews: number;
+  weeklyActivity: WeeklyActivityPoint[];
+}
+
 export type ReviewRatingValue = 'AGAIN' | 'HARD' | 'GOOD' | 'EASY';
 
 /** A card in the review queue. */
