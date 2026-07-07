@@ -9,8 +9,8 @@ verified before the next begins.
 | **0**  | **Foundation**                       | Monorepo, tooling, `config` + `logger`, bootable API + health, Docker, CI, docs | ✅ done |
 | **1**  | **Data & Domain Core**               | Full Prisma schema (33 models), initial migration, seed harness, `core` domain, `Word` entity + repository port + Prisma adapter | ✅ done |
 | **2**  | **AI Mnemonic Engine**               | `@mnemonic/ai`: provider port + OpenAI adapter + stub, prompt templates, 11 generated artifacts, Zod-validated structured output, caching, cost tracking | ✅ done |
-| 3      | Words REST API                       | CRUD, search, filter, pagination, rate limiting, caching, `AiHistory` persistence, integration tests | ⏭ next |
-| 4      | Auth & Users                         | Clerk integration, user/profile sync, RBAC, subscription gating                  |        |
+| **3**  | **Words REST API**                   | `/api/v1/words` CRUD + search/filter/pagination, `@mnemonic/validation`, DI container, Redis rate-limit + cache, AI generate + `AiHistory`, readiness probe, integration tests | ✅ done |
+| 4      | Auth & Users                         | Clerk integration, user/profile sync, RBAC, subscription gating                  | ⏭ next |
 | 5      | Web Foundation                       | Next.js app, design system (`ui`), theming (dark/light), React Query + Zustand   |        |
 | 6      | Flashcards + SM-2 Spaced Repetition  | Animated flashcards, complete SM-2, review scheduling (Again/Hard/Good/Easy)     |        |
 | 7      | Daily Learning + Dashboard           | Goals (10/20/30/50/custom), XP, streaks, retention %, analytics                  |        |
@@ -35,6 +35,23 @@ verified before the next begins.
 - **Performance & scale** — caching, pagination, connection pooling, idempotent AI.
 
 ---
+
+## Phase 3 — completed
+
+- Words REST API under `/api/v1/words`: create, read (by id + slug), list
+  (search/filter/sort/paginate), update (PATCH), delete, and
+  `POST /:id/generate` (AI mnemonics → persisted `AiHistory`).
+- Clean Architecture module: use-cases (application) · Prisma/cached/in-memory
+  repositories + AI-history recorder (infrastructure) · controller + routes
+  (interface), wired through a typed DI **container** with test overrides.
+- `@mnemonic/validation` (shared Zod schemas), central error handler now maps
+  domain errors (NotFound→404, Conflict→409, Validation→422), Redis-or-memory
+  rate limiting + cache (`CachedWordRepository`), DB readiness probe.
+- **Packaging decision:** the API runs via **tsx in production** (not a tsup
+  bundle) so Prisma's generated client + engine resolve normally — prod mirrors
+  dev. Verified: `node --import tsx src/main.ts` boots and serves.
+- Verified: full CRUD + AI-generate + validation + error-mapping via supertest
+  (in-memory container); typecheck, ~50 tests, lint, format all green.
 
 ## Phase 2 — completed
 

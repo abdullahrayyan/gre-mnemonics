@@ -1,8 +1,17 @@
+import { ConflictError, DomainError, NotFoundError, ValidationError } from '@mnemonic/core';
 import type { ErrorRequestHandler, Request } from 'express';
 import { ZodError } from 'zod';
 import { AppError } from '../http/http-error.js';
 import { logger } from '../logger.js';
 import { isProduction } from '../../env.js';
+
+/** Map a domain error to its HTTP status. */
+function statusForDomainError(error: DomainError): number {
+  if (error instanceof ValidationError) return 422;
+  if (error instanceof NotFoundError) return 404;
+  if (error instanceof ConflictError) return 409;
+  return 400;
+}
 
 interface ErrorEnvelope {
   error: {
@@ -38,6 +47,21 @@ export const errorHandler: ErrorRequestHandler = (err, req, res, _next) => {
       },
     };
     res.status(422).json(envelope);
+    return;
+  }
+
+  if (err instanceof DomainError) {
+    const status = statusForDomainError(err);
+    if (status >= 500) log.error({ err, code: err.code }, err.message);
+    const envelope: ErrorEnvelope = {
+      error: {
+        code: err.code,
+        message: err.message,
+        requestId: req.requestId,
+        details: err instanceof ValidationError ? { issues: err.issues } : undefined,
+      },
+    };
+    res.status(status).json(envelope);
     return;
   }
 

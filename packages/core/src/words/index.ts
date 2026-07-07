@@ -19,7 +19,7 @@ export {
 } from './enums.js';
 
 export { Word, EMPTY_AI_CONTENT } from './word.entity.js';
-export type { WordProps, WordAiContent, CreateWordInput } from './word.entity.js';
+export type { WordProps, WordAiContent, CreateWordInput, UpdateWordInput } from './word.entity.js';
 
 export type {
   WordRepository,

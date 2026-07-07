@@ -33,8 +33,8 @@ packages/
   database/     Prisma schema + client         ✅
   core/         Framework-free domain layer    ✅
   ai/           AI mnemonic engine (OpenAI)    ✅
-  validation/   Zod schemas shared FE↔BE       (Phase 3)
-  types/        Shared DTOs / contracts        (Phase 3)
+  validation/   Zod schemas shared FE↔BE       ✅
+  types/        Shared DTOs / contracts        (Phase 5)
   config/       Fail-fast env validation       ✅
   logger/       Pino structured logging        ✅
   ui/           React design system            (Phase 5)

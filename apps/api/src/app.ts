@@ -1,27 +1,32 @@
 import cors from 'cors';
 import express, { type Express } from 'express';
 import helmet from 'helmet';
+import { createContainer, type Container } from './container/container.js';
 import { env } from './env.js';
-import { apiV1Router } from './router.js';
+import { createApiV1Router } from './router.js';
+import { createReadinessHandler } from './modules/health/health.readiness.js';
 import { healthRouter } from './modules/health/health.routes.js';
+import { asyncHandler } from './shared/http/async-handler.js';
 import { errorHandler } from './shared/middleware/error-handler.js';
 import { httpLogger } from './shared/middleware/http-logger.js';
 import { notFoundHandler } from './shared/middleware/not-found.js';
+import { createRateLimiter } from './shared/middleware/rate-limit.js';
 import { requestId } from './shared/middleware/request-id.js';
 
+export interface CreateAppOptions {
+  /** Inject a pre-built container (tests supply fakes); defaults to the real graph. */
+  container?: Container;
+}
+
 /**
- * Build the Express application. Pure factory (no network binding) so it can be
- * exercised directly by integration tests with supertest.
- *
- * Middleware order is deliberate:
- *   security → cors → body parsing → correlation id → request logging →
- *   routes → 404 → central error handler.
+ * Build the Express application. Pure factory (no network binding) so tests can
+ * drive it with supertest and an injected container.
  */
-export function createApp(): Express {
+export function createApp(options: CreateAppOptions = {}): Express {
+  const container = options.container ?? createContainer();
   const app = express();
 
   app.disable('x-powered-by');
-  // Trust the first proxy hop (Railway/Vercel) so client IPs and protocol are correct.
   app.set('trust proxy', 1);
 
   app.use(helmet());
@@ -37,10 +42,16 @@ export function createApp(): Express {
   app.use(requestId);
   app.use(httpLogger);
 
-  // Unversioned liveness endpoint for platform health checks.
+  // Liveness + readiness probes (unversioned, for platform health checks).
   app.use('/health', healthRouter);
-  // Versioned application API.
-  app.use('/api/v1', apiV1Router);
+  app.get('/health/ready', asyncHandler(createReadinessHandler(container.prisma)));
+
+  // Versioned API, behind a global per-IP rate limiter.
+  const apiLimiter = createRateLimiter(
+    { points: 300, durationSeconds: 60, keyPrefix: 'api' },
+    container.redis,
+  );
+  app.use('/api/v1', apiLimiter, createApiV1Router(container));
 
   app.use(notFoundHandler);
   app.use(errorHandler);

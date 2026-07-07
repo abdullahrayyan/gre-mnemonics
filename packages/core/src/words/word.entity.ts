@@ -77,6 +77,28 @@ export interface CreateWordInput {
   status?: WordStatus;
 }
 
+/** Fields that may be changed on an existing word (partial update). */
+export interface UpdateWordInput {
+  word?: string;
+  slug?: string;
+  pronunciation?: string | null;
+  ipa?: string | null;
+  difficulty?: Difficulty;
+  frequency?: number | null;
+  partOfSpeech?: PartOfSpeech;
+  meaning?: string;
+  hindiMeaning?: string | null;
+  synonyms?: string[];
+  antonyms?: string[];
+  rootWord?: string | null;
+  prefix?: string | null;
+  suffix?: string | null;
+  etymology?: string | null;
+  exampleSentence?: string | null;
+  commonMistakes?: string | null;
+  status?: WordStatus;
+}
+
 const MAX_WORD_LENGTH = 100;
 const MAX_MEANING_LENGTH = 2000;
 
@@ -213,6 +235,50 @@ export class Word {
   applyAiContent(patch: Partial<WordAiContent>, now: Date = new Date()): void {
     this.props.ai = { ...this.props.ai, ...normalizeAi(patch) };
     this.touch(now);
+  }
+
+  /** Apply a validated partial update to the word's lexical fields. */
+  update(patch: UpdateWordInput, now: Date = new Date()): void {
+    const next: WordProps = { ...this.props };
+
+    if (patch.word !== undefined) next.word = patch.word.trim();
+    if (patch.meaning !== undefined) next.meaning = patch.meaning.trim();
+    if (patch.difficulty !== undefined) next.difficulty = patch.difficulty;
+    if (patch.partOfSpeech !== undefined) next.partOfSpeech = patch.partOfSpeech;
+    if (patch.frequency !== undefined) next.frequency = patch.frequency;
+    if (patch.status !== undefined) next.status = patch.status;
+    if (patch.synonyms !== undefined) next.synonyms = normalizeList(patch.synonyms);
+    if (patch.antonyms !== undefined) next.antonyms = normalizeList(patch.antonyms);
+    if (patch.pronunciation !== undefined) next.pronunciation = nullableTrim(patch.pronunciation);
+    if (patch.ipa !== undefined) next.ipa = nullableTrim(patch.ipa);
+    if (patch.hindiMeaning !== undefined) next.hindiMeaning = nullableTrim(patch.hindiMeaning);
+    if (patch.rootWord !== undefined) next.rootWord = nullableTrim(patch.rootWord);
+    if (patch.prefix !== undefined) next.prefix = nullableTrim(patch.prefix);
+    if (patch.suffix !== undefined) next.suffix = nullableTrim(patch.suffix);
+    if (patch.etymology !== undefined) next.etymology = nullableTrim(patch.etymology);
+    if (patch.exampleSentence !== undefined)
+      next.exampleSentence = nullableTrim(patch.exampleSentence);
+    if (patch.commonMistakes !== undefined)
+      next.commonMistakes = nullableTrim(patch.commonMistakes);
+
+    if (patch.slug !== undefined && patch.slug.trim().length > 0) {
+      next.slug = patch.slug.trim();
+    } else if (patch.word !== undefined) {
+      next.slug = slugify(next.word);
+    }
+
+    new Guard()
+      .requireNonEmpty(next.word, 'word')
+      .requireMaxLength(next.word, MAX_WORD_LENGTH, 'word')
+      .requireNonEmpty(next.meaning, 'meaning')
+      .requireMaxLength(next.meaning, MAX_MEANING_LENGTH, 'meaning')
+      .requireOneOf(next.difficulty, DIFFICULTIES, 'difficulty')
+      .requireOneOf(next.partOfSpeech, PARTS_OF_SPEECH, 'partOfSpeech')
+      .requireNonNegativeIntOrNull(next.frequency, 'frequency')
+      .throwIfInvalid();
+
+    next.updatedAt = now;
+    this.props = next;
   }
 
   /** Transition to PUBLISHED. Requires a meaning (guaranteed) and mnemonics. */
