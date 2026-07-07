@@ -6,3 +6,4 @@
  */
 export * from './shared/index.js';
 export * from './words/index.js';
+export * from './users/index.js';

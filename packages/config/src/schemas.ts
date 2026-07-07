@@ -69,7 +69,14 @@ export const openaiEnvSchema = z.object({
   OPENAI_REQUEST_TIMEOUT_MS: z.coerce.number().int().positive().default(60_000),
 });
 
+/** Clerk authentication configuration (validated lazily by the auth module). */
+export const clerkEnvSchema = z.object({
+  CLERK_SECRET_KEY: z.string().min(1),
+  CLERK_WEBHOOK_SECRET: z.string().min(1).optional(),
+});
+
 export type NodeEnv = z.infer<typeof nodeEnvSchema>;
 export type LogLevel = z.infer<typeof logLevelSchema>;
 export type ApiEnv = z.infer<typeof apiEnvSchema>;
 export type OpenAiEnv = z.infer<typeof openaiEnvSchema>;
+export type ClerkEnv = z.infer<typeof clerkEnvSchema>;

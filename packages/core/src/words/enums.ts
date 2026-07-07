@@ -80,6 +80,33 @@ export const MnemonicType = {
 export type MnemonicType = (typeof MnemonicType)[keyof typeof MnemonicType];
 export const MNEMONIC_TYPES = Object.values(MnemonicType);
 
+export const UserRole = {
+  USER: 'USER',
+  ADMIN: 'ADMIN',
+  MODERATOR: 'MODERATOR',
+} as const;
+export type UserRole = (typeof UserRole)[keyof typeof UserRole];
+export const USER_ROLES = Object.values(UserRole);
+export function isUserRole(value: unknown): value is UserRole {
+  return typeof value === 'string' && (USER_ROLES as string[]).includes(value);
+}
+
+export const UserStatus = {
+  ACTIVE: 'ACTIVE',
+  SUSPENDED: 'SUSPENDED',
+  DELETED: 'DELETED',
+} as const;
+export type UserStatus = (typeof UserStatus)[keyof typeof UserStatus];
+export const USER_STATUSES = Object.values(UserStatus);
+
+export const SubscriptionPlan = {
+  FREE: 'FREE',
+  PRO: 'PRO',
+  PREMIUM: 'PREMIUM',
+} as const;
+export type SubscriptionPlan = (typeof SubscriptionPlan)[keyof typeof SubscriptionPlan];
+export const SUBSCRIPTION_PLANS = Object.values(SubscriptionPlan);
+
 /** SM-2 recall grades used by the spaced-repetition scheduler (Phase 6). */
 export const ReviewRating = {
   AGAIN: 'AGAIN',

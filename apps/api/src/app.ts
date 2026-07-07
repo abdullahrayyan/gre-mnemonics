@@ -6,6 +6,7 @@ import { env } from './env.js';
 import { createApiV1Router } from './router.js';
 import { createReadinessHandler } from './modules/health/health.readiness.js';
 import { healthRouter } from './modules/health/health.routes.js';
+import { createWebhooksRouter } from './modules/users/interface/webhooks.routes.js';
 import { asyncHandler } from './shared/http/async-handler.js';
 import { errorHandler } from './shared/middleware/error-handler.js';
 import { httpLogger } from './shared/middleware/http-logger.js';
@@ -36,11 +37,14 @@ export function createApp(options: CreateAppOptions = {}): Express {
       credentials: true,
     }),
   );
-  app.use(express.json({ limit: '1mb' }));
-  app.use(express.urlencoded({ extended: true, limit: '1mb' }));
-
   app.use(requestId);
   app.use(httpLogger);
+
+  // Webhooks verify a signature over the RAW body — mount before the JSON parser.
+  app.use('/api/webhooks', createWebhooksRouter(container));
+
+  app.use(express.json({ limit: '1mb' }));
+  app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 
   // Liveness + readiness probes (unversioned, for platform health checks).
   app.use('/health', healthRouter);

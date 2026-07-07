@@ -8,5 +8,6 @@ export {
   redisEnvSchema,
   apiEnvSchema,
   openaiEnvSchema,
+  clerkEnvSchema,
 } from './schemas.js';
-export type { NodeEnv, LogLevel, ApiEnv, OpenAiEnv } from './schemas.js';
+export type { NodeEnv, LogLevel, ApiEnv, OpenAiEnv, ClerkEnv } from './schemas.js';

@@ -35,6 +35,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@clerk/shared",
       "@prisma/client",
       "@prisma/engines",
       "esbuild",

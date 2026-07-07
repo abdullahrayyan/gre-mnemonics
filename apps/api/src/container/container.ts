@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { MnemonicEngine, OpenAiProvider } from '@mnemonic/ai';
-import { openaiEnvSchema } from '@mnemonic/config';
-import type { WordRepository } from '@mnemonic/core';
+import { clerkEnvSchema, openaiEnvSchema } from '@mnemonic/config';
+import type { UserRepository, WordRepository } from '@mnemonic/core';
 import {
   PrismaWordRepository,
   prisma as sharedPrisma,
@@ -12,6 +12,11 @@ import { getRedis } from '../config/redis.js';
 import { InMemoryCacheStore, type CacheStore } from '../shared/cache/cache-store.js';
 import { RedisCacheStore } from '../shared/cache/redis-cache-store.js';
 import { logger } from '../shared/logger.js';
+import type { AuthVerifier } from '../modules/auth/auth-verifier.port.js';
+import { ClerkAuthVerifier } from '../modules/auth/clerk-auth-verifier.js';
+import { StubAuthVerifier } from '../modules/auth/stub-auth-verifier.js';
+import { SvixWebhookVerifier } from '../modules/auth/svix-webhook-verifier.js';
+import type { WebhookVerifier } from '../modules/auth/webhook-verifier.port.js';
 import type { AiHistoryRecorder } from '../modules/words/application/ai-history.port.js';
 import { CreateWordUseCase } from '../modules/words/application/create-word.usecase.js';
 import { DeleteWordUseCase } from '../modules/words/application/delete-word.usecase.js';
@@ -21,6 +26,11 @@ import { SearchWordsUseCase } from '../modules/words/application/search-words.us
 import { UpdateWordUseCase } from '../modules/words/application/update-word.usecase.js';
 import { CachedWordRepository } from '../modules/words/infrastructure/cached-word.repository.js';
 import { PrismaAiHistoryRecorder } from '../modules/words/infrastructure/prisma-ai-history.recorder.js';
+import type { ProfileRepository } from '../modules/users/application/profile.port.js';
+import { SyncClerkUserUseCase } from '../modules/users/application/sync-clerk-user.usecase.js';
+import { GetMeUseCase, UpdateProfileUseCase } from '../modules/users/application/user.usecases.js';
+import { PrismaProfileRepository } from '../modules/users/infrastructure/prisma-profile.repository.js';
+import { PrismaUserRepository } from '../modules/users/infrastructure/prisma-user.repository.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -31,6 +41,12 @@ export interface WordUseCases {
   generate: GenerateWordMnemonicsUseCase;
 }
 
+export interface UserUseCases {
+  syncUser: SyncClerkUserUseCase;
+  getMe: GetMeUseCase;
+  updateProfile: UpdateProfileUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -38,11 +54,15 @@ export interface Container {
   wordRepository: WordRepository;
   aiHistoryRecorder: AiHistoryRecorder;
   mnemonicEngine: MnemonicEngine | null;
+  authVerifier: AuthVerifier;
+  webhookVerifier: WebhookVerifier;
+  userRepository: UserRepository;
+  profileRepository: ProfileRepository;
   generateId: () => string;
   words: WordUseCases;
+  users: UserUseCases;
 }
 
-/** Build the AI engine from env, or `null` when no OpenAI key is configured. */
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
   const parsed = openaiEnvSchema.safeParse(process.env);
   if (!parsed.success) {
@@ -61,21 +81,37 @@ function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
   });
 }
 
-/**
- * Assemble the application graph. Overrides let tests inject fakes (in-memory
- * repository, stub AI engine, no-op history) without touching real I/O.
- */
+function createAuthVerifier(): AuthVerifier {
+  const parsed = clerkEnvSchema.safeParse(process.env);
+  if (parsed.success) return new ClerkAuthVerifier(parsed.data.CLERK_SECRET_KEY);
+  logger.info('Clerk not configured; all authenticated requests will be rejected');
+  return new StubAuthVerifier();
+}
+
+function createWebhookVerifier(): WebhookVerifier {
+  const secret = process.env.CLERK_WEBHOOK_SECRET;
+  if (secret) return new SvixWebhookVerifier(secret);
+  logger.info('Clerk webhook secret not configured; webhooks will be rejected');
+  return { verify: () => null };
+}
+
+/** Assemble the application graph. Overrides inject fakes in tests. */
 export function createContainer(overrides: Partial<Container> = {}): Container {
   const prisma = overrides.prisma ?? sharedPrisma;
   const redis = overrides.redis !== undefined ? overrides.redis : getRedis();
   const cache = overrides.cache ?? (redis ? new RedisCacheStore(redis) : new InMemoryCacheStore());
+  const generateId = overrides.generateId ?? (() => randomUUID());
 
   const wordRepository =
     overrides.wordRepository ?? new CachedWordRepository(new PrismaWordRepository(prisma), cache);
   const aiHistoryRecorder = overrides.aiHistoryRecorder ?? new PrismaAiHistoryRecorder(prisma);
   const mnemonicEngine =
     overrides.mnemonicEngine !== undefined ? overrides.mnemonicEngine : createMnemonicEngine(cache);
-  const generateId = overrides.generateId ?? (() => randomUUID());
+
+  const authVerifier = overrides.authVerifier ?? createAuthVerifier();
+  const webhookVerifier = overrides.webhookVerifier ?? createWebhookVerifier();
+  const userRepository = overrides.userRepository ?? new PrismaUserRepository(prisma);
+  const profileRepository = overrides.profileRepository ?? new PrismaProfileRepository(prisma);
 
   const words: WordUseCases = overrides.words ?? {
     create: new CreateWordUseCase(wordRepository, generateId),
@@ -86,6 +122,12 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     generate: new GenerateWordMnemonicsUseCase(wordRepository, mnemonicEngine, aiHistoryRecorder),
   };
 
+  const users: UserUseCases = overrides.users ?? {
+    syncUser: new SyncClerkUserUseCase(userRepository, generateId),
+    getMe: new GetMeUseCase(userRepository, profileRepository),
+    updateProfile: new UpdateProfileUseCase(profileRepository),
+  };
+
   return {
     prisma,
     redis,
@@ -93,7 +135,12 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     wordRepository,
     aiHistoryRecorder,
     mnemonicEngine,
+    authVerifier,
+    webhookVerifier,
+    userRepository,
+    profileRepository,
     generateId,
     words,
+    users,
   };
 }

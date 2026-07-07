@@ -10,3 +10,5 @@ export {
   wordSlugParamSchema,
 } from './words.js';
 export type { CreateWordDto, UpdateWordDto, WordSearchQueryDto } from './words.js';
+export { updateProfileSchema } from './users.js';
+export type { UpdateProfileDto } from './users.js';

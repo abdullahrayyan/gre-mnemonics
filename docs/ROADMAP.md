@@ -10,8 +10,8 @@ verified before the next begins.
 | **1**  | **Data & Domain Core**               | Full Prisma schema (33 models), initial migration, seed harness, `core` domain, `Word` entity + repository port + Prisma adapter | ✅ done |
 | **2**  | **AI Mnemonic Engine**               | `@mnemonic/ai`: provider port + OpenAI adapter + stub, prompt templates, 11 generated artifacts, Zod-validated structured output, caching, cost tracking | ✅ done |
 | **3**  | **Words REST API**                   | `/api/v1/words` CRUD + search/filter/pagination, `@mnemonic/validation`, DI container, Redis rate-limit + cache, AI generate + `AiHistory`, readiness probe, integration tests | ✅ done |
-| 4      | Auth & Users                         | Clerk integration, user/profile sync, RBAC, subscription gating                  | ⏭ next |
-| 5      | Web Foundation                       | Next.js app, design system (`ui`), theming (dark/light), React Query + Zustand   |        |
+| **4**  | **Auth & Users**                     | Clerk token verification + RBAC middleware, svix webhook user provisioning, `/me` + profile, subscription-gate middleware, secured word writes | ✅ done |
+| 5      | Web Foundation                       | Next.js app, design system (`ui`), theming (dark/light), React Query + Zustand   | ⏭ next |
 | 6      | Flashcards + SM-2 Spaced Repetition  | Animated flashcards, complete SM-2, review scheduling (Again/Hard/Good/Easy)     |        |
 | 7      | Daily Learning + Dashboard           | Goals (10/20/30/50/custom), XP, streaks, retention %, analytics                  |        |
 | 8      | Quiz Engine                          | 9 quiz types, attempts, accuracy/speed/weak-word tracking                        |        |
@@ -35,6 +35,19 @@ verified before the next begins.
 - **Performance & scale** — caching, pagination, connection pooling, idempotent AI.
 
 ---
+
+## Phase 4 — completed
+
+- Auth via ports: `AuthVerifier` (Clerk JWT adapter + stub) and `WebhookVerifier`
+  (svix adapter + stub) — middleware and provisioning are testable without Clerk.
+- `requireAuth` / `requireRole` / `optionalAuth` / `requirePlan` middleware;
+  `req.auth` carries `{ userId, clerkId, role }`.
+- `User` domain entity + `UserRepository`; `PrismaUserRepository` provisions
+  Profile + GamificationProfile + FREE Subscription atomically on create.
+- Clerk webhook (`POST /api/webhooks/clerk`, raw-body + signature verified) syncs
+  `user.created/updated/deleted`. `GET /api/v1/me` + `PATCH /api/v1/me/profile`.
+- Word write endpoints now require ADMIN; reads stay public.
+- Verified: auth/RBAC/webhook integration tests, all gates green.
 
 ## Phase 3 — completed
 
