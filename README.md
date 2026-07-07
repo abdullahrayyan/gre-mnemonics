@@ -30,11 +30,11 @@ apps/
   api/          Express + TypeScript backend  → Railway
   web/          Next.js App Router frontend    → Vercel   (Phase 5)
 packages/
-  database/     Prisma schema + client         (Phase 1)
-  core/         Framework-free domain layer    (Phase 1)
+  database/     Prisma schema + client         ✅
+  core/         Framework-free domain layer    ✅
   ai/           AI mnemonic engine (OpenAI)    (Phase 2)
-  validation/   Zod schemas shared FE↔BE       (Phase 1)
-  types/        Shared DTOs / contracts        (Phase 1)
+  validation/   Zod schemas shared FE↔BE       (Phase 3)
+  types/        Shared DTOs / contracts        (Phase 3)
   config/       Fail-fast env validation       ✅
   logger/       Pino structured logging        ✅
   ui/           React design system            (Phase 5)

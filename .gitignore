@@ -23,6 +23,7 @@ coverage/
 # Prisma
 packages/database/prisma/*.db
 packages/database/prisma/migrations/dev.db*
+packages/database/src/generated/
 
 # Logs
 *.log

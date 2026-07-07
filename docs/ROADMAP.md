@@ -7,8 +7,8 @@ verified before the next begins.
 | Phase  | Feature                              | Key deliverables                                                                 | Status |
 | ------ | ------------------------------------ | -------------------------------------------------------------------------------- | ------ |
 | **0**  | **Foundation**                       | Monorepo, tooling, `config` + `logger`, bootable API + health, Docker, CI, docs | ✅ done |
-| 1      | Data & Domain Core                   | Full Prisma schema (all tables), migrations, seed harness, `core` domain, Word entity + repository | ⏭ next |
-| 2      | AI Mnemonic Engine                   | `@mnemonic/ai`, OpenAI adapter, prompt templates, 11 generated artifacts, caching + `AIHistory` |        |
+| **1**  | **Data & Domain Core**               | Full Prisma schema (33 models), initial migration, seed harness, `core` domain, `Word` entity + repository port + Prisma adapter | ✅ done |
+| 2      | AI Mnemonic Engine                   | `@mnemonic/ai`, OpenAI adapter, prompt templates, 11 generated artifacts, caching + `AIHistory` | ⏭ next |
 | 3      | Words REST API                       | CRUD, search, filter, pagination, rate limiting, caching, integration tests      |        |
 | 4      | Auth & Users                         | Clerk integration, user/profile sync, RBAC, subscription gating                  |        |
 | 5      | Web Foundation                       | Next.js app, design system (`ui`), theming (dark/light), React Query + Zustand   |        |
@@ -35,6 +35,18 @@ verified before the next begins.
 - **Performance & scale** — caching, pagination, connection pooling, idempotent AI.
 
 ---
+
+## Phase 1 — completed
+
+- `@mnemonic/core`: framework-free domain — `Word` aggregate with enforced
+  invariants, value-object enums, `WordRepository` port, `Guard`/pagination/
+  slug utilities, domain errors. Unit tested.
+- `@mnemonic/database`: full Prisma schema (33 models · 33 enums · 48 FKs),
+  initial migration, Prisma client singleton, `PrismaWordRepository` (adapter)
+  + `WordMapper` (row ↔ entity), idempotent seed (exams, badges, starter GRE
+  words with exam frequency). Mapper unit tested.
+- Verified: schema valid, migration DDL generated, client generated, all quality
+  gates green (typecheck · test · lint · format · build).
 
 ## Phase 0 — completed
 
