@@ -11,8 +11,8 @@ verified before the next begins.
 | **2**  | **AI Mnemonic Engine**               | `@mnemonic/ai`: provider port + OpenAI adapter + stub, prompt templates, 11 generated artifacts, Zod-validated structured output, caching, cost tracking | ✅ done |
 | **3**  | **Words REST API**                   | `/api/v1/words` CRUD + search/filter/pagination, `@mnemonic/validation`, DI container, Redis rate-limit + cache, AI generate + `AiHistory`, readiness probe, integration tests | ✅ done |
 | **4**  | **Auth & Users**                     | Clerk token verification + RBAC middleware, svix webhook user provisioning, `/me` + profile, subscription-gate middleware, secured word writes | ✅ done |
-| 5      | Web Foundation                       | Next.js app, design system (`ui`), theming (dark/light), React Query + Zustand   | ⏭ next |
-| 6      | Flashcards + SM-2 Spaced Repetition  | Animated flashcards, complete SM-2, review scheduling (Again/Hard/Good/Easy)     |        |
+| **5**  | **Web Foundation**                   | Next.js App Router app, `@mnemonic/ui` design system + `@mnemonic/types`, dark/light theming, React Query + Zustand, Clerk on web, typed API client, landing + words + dashboard | ✅ done |
+| 6      | Flashcards + SM-2 Spaced Repetition  | Animated flashcards, complete SM-2, review scheduling (Again/Hard/Good/Easy)     | ⏭ next |
 | 7      | Daily Learning + Dashboard           | Goals (10/20/30/50/custom), XP, streaks, retention %, analytics                  |        |
 | 8      | Quiz Engine                          | 9 quiz types, attempts, accuracy/speed/weak-word tracking                        |        |
 | 9      | AI Tutor                             | Streaming chat, explain/another-mnemonic/compare/etc.                            |        |
@@ -35,6 +35,19 @@ verified before the next begins.
 - **Performance & scale** — caching, pagination, connection pooling, idempotent AI.
 
 ---
+
+## Phase 5 — completed
+
+- `apps/web`: Next.js 15 App Router app — landing (Framer Motion hero + feature
+  cards), `/words` (React Query list + skeletons + glass cards), `/dashboard`
+  (auth-aware). Clerk on the web (provider, middleware, sign-in / user button),
+  dark/light theming via next-themes, typed API client, Zustand UI store.
+- `@mnemonic/ui`: design system — `cn`, Button (motion), Card (glass), Badge,
+  Skeleton, Spinner; component tests (Vitest + Testing Library + jsdom).
+- `@mnemonic/types`: framework-free HTTP contracts (WordDto, MeDto, Pagination,
+  envelopes) shared by API and clients. Shared React ESLint config.
+- Verified: typecheck (incl. CI-sim without build artifacts), unit tests, lint,
+  format, and a full `next build` (4 static routes + middleware).
 
 ## Phase 4 — completed
 

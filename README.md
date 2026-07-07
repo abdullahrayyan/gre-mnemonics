@@ -34,10 +34,10 @@ packages/
   core/         Framework-free domain layer    ✅
   ai/           AI mnemonic engine (OpenAI)    ✅
   validation/   Zod schemas shared FE↔BE       ✅
-  types/        Shared DTOs / contracts        (Phase 5)
+  types/        Shared DTOs / contracts        ✅
   config/       Fail-fast env validation       ✅
   logger/       Pino structured logging        ✅
-  ui/           React design system            (Phase 5)
+  ui/           React design system            ✅
   tsconfig/     Shared TypeScript configs      ✅
   eslint-config/ Shared ESLint flat config     ✅
 docs/           Architecture, roadmap, ADRs
@@ -66,6 +66,9 @@ docker compose up -d
 
 # 4. Run the API (http://localhost:4000/health)
 pnpm --filter @mnemonic/api dev
+
+# 5. Run the web app (http://localhost:3000)
+pnpm --filter @mnemonic/web dev
 ```
 
 ## Workspace scripts
