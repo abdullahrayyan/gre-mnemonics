@@ -1,0 +1,36 @@
+{
+  "name": "mnemonic-master",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Mnemonic Master AI — AI-powered vocabulary learning platform (GRE and beyond).",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20.11.0",
+    "pnpm": ">=9"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
+    "db:generate": "pnpm --filter @mnemonic/database db:generate",
+    "db:migrate": "pnpm --filter @mnemonic/database db:migrate",
+    "db:seed": "pnpm --filter @mnemonic/database db:seed",
+    "db:studio": "pnpm --filter @mnemonic/database db:studio",
+    "clean": "turbo run clean && rimraf node_modules"
+  },
+  "devDependencies": {
+    "@mnemonic/eslint-config": "workspace:*",
+    "@mnemonic/tsconfig": "workspace:*",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  }
+}
