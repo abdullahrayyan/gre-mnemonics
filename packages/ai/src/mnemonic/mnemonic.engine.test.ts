@@ -114,6 +114,48 @@ describe('MnemonicEngine', () => {
   });
 });
 
+describe('MnemonicEngine.generateWord', () => {
+  const validWord = JSON.stringify({
+    ...JSON.parse(JSON.stringify(validSet())),
+    meaning: 'to support or strengthen',
+    hindiMeaning: 'सहारा देना',
+    partOfSpeech: 'VERB',
+    difficulty: 'MEDIUM',
+    synonyms: ['support', 'reinforce'],
+    antonyms: ['undermine'],
+    rootWord: null,
+    exampleSentence: 'The award bolstered her confidence.',
+  });
+
+  it('generates a full word entry from just a word', async () => {
+    const engine = new MnemonicEngine(new StubAiProvider(validWord), { model: 'gpt-4o-mini' });
+    const result = await engine.generateWord('Bolster', { examType: 'GRE' });
+
+    expect(result.data.meaning).toBe('to support or strengthen');
+    expect(result.data.partOfSpeech).toBe('VERB');
+    expect(result.data.synonyms).toEqual(['support', 'reinforce']);
+    expect(result.data.quizQuestions.length).toBeGreaterThan(0);
+  });
+
+  it('maps a generated word onto CreateWordInput', async () => {
+    const engine = new MnemonicEngine(new StubAiProvider(validWord));
+    const { data } = await engine.generateWord('Bolster');
+    const input = engine.toCreateWordInput('Bolster', data);
+
+    expect(input.word).toBe('Bolster');
+    expect(input.meaning).toBe('to support or strengthen');
+    expect(input.status).toBe('PUBLISHED');
+    expect(input.ai?.visualMemoryPrompt).toBe(data.visualImagination);
+  });
+
+  it('coerces an invalid part of speech to OTHER', async () => {
+    const bad = JSON.stringify({ ...JSON.parse(validWord), partOfSpeech: 'not-a-pos' });
+    const engine = new MnemonicEngine(new StubAiProvider(bad));
+    const { data } = await engine.generateWord('Bolster');
+    expect(data.partOfSpeech).toBe('OTHER');
+  });
+});
+
 describe('estimateCostCents', () => {
   it('prices known models and rounds up to cents', () => {
     const cents = estimateCostCents({

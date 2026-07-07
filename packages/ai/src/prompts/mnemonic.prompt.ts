@@ -60,3 +60,44 @@ SYNONYM, ANTONYM, SENTENCE_COMPLETION, FILL_IN_BLANK, ROOT, MNEMONIC_RECALL.`;
     { role: 'user', content: userPrompt },
   ];
 }
+
+/** Bump when the word prompt changes so caches invalidate. */
+export const WORD_PROMPT_VERSION = 'v1';
+
+/** Build the chat messages for a full word entry (lexical fields + mnemonics). */
+export function buildWordMessages(word: string, examType?: string): AiMessage[] {
+  const userPrompt = `Generate a COMPLETE learning entry for the English word "${word}".
+${examType ? `Target exam: ${examType}` : ''}
+
+Return a JSON object with EXACTLY these keys:
+{
+  "meaning": "concise, accurate definition",
+  "hindiMeaning": "the meaning in Hindi (Devanagari)",
+  "partOfSpeech": "one of NOUN, VERB, ADJECTIVE, ADVERB, PRONOUN, PREPOSITION, CONJUNCTION, INTERJECTION, DETERMINER, PHRASE, OTHER",
+  "difficulty": "one of BEGINNER, EASY, MEDIUM, HARD, EXPERT",
+  "synonyms": ["..."],
+  "antonyms": ["..."],
+  "rootWord": "root/etymology token or null",
+  "exampleSentence": "a natural example sentence using the word",
+  "hinglishMnemonic": "Hinglish sound-alike mnemonic (funny desi friend style)",
+  "englishMnemonic": "English mnemonic / wordplay",
+  "story": "a short, funny story that fixes the meaning",
+  "beginnerExplanation": "simple explanation for a beginner",
+  "hindiExplanation": "explanation in Hindi (Devanagari)",
+  "rootExplanation": "root/prefix/suffix/etymology explanation",
+  "realLifeExample": "a real-life example sentence",
+  "visualImagination": "a vivid mental image",
+  "memoryTrick": "a quick memory trick",
+  "imagePrompt": "a literal scene description for an image generator",
+  "quizQuestions": [
+    { "type": "WORD_TO_MEANING", "prompt": "...", "options": ["...","...","...","..."], "correctAnswer": "...", "explanation": "..." }
+  ]
+}
+
+The meaning must be accurate. Provide 3-5 quiz questions. Reply with ONE JSON object only.`;
+
+  return [
+    { role: 'system', content: SYSTEM_PROMPT },
+    { role: 'user', content: userPrompt },
+  ];
+}

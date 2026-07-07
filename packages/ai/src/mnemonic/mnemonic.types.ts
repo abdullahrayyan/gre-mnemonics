@@ -1,3 +1,4 @@
+import { Difficulty, PartOfSpeech } from '@mnemonic/core';
 import { z } from 'zod';
 
 /** Quiz question kinds the engine may generate (mirrors DB `QuizQuestionType`). */
@@ -60,3 +61,20 @@ export interface MnemonicRequest {
   hindiMeaning?: string;
   examType?: string;
 }
+
+/**
+ * A complete generated word entry: the lexical fields (definition, POS,
+ * synonyms, …) plus all 11 mnemonic artifacts. Produced from just a word, so it
+ * powers both corpus seeding and the "generate any word" feature.
+ */
+export const generatedWordSchema = generatedMnemonicSetSchema.extend({
+  meaning: z.string().min(1),
+  hindiMeaning: z.string().min(1),
+  partOfSpeech: z.nativeEnum(PartOfSpeech).catch(PartOfSpeech.OTHER),
+  difficulty: z.nativeEnum(Difficulty).catch(Difficulty.MEDIUM),
+  synonyms: z.array(z.string().min(1)).max(20).default([]),
+  antonyms: z.array(z.string().min(1)).max(20).default([]),
+  rootWord: z.string().nullish(),
+  exampleSentence: z.string().min(1),
+});
+export type GeneratedWord = z.infer<typeof generatedWordSchema>;

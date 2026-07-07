@@ -24,7 +24,7 @@ verified before the next begins.
 | 15     | Notifications                        | FCM push + Resend email reminders                                               |        |
 | 16     | Voice                                | Native/slow pronunciation, recording, AI pronunciation scoring                   |        |
 | 17     | Bonus AI + PWA                       | Any-word generator, memory palace, OCR/PDF import, Chrome extension, offline PWA  |        |
-| 18     | Seed Data                            | 1000 GRE words with exam frequency                                              |        |
+| 18     | Seed Data                            | 1000 GRE words with exam frequency (corpus captured: 840 words / 28 gregmat groups; AI-generation seed pipeline built) | 🔶 data in |
 
 ### Cross-cutting (woven through every phase)
 

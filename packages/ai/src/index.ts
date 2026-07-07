@@ -21,7 +21,12 @@ export { StubAiProvider } from './provider/stub-provider.js';
 
 export { type GenerationCache, InMemoryGenerationCache } from './cache/generation-cache.js';
 
-export { buildMnemonicMessages, MNEMONIC_PROMPT_VERSION } from './prompts/mnemonic.prompt.js';
+export {
+  buildMnemonicMessages,
+  buildWordMessages,
+  MNEMONIC_PROMPT_VERSION,
+  WORD_PROMPT_VERSION,
+} from './prompts/mnemonic.prompt.js';
 
 export {
   MnemonicEngine,
@@ -31,9 +36,11 @@ export {
 export {
   generatedMnemonicSetSchema,
   generatedQuizQuestionSchema,
+  generatedWordSchema,
   QUIZ_QUESTION_KINDS,
   type GeneratedMnemonicSet,
   type GeneratedQuizQuestion,
+  type GeneratedWord,
   type QuizQuestionKind,
   type MnemonicRequest,
 } from './mnemonic/mnemonic.types.js';
