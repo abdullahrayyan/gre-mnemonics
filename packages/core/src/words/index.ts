@@ -16,6 +16,11 @@ export {
   MNEMONIC_TYPES,
   ReviewRating,
   REVIEW_RATINGS,
+  isReviewRating,
+  LearningStatus,
+  LEARNING_STATUSES,
+  StudySource,
+  STUDY_SOURCES,
 } from './enums.js';
 
 export { Word, EMPTY_AI_CONTENT } from './word.entity.js';

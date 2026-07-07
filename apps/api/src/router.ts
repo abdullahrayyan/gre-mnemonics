@@ -2,6 +2,7 @@ import { Router } from 'express';
 import type { Container } from './container/container.js';
 import { createAuthMiddleware } from './modules/auth/auth.middleware.js';
 import { healthRouter } from './modules/health/health.routes.js';
+import { createReviewsRouter } from './modules/reviews/interface/reviews.routes.js';
 import { createUsersRouter } from './modules/users/interface/users.routes.js';
 import { createWordsRouter } from './modules/words/interface/words.routes.js';
 
@@ -16,6 +17,7 @@ export function createApiV1Router(container: Container): Router {
   router.use('/health', healthRouter);
   router.use('/words', createWordsRouter(container, auth));
   router.use('/me', createUsersRouter(container, auth));
+  router.use('/reviews', createReviewsRouter(container, auth));
 
   return router;
 }

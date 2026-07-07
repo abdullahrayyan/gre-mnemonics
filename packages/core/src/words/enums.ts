@@ -107,7 +107,7 @@ export const SubscriptionPlan = {
 export type SubscriptionPlan = (typeof SubscriptionPlan)[keyof typeof SubscriptionPlan];
 export const SUBSCRIPTION_PLANS = Object.values(SubscriptionPlan);
 
-/** SM-2 recall grades used by the spaced-repetition scheduler (Phase 6). */
+/** SM-2 recall grades used by the spaced-repetition scheduler. */
 export const ReviewRating = {
   AGAIN: 'AGAIN',
   HARD: 'HARD',
@@ -116,3 +116,27 @@ export const ReviewRating = {
 } as const;
 export type ReviewRating = (typeof ReviewRating)[keyof typeof ReviewRating];
 export const REVIEW_RATINGS = Object.values(ReviewRating);
+export function isReviewRating(value: unknown): value is ReviewRating {
+  return typeof value === 'string' && (REVIEW_RATINGS as string[]).includes(value);
+}
+
+/** A learner's mastery status for a word. */
+export const LearningStatus = {
+  NEW: 'NEW',
+  LEARNING: 'LEARNING',
+  REVIEW: 'REVIEW',
+  MASTERED: 'MASTERED',
+  SUSPENDED: 'SUSPENDED',
+} as const;
+export type LearningStatus = (typeof LearningStatus)[keyof typeof LearningStatus];
+export const LEARNING_STATUSES = Object.values(LearningStatus);
+
+/** Where a review/study action originated. */
+export const StudySource = {
+  FLASHCARD: 'FLASHCARD',
+  QUIZ: 'QUIZ',
+  TUTOR: 'TUTOR',
+  IMPORT: 'IMPORT',
+} as const;
+export type StudySource = (typeof StudySource)[keyof typeof StudySource];
+export const STUDY_SOURCES = Object.values(StudySource);

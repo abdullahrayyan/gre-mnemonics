@@ -3,6 +3,9 @@ import type {
   ApiSuccess,
   MeDto,
   PaginatedResponse,
+  ReviewCardDto,
+  ReviewOutcomeDto,
+  ReviewRatingValue,
   WordDto,
   WordSearchParams,
 } from '@mnemonic/types';
@@ -65,4 +68,13 @@ export const api = {
       request<ApiSuccess<WordDto>>(`/api/v1/words/slug/${slug}`, { token }),
   },
   me: (token: string) => request<ApiSuccess<MeDto>>('/api/v1/me', { token }),
+  reviews: {
+    queue: (token: string, limit?: number) =>
+      request<ApiSuccess<ReviewCardDto[]>>('/api/v1/reviews/queue', {
+        token,
+        searchParams: limit ? { limit } : undefined,
+      }),
+    submit: (body: { wordId: string; rating: ReviewRatingValue }, token: string) =>
+      request<ApiSuccess<ReviewOutcomeDto>>('/api/v1/reviews', { method: 'POST', body, token }),
+  },
 };

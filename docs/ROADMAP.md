@@ -12,8 +12,8 @@ verified before the next begins.
 | **3**  | **Words REST API**                   | `/api/v1/words` CRUD + search/filter/pagination, `@mnemonic/validation`, DI container, Redis rate-limit + cache, AI generate + `AiHistory`, readiness probe, integration tests | ✅ done |
 | **4**  | **Auth & Users**                     | Clerk token verification + RBAC middleware, svix webhook user provisioning, `/me` + profile, subscription-gate middleware, secured word writes | ✅ done |
 | **5**  | **Web Foundation**                   | Next.js App Router app, `@mnemonic/ui` design system + `@mnemonic/types`, dark/light theming, React Query + Zustand, Clerk on web, typed API client, landing + words + dashboard | ✅ done |
-| 6      | Flashcards + SM-2 Spaced Repetition  | Animated flashcards, complete SM-2, review scheduling (Again/Hard/Good/Easy)     | ⏭ next |
-| 7      | Daily Learning + Dashboard           | Goals (10/20/30/50/custom), XP, streaks, retention %, analytics                  |        |
+| **6**  | **Flashcards + SM-2 Spaced Repetition** | Complete SM-2 scheduler in `core`, review API (`/reviews/queue` + submit → schedule + progress + XP), animated flip flashcard UI (Again/Hard/Good/Easy) | ✅ done |
+| 7      | Daily Learning + Dashboard           | Goals (10/20/30/50/custom), XP, streaks, retention %, analytics                  | ⏭ next |
 | 8      | Quiz Engine                          | 9 quiz types, attempts, accuracy/speed/weak-word tracking                        |        |
 | 9      | AI Tutor                             | Streaming chat, explain/another-mnemonic/compare/etc.                            |        |
 | 10     | Gamification                         | XP, levels, streaks, badges, leaderboards                                        |        |
@@ -35,6 +35,20 @@ verified before the next begins.
 - **Performance & scale** — caching, pagination, connection pooling, idempotent AI.
 
 ---
+
+## Phase 6 — completed
+
+- `@mnemonic/core`: the **complete SM-2 algorithm** (`scheduleSm2`) — ease-factor
+  update (clamped to 1.3), interval progression (1 → 6 → interval×EF), lapse
+  reset on Again, next due date. 7 dedicated unit tests. `ReviewRating`,
+  `LearningStatus`, `StudySource` enums.
+- API `reviews` module: `GET /api/v1/reviews/queue` (due cards + new cards) and
+  `POST /api/v1/reviews` (auth) — one transaction updates the SM-2 schedule,
+  learning progress, review log, and awards XP. Prisma + in-memory stores;
+  integration tests.
+- Web `/review`: animated 3D-flip flashcard (front word/pronunciation, back
+  meaning/mnemonic/synonyms), Again/Hard/Good/Easy rating, React Query hooks
+  with Clerk token. Verified: typecheck, tests, lint, format, `next build`.
 
 ## Phase 5 — completed
 

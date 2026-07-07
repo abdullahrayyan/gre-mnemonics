@@ -31,6 +31,12 @@ import { SyncClerkUserUseCase } from '../modules/users/application/sync-clerk-us
 import { GetMeUseCase, UpdateProfileUseCase } from '../modules/users/application/user.usecases.js';
 import { PrismaProfileRepository } from '../modules/users/infrastructure/prisma-profile.repository.js';
 import { PrismaUserRepository } from '../modules/users/infrastructure/prisma-user.repository.js';
+import type { ReviewStore } from '../modules/reviews/application/review-store.port.js';
+import {
+  GetReviewQueueUseCase,
+  SubmitReviewUseCase,
+} from '../modules/reviews/application/review.usecases.js';
+import { PrismaReviewStore } from '../modules/reviews/infrastructure/prisma-review.store.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -47,6 +53,11 @@ export interface UserUseCases {
   updateProfile: UpdateProfileUseCase;
 }
 
+export interface ReviewUseCases {
+  getQueue: GetReviewQueueUseCase;
+  submit: SubmitReviewUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -58,9 +69,11 @@ export interface Container {
   webhookVerifier: WebhookVerifier;
   userRepository: UserRepository;
   profileRepository: ProfileRepository;
+  reviewStore: ReviewStore;
   generateId: () => string;
   words: WordUseCases;
   users: UserUseCases;
+  reviews: ReviewUseCases;
 }
 
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
@@ -128,6 +141,12 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     updateProfile: new UpdateProfileUseCase(profileRepository),
   };
 
+  const reviewStore = overrides.reviewStore ?? new PrismaReviewStore(prisma);
+  const reviews: ReviewUseCases = overrides.reviews ?? {
+    getQueue: new GetReviewQueueUseCase(reviewStore),
+    submit: new SubmitReviewUseCase(reviewStore),
+  };
+
   return {
     prisma,
     redis,
@@ -139,8 +158,10 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     webhookVerifier,
     userRepository,
     profileRepository,
+    reviewStore,
     generateId,
     words,
     users,
+    reviews,
   };
 }

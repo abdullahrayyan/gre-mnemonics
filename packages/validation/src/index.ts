@@ -12,3 +12,5 @@ export {
 export type { CreateWordDto, UpdateWordDto, WordSearchQueryDto } from './words.js';
 export { updateProfileSchema } from './users.js';
 export type { UpdateProfileDto } from './users.js';
+export { submitReviewSchema, reviewQueueQuerySchema } from './reviews.js';
+export type { SubmitReviewDto, ReviewQueueQueryDto } from './reviews.js';

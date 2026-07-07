@@ -95,6 +95,28 @@ export interface MeDto {
   profile: ProfileDto | null;
 }
 
+export type ReviewRatingValue = 'AGAIN' | 'HARD' | 'GOOD' | 'EASY';
+
+/** A card in the review queue. */
+export interface ReviewCardDto {
+  word: WordDto;
+  dueAt: string | null;
+  repetitions: number;
+  intervalDays: number;
+  isNew: boolean;
+}
+
+/** The result of submitting a review. */
+export interface ReviewOutcomeDto {
+  wordId: string;
+  status: string;
+  repetitions: number;
+  intervalDays: number;
+  easeFactor: number;
+  dueAt: string;
+  xpAwarded: number;
+}
+
 /** Query parameters accepted by `GET /api/v1/words`. */
 export interface WordSearchParams {
   page?: number;
