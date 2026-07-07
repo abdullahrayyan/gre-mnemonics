@@ -57,6 +57,19 @@ export const apiEnvSchema = runtimeEnvSchema
   .merge(databaseEnvSchema)
   .merge(redisEnvSchema);
 
+/**
+ * OpenAI configuration. Validated lazily by the AI module when it initializes,
+ * so the core API can boot without an AI key configured.
+ */
+export const openaiEnvSchema = z.object({
+  OPENAI_API_KEY: z.string().min(1),
+  OPENAI_MODEL: z.string().min(1).default('gpt-4o-mini'),
+  OPENAI_MODEL_FALLBACK: z.string().min(1).default('gpt-4o-mini'),
+  OPENAI_IMAGE_MODEL: z.string().min(1).default('gpt-image-1'),
+  OPENAI_REQUEST_TIMEOUT_MS: z.coerce.number().int().positive().default(60_000),
+});
+
 export type NodeEnv = z.infer<typeof nodeEnvSchema>;
 export type LogLevel = z.infer<typeof logLevelSchema>;
 export type ApiEnv = z.infer<typeof apiEnvSchema>;
+export type OpenAiEnv = z.infer<typeof openaiEnvSchema>;

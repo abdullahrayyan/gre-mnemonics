@@ -32,7 +32,7 @@ apps/
 packages/
   database/     Prisma schema + client         ✅
   core/         Framework-free domain layer    ✅
-  ai/           AI mnemonic engine (OpenAI)    (Phase 2)
+  ai/           AI mnemonic engine (OpenAI)    ✅
   validation/   Zod schemas shared FE↔BE       (Phase 3)
   types/        Shared DTOs / contracts        (Phase 3)
   config/       Fail-fast env validation       ✅

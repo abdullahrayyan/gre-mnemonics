@@ -8,8 +8,8 @@ verified before the next begins.
 | ------ | ------------------------------------ | -------------------------------------------------------------------------------- | ------ |
 | **0**  | **Foundation**                       | Monorepo, tooling, `config` + `logger`, bootable API + health, Docker, CI, docs | ✅ done |
 | **1**  | **Data & Domain Core**               | Full Prisma schema (33 models), initial migration, seed harness, `core` domain, `Word` entity + repository port + Prisma adapter | ✅ done |
-| 2      | AI Mnemonic Engine                   | `@mnemonic/ai`, OpenAI adapter, prompt templates, 11 generated artifacts, caching + `AIHistory` | ⏭ next |
-| 3      | Words REST API                       | CRUD, search, filter, pagination, rate limiting, caching, integration tests      |        |
+| **2**  | **AI Mnemonic Engine**               | `@mnemonic/ai`: provider port + OpenAI adapter + stub, prompt templates, 11 generated artifacts, Zod-validated structured output, caching, cost tracking | ✅ done |
+| 3      | Words REST API                       | CRUD, search, filter, pagination, rate limiting, caching, `AiHistory` persistence, integration tests | ⏭ next |
 | 4      | Auth & Users                         | Clerk integration, user/profile sync, RBAC, subscription gating                  |        |
 | 5      | Web Foundation                       | Next.js app, design system (`ui`), theming (dark/light), React Query + Zustand   |        |
 | 6      | Flashcards + SM-2 Spaced Repetition  | Animated flashcards, complete SM-2, review scheduling (Again/Hard/Good/Easy)     |        |
@@ -35,6 +35,18 @@ verified before the next begins.
 - **Performance & scale** — caching, pagination, connection pooling, idempotent AI.
 
 ---
+
+## Phase 2 — completed
+
+- `@mnemonic/ai`: `AiProvider` port with an `OpenAiProvider` adapter (token/
+  latency/error handling) and a deterministic `StubAiProvider` for tests.
+- `MnemonicEngine`: builds the "funny friend" prompt, generates all 11 artifacts
+  as one structured JSON call, validates with Zod (parse-retry + fence-strip +
+  quiz-type coercion), maps to domain `WordAiContent`, and is DB-free (returns
+  metadata for the API to persist as `AiHistory`).
+- `GenerationCache` port + in-memory impl (Redis in Phase 3), `estimateCostCents`.
+- Verified: 8 unit tests (parse/cache/retry/error/mapping/cost), typecheck, lint,
+  format, build all green; runnable offline demo (`pnpm --filter @mnemonic/ai demo`).
 
 ## Phase 1 — completed
 

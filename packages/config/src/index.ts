@@ -7,5 +7,6 @@ export {
   databaseEnvSchema,
   redisEnvSchema,
   apiEnvSchema,
+  openaiEnvSchema,
 } from './schemas.js';
-export type { NodeEnv, LogLevel, ApiEnv } from './schemas.js';
+export type { NodeEnv, LogLevel, ApiEnv, OpenAiEnv } from './schemas.js';
