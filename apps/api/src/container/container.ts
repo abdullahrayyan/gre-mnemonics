@@ -42,6 +42,13 @@ import { PrismaAnalyticsRecorder } from '../modules/analytics/prisma-analytics.r
 import { GetDashboardUseCase } from '../modules/stats/application/get-dashboard.usecase.js';
 import type { StatsStore } from '../modules/stats/application/stats-store.port.js';
 import { PrismaStatsStore } from '../modules/stats/infrastructure/prisma-stats.store.js';
+import type { QuizStore } from '../modules/quizzes/application/quiz-store.port.js';
+import {
+  AnswerQuestionUseCase,
+  GetWeakWordsUseCase,
+  StartQuizUseCase,
+} from '../modules/quizzes/application/quiz.usecases.js';
+import { PrismaQuizStore } from '../modules/quizzes/infrastructure/prisma-quiz.store.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -67,6 +74,12 @@ export interface StatsUseCases {
   getDashboard: GetDashboardUseCase;
 }
 
+export interface QuizUseCases {
+  start: StartQuizUseCase;
+  answer: AnswerQuestionUseCase;
+  weakWords: GetWeakWordsUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -81,11 +94,13 @@ export interface Container {
   reviewStore: ReviewStore;
   statsStore: StatsStore;
   analyticsRecorder: AnalyticsRecorder;
+  quizStore: QuizStore;
   generateId: () => string;
   words: WordUseCases;
   users: UserUseCases;
   reviews: ReviewUseCases;
   stats: StatsUseCases;
+  quizzes: QuizUseCases;
 }
 
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
@@ -165,6 +180,13 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     getDashboard: new GetDashboardUseCase(statsStore),
   };
 
+  const quizStore = overrides.quizStore ?? new PrismaQuizStore(prisma);
+  const quizzes: QuizUseCases = overrides.quizzes ?? {
+    start: new StartQuizUseCase(wordRepository, quizStore),
+    answer: new AnswerQuestionUseCase(quizStore),
+    weakWords: new GetWeakWordsUseCase(quizStore),
+  };
+
   return {
     prisma,
     redis,
@@ -179,10 +201,12 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     reviewStore,
     statsStore,
     analyticsRecorder,
+    quizStore,
     generateId,
     words,
     users,
     reviews,
     stats,
+    quizzes,
   };
 }

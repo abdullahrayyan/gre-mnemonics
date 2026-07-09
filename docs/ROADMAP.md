@@ -14,8 +14,8 @@ verified before the next begins.
 | **5**  | **Web Foundation**                   | Next.js App Router app, `@mnemonic/ui` design system + `@mnemonic/types`, dark/light theming, React Query + Zustand, Clerk on web, typed API client, landing + words + dashboard | ✅ done |
 | **6**  | **Flashcards + SM-2 Spaced Repetition** | Complete SM-2 scheduler in `core`, review API (`/reviews/queue` + submit → schedule + progress + XP), animated flip flashcard UI (Again/Hard/Good/Easy) | ✅ done |
 | **7**  | **Daily Learning + Dashboard**       | XP↔level math in `core`, `/stats/dashboard` aggregation (goal/streak/retention/reviews-due/weekly), analytics events, dashboard UI (goal ring + selector + weekly chart) | ✅ done |
-| 8      | Quiz Engine                          | 9 quiz types, attempts, accuracy/speed/weak-word tracking                        | ⏭ next |
-| 9      | AI Tutor                             | Streaming chat, explain/another-mnemonic/compare/etc.                            |        |
+| **8**  | **Quiz Engine**                      | 9-type quiz generator in `core` (MCQ w/ distractors), quiz API (start/answer/complete + XP, weak-words), quiz UI with instant feedback + results | ✅ done |
+| 9      | AI Tutor                             | Streaming chat, explain/another-mnemonic/compare/etc.                            | ⏭ next |
 | 10     | Gamification                         | XP, levels, streaks, badges, leaderboards                                        |        |
 | 11     | Community                            | Submit mnemonics, votes, comments, reports, moderation                          |        |
 | 12     | Search                               | Multi-field search (word/meaning/Hindi/synonym/root/difficulty/category)         |        |
@@ -35,6 +35,20 @@ verified before the next begins.
 - **Performance & scale** — caching, pagination, connection pooling, idempotent AI.
 
 ---
+
+## Phase 8 — completed
+
+- `@mnemonic/core`: `generateQuizQuestions` — deterministic (injectable RNG)
+  multiple-choice generator covering all 9 kinds (word↔meaning, synonym, antonym,
+  sentence-completion, fill-in-blank, root, mnemonic-recall) with distractors
+  drawn from the word pool; `QuizType`/`QuizQuestionKind` enums. Unit tests.
+- API `quizzes` module: `POST /quizzes` (generate + persist, answers hidden),
+  `POST /quizzes/:id/answers` (grade, auto-complete on last → score + XP),
+  `GET /quizzes/weak-words` (most-missed words). Prisma + in-memory stores;
+  integration tests.
+- Web `/quiz`: type picker → question screen with instant correct/incorrect
+  highlighting → results (score + XP). Verified: typecheck, tests, lint, format,
+  `next build` (6 routes).
 
 ## Phase 7 — completed
 

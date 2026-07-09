@@ -1,4 +1,5 @@
 import type {
+  AnswerResultDto,
   ApiError,
   ApiSuccess,
   DashboardDto,
@@ -8,6 +9,8 @@ import type {
   ReviewCardDto,
   ReviewOutcomeDto,
   ReviewRatingValue,
+  StartedQuizDto,
+  QuizTypeValue,
   WordDto,
   WordSearchParams,
 } from '@mnemonic/types';
@@ -97,5 +100,19 @@ export const api = {
       }),
     submit: (body: { wordId: string; rating: ReviewRatingValue }, token: string) =>
       request<ApiSuccess<ReviewOutcomeDto>>('/api/v1/reviews', { method: 'POST', body, token }),
+  },
+  quizzes: {
+    start: (body: { type: QuizTypeValue; count?: number }, token: string) =>
+      request<ApiSuccess<StartedQuizDto>>('/api/v1/quizzes', { method: 'POST', body, token }),
+    answer: (
+      quizId: string,
+      body: { attemptId: string; userAnswer: string; responseTimeMs?: number },
+      token: string,
+    ) =>
+      request<ApiSuccess<AnswerResultDto>>(`/api/v1/quizzes/${quizId}/answers`, {
+        method: 'POST',
+        body,
+        token,
+      }),
   },
 };

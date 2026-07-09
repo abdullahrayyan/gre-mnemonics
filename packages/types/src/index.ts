@@ -120,6 +120,47 @@ export interface DashboardDto {
 
 export type ReviewRatingValue = 'AGAIN' | 'HARD' | 'GOOD' | 'EASY';
 
+export type QuizTypeValue =
+  | 'WORD_TO_MEANING'
+  | 'MEANING_TO_WORD'
+  | 'SYNONYM'
+  | 'ANTONYM'
+  | 'SENTENCE_COMPLETION'
+  | 'FILL_IN_BLANK'
+  | 'ROOT'
+  | 'MNEMONIC_RECALL'
+  | 'TIMED'
+  | 'MIXED';
+
+export interface QuizQuestionDto {
+  attemptId: string;
+  type: string;
+  prompt: string;
+  options: string[];
+}
+
+export interface StartedQuizDto {
+  quizId: string;
+  type: string;
+  totalQuestions: number;
+  questions: QuizQuestionDto[];
+}
+
+export interface QuizSummaryDto {
+  quizId: string;
+  totalQuestions: number;
+  correctCount: number;
+  scorePercent: number;
+  xpAwarded: number;
+}
+
+export interface AnswerResultDto {
+  isCorrect: boolean;
+  correctAnswer: string;
+  completed: boolean;
+  summary?: QuizSummaryDto;
+}
+
 /** A card in the review queue. */
 export interface ReviewCardDto {
   word: WordDto;
