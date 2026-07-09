@@ -118,6 +118,26 @@ export interface DashboardDto {
   weeklyActivity: WeeklyActivityPoint[];
 }
 
+export interface AchievementDto {
+  key: string;
+  name: string;
+  description: string;
+  tier: string;
+  icon: string | null;
+  status: 'IN_PROGRESS' | 'EARNED';
+  progress: number;
+  target: number;
+  earnedAt: string | null;
+}
+
+export interface LeaderboardEntryDto {
+  rank: number;
+  name: string;
+  totalXp: number;
+  level: number;
+  isCurrentUser: boolean;
+}
+
 export type ReviewRatingValue = 'AGAIN' | 'HARD' | 'GOOD' | 'EASY';
 
 export type QuizTypeValue =

@@ -1,8 +1,10 @@
 import type {
+  AchievementDto,
   AnswerResultDto,
   ApiError,
   ApiSuccess,
   DashboardDto,
+  LeaderboardEntryDto,
   MeDto,
   PaginatedResponse,
   ProfileDto,
@@ -87,6 +89,12 @@ export const api = {
   stats: {
     dashboard: (token: string) =>
       request<ApiSuccess<DashboardDto>>('/api/v1/stats/dashboard', { token }),
+  },
+  gamification: {
+    achievements: (token: string) =>
+      request<ApiSuccess<AchievementDto[]>>('/api/v1/gamification/achievements', { token }),
+    leaderboard: (token: string) =>
+      request<ApiSuccess<LeaderboardEntryDto[]>>('/api/v1/gamification/leaderboard', { token }),
   },
   analytics: {
     track: (body: { name: string; properties?: Record<string, unknown> }) =>

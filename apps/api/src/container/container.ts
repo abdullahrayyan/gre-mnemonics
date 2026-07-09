@@ -49,6 +49,12 @@ import {
   StartQuizUseCase,
 } from '../modules/quizzes/application/quiz.usecases.js';
 import { PrismaQuizStore } from '../modules/quizzes/infrastructure/prisma-quiz.store.js';
+import type { GamificationStore } from '../modules/gamification/application/gamification-store.port.js';
+import {
+  GetLeaderboardUseCase,
+  ListAchievementsUseCase,
+} from '../modules/gamification/application/gamification.usecases.js';
+import { PrismaGamificationStore } from '../modules/gamification/infrastructure/prisma-gamification.store.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -80,6 +86,11 @@ export interface QuizUseCases {
   weakWords: GetWeakWordsUseCase;
 }
 
+export interface GamificationUseCases {
+  listAchievements: ListAchievementsUseCase;
+  getLeaderboard: GetLeaderboardUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -96,12 +107,14 @@ export interface Container {
   statsStore: StatsStore;
   analyticsRecorder: AnalyticsRecorder;
   quizStore: QuizStore;
+  gamificationStore: GamificationStore;
   generateId: () => string;
   words: WordUseCases;
   users: UserUseCases;
   reviews: ReviewUseCases;
   stats: StatsUseCases;
   quizzes: QuizUseCases;
+  gamification: GamificationUseCases;
 }
 
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
@@ -201,6 +214,12 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     weakWords: new GetWeakWordsUseCase(quizStore),
   };
 
+  const gamificationStore = overrides.gamificationStore ?? new PrismaGamificationStore(prisma);
+  const gamification: GamificationUseCases = overrides.gamification ?? {
+    listAchievements: new ListAchievementsUseCase(gamificationStore),
+    getLeaderboard: new GetLeaderboardUseCase(gamificationStore),
+  };
+
   return {
     prisma,
     redis,
@@ -217,11 +236,13 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     statsStore,
     analyticsRecorder,
     quizStore,
+    gamificationStore,
     generateId,
     words,
     users,
     reviews,
     stats,
     quizzes,
+    gamification,
   };
 }
