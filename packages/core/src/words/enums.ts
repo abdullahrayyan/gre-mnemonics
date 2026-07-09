@@ -107,6 +107,43 @@ export const SubscriptionPlan = {
 export type SubscriptionPlan = (typeof SubscriptionPlan)[keyof typeof SubscriptionPlan];
 export const SUBSCRIPTION_PLANS = Object.values(SubscriptionPlan);
 
+/** Moderation lifecycle for community-submitted content. */
+export const ModerationStatus = {
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  FLAGGED: 'FLAGGED',
+} as const;
+export type ModerationStatus = (typeof ModerationStatus)[keyof typeof ModerationStatus];
+export const MODERATION_STATUSES = Object.values(ModerationStatus);
+
+export const ReportTargetType = {
+  MNEMONIC: 'MNEMONIC',
+  COMMENT: 'COMMENT',
+  WORD: 'WORD',
+  USER: 'USER',
+} as const;
+export type ReportTargetType = (typeof ReportTargetType)[keyof typeof ReportTargetType];
+export const REPORT_TARGET_TYPES = Object.values(ReportTargetType);
+
+export const ReportReason = {
+  SPAM: 'SPAM',
+  OFFENSIVE: 'OFFENSIVE',
+  INCORRECT: 'INCORRECT',
+  PLAGIARISM: 'PLAGIARISM',
+  OTHER: 'OTHER',
+} as const;
+export type ReportReason = (typeof ReportReason)[keyof typeof ReportReason];
+export const REPORT_REASONS = Object.values(ReportReason);
+
+export const ReportStatus = {
+  OPEN: 'OPEN',
+  RESOLVED: 'RESOLVED',
+  DISMISSED: 'DISMISSED',
+} as const;
+export type ReportStatus = (typeof ReportStatus)[keyof typeof ReportStatus];
+export const REPORT_STATUSES = Object.values(ReportStatus);
+
 /** SM-2 recall grades used by the spaced-repetition scheduler. */
 export const ReviewRating = {
   AGAIN: 'AGAIN',

@@ -21,6 +21,14 @@ export {
   LEARNING_STATUSES,
   StudySource,
   STUDY_SOURCES,
+  ModerationStatus,
+  MODERATION_STATUSES,
+  ReportTargetType,
+  REPORT_TARGET_TYPES,
+  ReportReason,
+  REPORT_REASONS,
+  ReportStatus,
+  REPORT_STATUSES,
 } from './enums.js';
 
 export { Word, EMPTY_AI_CONTENT } from './word.entity.js';

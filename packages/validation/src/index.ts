@@ -20,3 +20,17 @@ export { startQuizSchema, answerQuestionSchema } from './quizzes.js';
 export type { StartQuizDto, AnswerQuestionDto } from './quizzes.js';
 export { tutorChatSchema, TUTOR_ACTIONS } from './tutor.js';
 export type { TutorChatDto } from './tutor.js';
+export {
+  submitMnemonicSchema,
+  voteSchema,
+  addCommentSchema,
+  reportSchema,
+  communityListQuerySchema,
+} from './community.js';
+export type {
+  SubmitMnemonicDto,
+  VoteDto,
+  AddCommentDto,
+  ReportDto,
+  CommunityListQueryDto,
+} from './community.js';

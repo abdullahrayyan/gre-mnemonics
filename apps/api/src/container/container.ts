@@ -55,6 +55,16 @@ import {
   ListAchievementsUseCase,
 } from '../modules/gamification/application/gamification.usecases.js';
 import { PrismaGamificationStore } from '../modules/gamification/infrastructure/prisma-gamification.store.js';
+import type { CommunityStore } from '../modules/community/application/community-store.port.js';
+import {
+  AddCommentUseCase,
+  ListCommentsUseCase,
+  ListCommunityMnemonicsUseCase,
+  ReportContentUseCase,
+  SubmitMnemonicUseCase,
+  VoteMnemonicUseCase,
+} from '../modules/community/application/community.usecases.js';
+import { PrismaCommunityStore } from '../modules/community/infrastructure/prisma-community.store.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -91,6 +101,15 @@ export interface GamificationUseCases {
   getLeaderboard: GetLeaderboardUseCase;
 }
 
+export interface CommunityUseCases {
+  list: ListCommunityMnemonicsUseCase;
+  submit: SubmitMnemonicUseCase;
+  vote: VoteMnemonicUseCase;
+  listComments: ListCommentsUseCase;
+  addComment: AddCommentUseCase;
+  report: ReportContentUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -108,6 +127,7 @@ export interface Container {
   analyticsRecorder: AnalyticsRecorder;
   quizStore: QuizStore;
   gamificationStore: GamificationStore;
+  communityStore: CommunityStore;
   generateId: () => string;
   words: WordUseCases;
   users: UserUseCases;
@@ -115,6 +135,7 @@ export interface Container {
   stats: StatsUseCases;
   quizzes: QuizUseCases;
   gamification: GamificationUseCases;
+  community: CommunityUseCases;
 }
 
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
@@ -220,6 +241,16 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     getLeaderboard: new GetLeaderboardUseCase(gamificationStore),
   };
 
+  const communityStore = overrides.communityStore ?? new PrismaCommunityStore(prisma);
+  const community: CommunityUseCases = overrides.community ?? {
+    list: new ListCommunityMnemonicsUseCase(communityStore),
+    submit: new SubmitMnemonicUseCase(communityStore, generateId),
+    vote: new VoteMnemonicUseCase(communityStore),
+    listComments: new ListCommentsUseCase(communityStore),
+    addComment: new AddCommentUseCase(communityStore, generateId),
+    report: new ReportContentUseCase(communityStore, generateId),
+  };
+
   return {
     prisma,
     redis,
@@ -237,6 +268,7 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     analyticsRecorder,
     quizStore,
     gamificationStore,
+    communityStore,
     generateId,
     words,
     users,
@@ -244,5 +276,6 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     stats,
     quizzes,
     gamification,
+    community,
   };
 }

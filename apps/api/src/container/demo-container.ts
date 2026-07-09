@@ -3,6 +3,7 @@ import { openaiEnvSchema } from '@mnemonic/config';
 import type { CacheStore } from '../shared/cache/cache-store.js';
 import { DemoAuthVerifier } from '../modules/auth/demo-auth-verifier.js';
 import type { AnalyticsRecorder } from '../modules/analytics/analytics-recorder.port.js';
+import { InMemoryCommunityStore } from '../modules/community/infrastructure/in-memory-community.store.js';
 import { InMemoryGamificationStore } from '../modules/gamification/infrastructure/in-memory-gamification.store.js';
 import { InMemoryQuizStore } from '../modules/quizzes/infrastructure/in-memory-quiz.store.js';
 import { InMemoryReviewStore } from '../modules/reviews/infrastructure/in-memory-review.store.js';
@@ -22,12 +23,15 @@ import {
   buildDemoWords,
   DEMO_ACHIEVEMENTS,
   DEMO_CLERK_ID,
+  DEMO_COMMUNITY_AUTHORS,
+  DEMO_COMMUNITY_POSTS,
   DEMO_DISPLAY_NAME,
   DEMO_LEADERBOARD,
   DEMO_TUTOR_REPLY,
   DEMO_USER_ID,
   toWordResponses,
 } from './demo-data.js';
+import type { Word } from '@mnemonic/core';
 
 const noopAiHistory: AiHistoryRecorder = { async record() {} };
 const noopAnalytics: AnalyticsRecorder = { async record() {} };
@@ -70,6 +74,62 @@ function buildDemoAi(cache: CacheStore): {
   };
 }
 
+/** Build a community store pre-populated with a small demo feed + threads. */
+function buildDemoCommunity(words: Word[], now: Date): InMemoryCommunityStore {
+  const wordById = new Map(words.map((w) => [w.id, w.word]));
+  const resolveAuthor = (id: string): string =>
+    id === DEMO_USER_ID ? DEMO_DISPLAY_NAME : (DEMO_COMMUNITY_AUTHORS[id] ?? 'Learner');
+  const store = new InMemoryCommunityStore((id) => wordById.get(id) ?? 'word', resolveAuthor);
+
+  let seq = 0;
+  const nextId = (prefix: string): string => `demo-${prefix}-${(seq += 1)}`;
+  const at = (minutesAgo: number): Date => new Date(now.getTime() - minutesAgo * 60_000);
+
+  DEMO_COMMUNITY_POSTS.forEach((post, index) => {
+    const word = words.find((w) => w.word.toLowerCase() === post.word.toLowerCase());
+    if (!word) return;
+    const mnemonicId = nextId('cm');
+    const votes: Record<string, number> = {};
+    for (const voter of post.upvoters) votes[voter] = 1;
+    store.seedMnemonic({
+      id: mnemonicId,
+      wordId: word.id,
+      word: word.word,
+      authorId: post.authorId,
+      authorName: resolveAuthor(post.authorId),
+      content: post.content,
+      createdAt: at((index + 1) * 90),
+      votes,
+    });
+    let cSeq = 0;
+    for (const comment of post.comments ?? []) {
+      const commentId = nextId('cc');
+      store.seedComment({
+        id: commentId,
+        mnemonicId,
+        authorId: comment.authorId,
+        parentId: null,
+        content: comment.content,
+        authorName: resolveAuthor(comment.authorId),
+        createdAt: at((index + 1) * 90 - (cSeq += 1) * 5),
+      });
+      for (const reply of comment.replies ?? []) {
+        store.seedComment({
+          id: nextId('cc'),
+          mnemonicId,
+          authorId: reply.authorId,
+          parentId: commentId,
+          content: reply.content,
+          authorName: resolveAuthor(reply.authorId),
+          createdAt: at((index + 1) * 90 - (cSeq += 1) * 5),
+        });
+      }
+    }
+  });
+
+  return store;
+}
+
 /**
  * Assemble a fully in-memory container for the zero-infra demo server: seeded
  * words, a seeded demo user/profile, stub AI (mnemonic + tutor), and a demo auth
@@ -109,6 +169,7 @@ export function createDemoContainer(now: Date = new Date()): Container {
     analyticsRecorder: noopAnalytics,
     quizStore: new InMemoryQuizStore(),
     gamificationStore: new InMemoryGamificationStore(DEMO_ACHIEVEMENTS, DEMO_LEADERBOARD),
+    communityStore: buildDemoCommunity(words, now),
   });
 
   logger.info(

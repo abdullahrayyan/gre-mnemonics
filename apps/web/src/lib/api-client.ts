@@ -3,6 +3,9 @@ import type {
   AnswerResultDto,
   ApiError,
   ApiSuccess,
+  CommentDto,
+  CommunityListParams,
+  CommunityMnemonicDto,
   DashboardDto,
   LeaderboardEntryDto,
   MeDto,
@@ -13,6 +16,7 @@ import type {
   ReviewRatingValue,
   StartedQuizDto,
   QuizTypeValue,
+  VoteResultDto,
   WordDto,
   WordSearchParams,
 } from '@mnemonic/types';
@@ -108,6 +112,37 @@ export const api = {
       }),
     submit: (body: { wordId: string; rating: ReviewRatingValue }, token: string) =>
       request<ApiSuccess<ReviewOutcomeDto>>('/api/v1/reviews', { method: 'POST', body, token }),
+  },
+  community: {
+    list: (params?: CommunityListParams, token?: string | null) =>
+      request<PaginatedResponse<CommunityMnemonicDto>>('/api/v1/community/mnemonics', {
+        searchParams: params,
+        token,
+      }),
+    submit: (body: { wordId: string; content: string; type?: string }, token: string) =>
+      request<ApiSuccess<CommunityMnemonicDto>>('/api/v1/community/mnemonics', {
+        method: 'POST',
+        body,
+        token,
+      }),
+    vote: (id: string, value: number, token: string) =>
+      request<ApiSuccess<VoteResultDto>>(`/api/v1/community/mnemonics/${id}/vote`, {
+        method: 'POST',
+        body: { value },
+        token,
+      }),
+    comments: (id: string, token?: string | null) =>
+      request<ApiSuccess<CommentDto[]>>(`/api/v1/community/mnemonics/${id}/comments`, { token }),
+    addComment: (id: string, body: { content: string; parentId?: string | null }, token: string) =>
+      request<ApiSuccess<CommentDto>>(`/api/v1/community/mnemonics/${id}/comments`, {
+        method: 'POST',
+        body,
+        token,
+      }),
+    report: (
+      body: { targetType: string; targetId: string; reason: string; details?: string | null },
+      token: string,
+    ) => request<ApiSuccess<{ id: string }>>('/api/v1/community/reports', { method: 'POST', body, token }),
   },
   quizzes: {
     start: (body: { type: QuizTypeValue; count?: number }, token: string) =>

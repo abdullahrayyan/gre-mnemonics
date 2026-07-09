@@ -521,6 +521,68 @@ export const DEMO_LEADERBOARD: LeaderboardEntryDto[] = [
   { rank: 6, name: 'Noah', totalXp: 640, level: 3, isCurrentUser: false },
 ];
 
+/** Synthetic community members (author id → display name) for the demo feed. */
+export const DEMO_COMMUNITY_AUTHORS: Record<string, string> = {
+  'demo-author-aarav': 'Aarav',
+  'demo-author-mei': 'Mei',
+  'demo-author-sofia': 'Sofia',
+  'demo-author-kenji': 'Kenji',
+};
+
+export interface DemoCommunityComment {
+  authorId: string;
+  content: string;
+  replies?: { authorId: string; content: string }[];
+}
+
+export interface DemoCommunityPost {
+  /** Word text to attach to (looked up among the seeded words). */
+  word: string;
+  authorId: string;
+  content: string;
+  /** Author ids who upvoted (each counts as +1). */
+  upvoters: string[];
+  comments?: DemoCommunityComment[];
+}
+
+/** A small, pre-populated community feed so the page has content on first load. */
+export const DEMO_COMMUNITY_POSTS: DemoCommunityPost[] = [
+  {
+    word: 'loquacious',
+    authorId: 'demo-author-aarav',
+    content:
+      "Sounds like 'low-quay-shus' — picture someone at a LOW QUAY who won't stop talking to every passing boat. Loquacious = very talkative.",
+    upvoters: ['demo-author-mei', 'demo-author-sofia', 'demo-author-kenji', DEMO_USER_ID],
+    comments: [
+      {
+        authorId: 'demo-author-mei',
+        content: 'Haha the low-quay image actually stuck 😄',
+        replies: [{ authorId: 'demo-author-aarav', content: 'Glad it helped!' }],
+      },
+      { authorId: 'demo-author-sofia', content: "Mine is 'loco + talkative' — a bit loco how much they talk." },
+    ],
+  },
+  {
+    word: 'taciturn',
+    authorId: 'demo-author-mei',
+    content: "Rhymes with 'pass-a-turn' — a taciturn player just passes their turn without a single word. Reserved and silent.",
+    upvoters: ['demo-author-aarav', 'demo-author-kenji'],
+  },
+  {
+    word: 'capricious',
+    authorId: 'demo-author-sofia',
+    content: "Think of a 'Capricorn goat' leaping around unpredictably — that's a capricious mood, changing on a whim.",
+    upvoters: ['demo-author-mei', DEMO_USER_ID],
+    comments: [{ authorId: 'demo-author-kenji', content: 'The goat leap is such a good visual.' }],
+  },
+  {
+    word: 'insipid',
+    authorId: 'demo-author-kenji',
+    content: "In-SIP-id: take a SIP of flat, warm soda — totally insipid. No flavour, dull and lifeless.",
+    upvoters: ['demo-author-sofia'],
+  },
+];
+
 /** Canned, on-brand tutor reply streamed by the stub AI provider in demo mode. */
 export const DEMO_TUTOR_REPLY = [
   "You're in demo mode, so I'll answer from a local script (no OpenAI key needed).",

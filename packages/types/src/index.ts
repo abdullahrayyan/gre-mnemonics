@@ -214,3 +214,55 @@ export interface WordSearchParams {
   sort?: 'word' | 'difficulty' | 'frequency' | 'createdAt' | 'updatedAt';
   order?: 'asc' | 'desc';
 }
+
+// ── Community (Phase 11) ────────────────────────────────────────────────────
+
+/** A community-submitted mnemonic for a word. */
+export interface CommunityMnemonicDto {
+  id: string;
+  wordId: string;
+  word: string;
+  authorId: string;
+  authorName: string;
+  content: string;
+  type: string;
+  upvotes: number;
+  downvotes: number;
+  score: number;
+  status: string;
+  commentCount: number;
+  /** The viewer's vote on this mnemonic: 1, -1, or 0 (anonymous → 0). */
+  viewerVote: number;
+  createdAt: string;
+}
+
+/** A threaded comment on a community mnemonic. */
+export interface CommentDto {
+  id: string;
+  mnemonicId: string;
+  parentId: string | null;
+  authorId: string;
+  authorName: string;
+  content: string;
+  createdAt: string;
+  replies: CommentDto[];
+}
+
+/** Result of casting a vote. */
+export interface VoteResultDto {
+  mnemonicId: string;
+  upvotes: number;
+  downvotes: number;
+  score: number;
+  viewerVote: number;
+}
+
+export type CommunitySort = 'new' | 'top';
+
+/** Query parameters for `GET /api/v1/community/mnemonics`. */
+export interface CommunityListParams {
+  wordId?: string;
+  sort?: CommunitySort;
+  page?: number;
+  pageSize?: number;
+}
