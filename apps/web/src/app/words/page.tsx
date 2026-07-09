@@ -1,7 +1,7 @@
 'use client';
 
 import { Skeleton, cn } from '@mnemonic/ui';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { WordCard } from '@/components/word-card';
 import { WordCarousel } from '@/components/word-carousel';
 import { useAllWords } from '@/hooks/use-words';
@@ -9,12 +9,6 @@ import { useAllWords } from '@/hooks/use-words';
 export default function WordsPage() {
   const { data: words, isLoading, isError } = useAllWords({ status: 'PUBLISHED', sort: 'word', order: 'asc' });
   const [index, setIndex] = useState(0);
-  const activeRef = useRef<HTMLButtonElement>(null);
-
-  // Keep the highlighted card in view as the carousel advances.
-  useEffect(() => {
-    activeRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-  }, [index]);
 
   return (
     <div className="space-y-8">
@@ -48,7 +42,6 @@ export default function WordsPage() {
             {words.map((word, i) => (
               <button
                 key={word.id}
-                ref={i === index ? activeRef : null}
                 type="button"
                 onClick={() => setIndex(i)}
                 className={cn(

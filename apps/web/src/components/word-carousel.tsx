@@ -88,7 +88,7 @@ export function WordCarousel({ words, index, onIndexChange }: WordCarouselProps)
               if (info.offset.x < -80) go(1);
               else if (info.offset.x > 80) go(-1);
             }}
-            className="cursor-grab space-y-5 p-6 active:cursor-grabbing sm:p-10"
+            className="min-h-[26rem] cursor-grab space-y-5 p-6 active:cursor-grabbing sm:min-h-[28rem] sm:p-10"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
