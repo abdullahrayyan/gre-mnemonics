@@ -1,5 +1,10 @@
 import { buildPage, pageOffset, type Page, type PageRequest } from '@mnemonic/core';
-import type { CommentDto, CommunityMnemonicDto, VoteResultDto } from '@mnemonic/types';
+import type {
+  CommentDto,
+  CommunityMnemonicDto,
+  ReportDto,
+  VoteResultDto,
+} from '@mnemonic/types';
 import type {
   AddCommentInput,
   CommunityStore,
@@ -52,7 +57,7 @@ export class InMemoryCommunityStore implements CommunityStore {
   private readonly mnemonics: MemMnemonic[] = [];
   private readonly votes = new Map<string, Map<string, number>>();
   private readonly comments: MemComment[] = [];
-  private readonly reports: (ReportInput & { createdAt: Date })[] = [];
+  private readonly reports: (ReportInput & { status: string; createdAt: Date })[] = [];
 
   constructor(
     private readonly resolveWord: (wordId: string) => string,
@@ -209,7 +214,47 @@ export class InMemoryCommunityStore implements CommunityStore {
   }
 
   async report(input: ReportInput): Promise<{ id: string }> {
-    this.reports.push({ ...input, createdAt: new Date() });
+    this.reports.push({ ...input, status: 'OPEN', createdAt: new Date() });
     return { id: input.id };
+  }
+
+  async listAllMnemonics(limit: number): Promise<CommunityMnemonicDto[]> {
+    return [...this.mnemonics]
+      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+      .slice(0, limit)
+      .map((m) => this.toDto(m));
+  }
+
+  async moderateMnemonic(id: string, status: string): Promise<void> {
+    const found = this.mnemonics.find((m) => m.id === id);
+    if (found) found.status = status;
+  }
+
+  async listReports(): Promise<ReportDto[]> {
+    return [...this.reports]
+      .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+      .map((r) => ({
+        id: r.id,
+        reporterId: r.reporterId,
+        targetType: r.targetType,
+        targetId: r.targetId,
+        reason: r.reason,
+        details: r.details ?? null,
+        status: r.status,
+        createdAt: r.createdAt.toISOString(),
+      }));
+  }
+
+  async resolveReport(id: string, status: string): Promise<void> {
+    const found = this.reports.find((r) => r.id === id);
+    if (found) found.status = status;
+  }
+
+  async countMnemonics(): Promise<number> {
+    return this.mnemonics.length;
+  }
+
+  async countOpenReports(): Promise<number> {
+    return this.reports.filter((r) => r.status === 'OPEN').length;
   }
 }

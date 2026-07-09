@@ -1,5 +1,6 @@
 import type {
   AchievementDto,
+  AdminOverviewDto,
   AnswerResultDto,
   ApiError,
   ApiSuccess,
@@ -7,6 +8,7 @@ import type {
   CommunityListParams,
   CommunityMnemonicDto,
   DashboardDto,
+  ReportDto,
   LeaderboardEntryDto,
   MeDto,
   PaginatedResponse,
@@ -143,6 +145,30 @@ export const api = {
       body: { targetType: string; targetId: string; reason: string; details?: string | null },
       token: string,
     ) => request<ApiSuccess<{ id: string }>>('/api/v1/community/reports', { method: 'POST', body, token }),
+  },
+  admin: {
+    overview: (token: string) =>
+      request<ApiSuccess<AdminOverviewDto>>('/api/v1/admin/overview', { token }),
+    mnemonics: (token: string) =>
+      request<ApiSuccess<CommunityMnemonicDto[]>>('/api/v1/admin/moderation/mnemonics', { token }),
+    moderate: (id: string, status: string, token: string) =>
+      request<ApiSuccess<{ id: string; status: string }>>(
+        `/api/v1/admin/moderation/mnemonics/${id}`,
+        { method: 'POST', body: { status }, token },
+      ),
+    reports: (token: string) =>
+      request<ApiSuccess<ReportDto[]>>('/api/v1/admin/moderation/reports', { token }),
+    resolveReport: (id: string, status: string, token: string) =>
+      request<ApiSuccess<{ id: string; status: string }>>(
+        `/api/v1/admin/moderation/reports/${id}`,
+        { method: 'POST', body: { status }, token },
+      ),
+    generateWord: (word: string, token: string) =>
+      request<ApiSuccess<WordDto>>('/api/v1/admin/words', {
+        method: 'POST',
+        body: { word },
+        token,
+      }),
   },
   quizzes: {
     start: (body: { type: QuizTypeValue; count?: number }, token: string) =>

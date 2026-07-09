@@ -65,6 +65,14 @@ import {
   VoteMnemonicUseCase,
 } from '../modules/community/application/community.usecases.js';
 import { PrismaCommunityStore } from '../modules/community/infrastructure/prisma-community.store.js';
+import {
+  AdminGenerateWordUseCase,
+  GetAdminOverviewUseCase,
+  ListModerationMnemonicsUseCase,
+  ListReportsUseCase,
+  ModerateMnemonicUseCase,
+  ResolveReportUseCase,
+} from '../modules/admin/application/admin.usecases.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -110,6 +118,15 @@ export interface CommunityUseCases {
   report: ReportContentUseCase;
 }
 
+export interface AdminUseCases {
+  overview: GetAdminOverviewUseCase;
+  listMnemonics: ListModerationMnemonicsUseCase;
+  moderateMnemonic: ModerateMnemonicUseCase;
+  listReports: ListReportsUseCase;
+  resolveReport: ResolveReportUseCase;
+  generateWord: AdminGenerateWordUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -128,6 +145,7 @@ export interface Container {
   quizStore: QuizStore;
   gamificationStore: GamificationStore;
   communityStore: CommunityStore;
+  countUsers: () => Promise<number>;
   generateId: () => string;
   words: WordUseCases;
   users: UserUseCases;
@@ -136,6 +154,7 @@ export interface Container {
   quizzes: QuizUseCases;
   gamification: GamificationUseCases;
   community: CommunityUseCases;
+  admin: AdminUseCases;
 }
 
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
@@ -251,6 +270,16 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     report: new ReportContentUseCase(communityStore, generateId),
   };
 
+  const countUsers = overrides.countUsers ?? (() => prisma.user.count());
+  const admin: AdminUseCases = overrides.admin ?? {
+    overview: new GetAdminOverviewUseCase(communityStore, wordRepository, countUsers),
+    listMnemonics: new ListModerationMnemonicsUseCase(communityStore),
+    moderateMnemonic: new ModerateMnemonicUseCase(communityStore),
+    listReports: new ListReportsUseCase(communityStore),
+    resolveReport: new ResolveReportUseCase(communityStore),
+    generateWord: new AdminGenerateWordUseCase(wordRepository, mnemonicEngine, generateId),
+  };
+
   return {
     prisma,
     redis,
@@ -269,6 +298,7 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     quizStore,
     gamificationStore,
     communityStore,
+    countUsers,
     generateId,
     words,
     users,
@@ -277,5 +307,6 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     quizzes,
     gamification,
     community,
+    admin,
   };
 }

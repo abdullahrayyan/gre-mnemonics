@@ -84,11 +84,13 @@ function buildDemoCommunity(words: Word[], now: Date): InMemoryCommunityStore {
   let seq = 0;
   const nextId = (prefix: string): string => `demo-${prefix}-${(seq += 1)}`;
   const at = (minutesAgo: number): Date => new Date(now.getTime() - minutesAgo * 60_000);
+  const mnemonicIds: string[] = [];
 
   DEMO_COMMUNITY_POSTS.forEach((post, index) => {
     const word = words.find((w) => w.word.toLowerCase() === post.word.toLowerCase());
     if (!word) return;
     const mnemonicId = nextId('cm');
+    mnemonicIds.push(mnemonicId);
     const votes: Record<string, number> = {};
     for (const voter of post.upvoters) votes[voter] = 1;
     store.seedMnemonic({
@@ -126,6 +128,18 @@ function buildDemoCommunity(words: Word[], now: Date): InMemoryCommunityStore {
       }
     }
   });
+
+  // One open report so the moderation queue has something to act on.
+  if (mnemonicIds[1]) {
+    void store.report({
+      id: nextId('rep'),
+      reporterId: 'demo-author-kenji',
+      targetType: 'MNEMONIC',
+      targetId: mnemonicIds[1],
+      reason: 'INCORRECT',
+      details: 'The nuance here feels a little off — worth a second look.',
+    });
+  }
 
   return store;
 }
@@ -170,6 +184,7 @@ export function createDemoContainer(now: Date = new Date()): Container {
     quizStore: new InMemoryQuizStore(),
     gamificationStore: new InMemoryGamificationStore(DEMO_ACHIEVEMENTS, DEMO_LEADERBOARD),
     communityStore: buildDemoCommunity(words, now),
+    countUsers: () => Promise.resolve(DEMO_LEADERBOARD.length),
   });
 
   logger.info(

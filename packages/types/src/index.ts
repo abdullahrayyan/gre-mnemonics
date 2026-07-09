@@ -257,6 +257,26 @@ export interface VoteResultDto {
   viewerVote: number;
 }
 
+/** A moderation report (admin view). */
+export interface ReportDto {
+  id: string;
+  reporterId: string;
+  targetType: string;
+  targetId: string;
+  reason: string;
+  details: string | null;
+  status: string;
+  createdAt: string;
+}
+
+/** Platform counts for the admin overview. */
+export interface AdminOverviewDto {
+  words: number;
+  mnemonics: number;
+  openReports: number;
+  users: number;
+}
+
 export type CommunitySort = 'new' | 'top';
 
 /** Query parameters for `GET /api/v1/community/mnemonics`. */

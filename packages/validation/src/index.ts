@@ -34,3 +34,13 @@ export type {
   ReportDto,
   CommunityListQueryDto,
 } from './community.js';
+export {
+  moderateMnemonicSchema,
+  resolveReportSchema,
+  adminGenerateWordSchema,
+} from './admin.js';
+export type {
+  ModerateMnemonicDto,
+  ResolveReportDto,
+  AdminGenerateWordDto,
+} from './admin.js';

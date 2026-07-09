@@ -1,6 +1,11 @@
 import { buildPage, pageOffset, type Page, type PageRequest } from '@mnemonic/core';
 import type { PrismaClient } from '@mnemonic/database';
-import type { CommentDto, CommunityMnemonicDto, VoteResultDto } from '@mnemonic/types';
+import type {
+  CommentDto,
+  CommunityMnemonicDto,
+  ReportDto,
+  VoteResultDto,
+} from '@mnemonic/types';
 import type {
   AddCommentInput,
   CommunityStore,
@@ -193,5 +198,69 @@ export class PrismaCommunityStore implements CommunityStore {
       },
     });
     return { id: row.id };
+  }
+
+  async listAllMnemonics(limit: number): Promise<CommunityMnemonicDto[]> {
+    const rows = await this.prisma.communityMnemonic.findMany({
+      orderBy: { createdAt: 'desc' },
+      take: limit,
+      include: {
+        word: { select: { word: true } },
+        author: authorInclude,
+        _count: { select: { comments: true } },
+      },
+    });
+    return rows.map((r) => ({
+      id: r.id,
+      wordId: r.wordId,
+      word: r.word.word,
+      authorId: r.authorId,
+      authorName: authorName(r.author),
+      content: r.content,
+      type: r.type,
+      upvotes: r.upvotes,
+      downvotes: r.downvotes,
+      score: r.score,
+      status: r.status,
+      commentCount: r._count.comments,
+      viewerVote: 0,
+      createdAt: r.createdAt.toISOString(),
+    }));
+  }
+
+  async moderateMnemonic(id: string, status: string): Promise<void> {
+    await this.prisma.communityMnemonic.update({
+      where: { id },
+      data: { status: status as never },
+    });
+  }
+
+  async listReports(): Promise<ReportDto[]> {
+    const rows = await this.prisma.report.findMany({ orderBy: { createdAt: 'desc' }, take: 200 });
+    return rows.map((r) => ({
+      id: r.id,
+      reporterId: r.reporterId,
+      targetType: r.targetType,
+      targetId: r.targetId,
+      reason: r.reason,
+      details: r.details,
+      status: r.status,
+      createdAt: r.createdAt.toISOString(),
+    }));
+  }
+
+  async resolveReport(id: string, status: string, resolverId: string): Promise<void> {
+    await this.prisma.report.update({
+      where: { id },
+      data: { status: status as never, resolvedById: resolverId, resolvedAt: new Date() },
+    });
+  }
+
+  async countMnemonics(): Promise<number> {
+    return this.prisma.communityMnemonic.count();
+  }
+
+  async countOpenReports(): Promise<number> {
+    return this.prisma.report.count({ where: { status: 'OPEN' } });
   }
 }

@@ -19,7 +19,7 @@ verified before the next begins.
 | **10** | **Gamification**                     | Achievement engine (badges from criteria + auto-award), leaderboard API, badges + leaderboard UI (XP/level/streak already surfaced) | ✅ done |
 | **11** | **Community**                        | Submit mnemonics, votes, threaded comments, reports; sort newest/top; demo feed  | ✅ done |
 | **12** | **Search**                           | Debounced multi-field search page (word/meaning/Hindi/synonym/root) + difficulty/POS filters + header search box | ✅ done |
-| 13     | Admin Panel                          | CRUD words, CSV/bulk import, regenerate AI, analytics, user + community mod       |        |
+| **13** | **Admin Panel**                      | ADMIN-gated overview stats, community moderation (mnemonics + reports), AI word generation | ✅ done |
 | 14     | Payments                             | Stripe subscriptions, webhooks, entitlements                                     |        |
 | 15     | Notifications                        | FCM push + Resend email reminders                                               |        |
 | 16     | Voice                                | Native/slow pronunciation, recording, AI pronunciation scoring                   |        |

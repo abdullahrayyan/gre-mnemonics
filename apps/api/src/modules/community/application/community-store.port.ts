@@ -1,5 +1,10 @@
 import type { Page, PageRequest } from '@mnemonic/core';
-import type { CommentDto, CommunityMnemonicDto, VoteResultDto } from '@mnemonic/types';
+import type {
+  CommentDto,
+  CommunityMnemonicDto,
+  ReportDto,
+  VoteResultDto,
+} from '@mnemonic/types';
 
 export interface ListMnemonicsFilter {
   wordId?: string;
@@ -46,4 +51,12 @@ export interface CommunityStore {
   listComments(mnemonicId: string): Promise<CommentDto[]>;
   addComment(input: AddCommentInput): Promise<CommentDto>;
   report(input: ReportInput): Promise<{ id: string }>;
+
+  // ── Admin / moderation ──
+  listAllMnemonics(limit: number): Promise<CommunityMnemonicDto[]>;
+  moderateMnemonic(id: string, status: string): Promise<void>;
+  listReports(): Promise<ReportDto[]>;
+  resolveReport(id: string, status: string, resolverId: string): Promise<void>;
+  countMnemonics(): Promise<number>;
+  countOpenReports(): Promise<number>;
 }
