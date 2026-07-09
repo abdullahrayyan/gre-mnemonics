@@ -1,4 +1,5 @@
-import './bootstrap/demo-env.js'; // MUST be first: sets demo env before validation.
+import './bootstrap/demo-env.js'; // MUST be first: sets demo defaults (won't override).
+import './bootstrap/env-loader.js'; // then load .env (OPENAI_API_KEY etc.), no override.
 import type { Server } from 'node:http';
 import { createApp } from './app.js';
 import { createDemoContainer } from './container/demo-container.js';

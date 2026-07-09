@@ -1,4 +1,6 @@
-import { MnemonicEngine, StubAiProvider, TutorEngine } from '@mnemonic/ai';
+import { MnemonicEngine, OpenAiProvider, StubAiProvider, TutorEngine } from '@mnemonic/ai';
+import { openaiEnvSchema } from '@mnemonic/config';
+import type { CacheStore } from '../shared/cache/cache-store.js';
 import { DemoAuthVerifier } from '../modules/auth/demo-auth-verifier.js';
 import type { AnalyticsRecorder } from '../modules/analytics/analytics-recorder.port.js';
 import { InMemoryGamificationStore } from '../modules/gamification/infrastructure/in-memory-gamification.store.js';
@@ -31,6 +33,44 @@ const noopAiHistory: AiHistoryRecorder = { async record() {} };
 const noopAnalytics: AnalyticsRecorder = { async record() {} };
 
 /**
+ * Build the mnemonic + tutor engines. Uses the real OpenAI provider when an
+ * OPENAI_API_KEY is configured (loaded from apps/api/.env), otherwise falls back
+ * to the deterministic stub so the demo still works fully offline.
+ */
+function buildDemoAi(cache: CacheStore): {
+  mnemonicEngine: MnemonicEngine;
+  tutorEngine: TutorEngine;
+  live: boolean;
+} {
+  const parsed = openaiEnvSchema.safeParse(process.env);
+  if (parsed.success) {
+    const options = {
+      apiKey: parsed.data.OPENAI_API_KEY,
+      defaultModel: parsed.data.OPENAI_MODEL,
+      timeoutMs: parsed.data.OPENAI_REQUEST_TIMEOUT_MS,
+    };
+    return {
+      mnemonicEngine: new MnemonicEngine(new OpenAiProvider(options), {
+        model: parsed.data.OPENAI_MODEL,
+        cache,
+        cacheTtlSeconds: 60 * 60 * 24 * 30,
+      }),
+      tutorEngine: new TutorEngine(new OpenAiProvider(options), { model: parsed.data.OPENAI_MODEL }),
+      live: true,
+    };
+  }
+  return {
+    mnemonicEngine: new MnemonicEngine(new StubAiProvider('{}'), {
+      model: 'demo-stub',
+      cache,
+      cacheTtlSeconds: 3600,
+    }),
+    tutorEngine: new TutorEngine(new StubAiProvider(DEMO_TUTOR_REPLY), { model: 'demo-stub' }),
+    live: false,
+  };
+}
+
+/**
  * Assemble a fully in-memory container for the zero-infra demo server: seeded
  * words, a seeded demo user/profile, stub AI (mnemonic + tutor), and a demo auth
  * verifier that accepts any token. No Postgres, Redis, OpenAI, or Clerk required.
@@ -50,13 +90,8 @@ export function createDemoContainer(now: Date = new Date()): Container {
   profileRepository.seed(DEMO_USER_ID);
   void profileRepository.update(DEMO_USER_ID, { displayName: DEMO_DISPLAY_NAME });
 
-  // Stub AI: mnemonic generation + a streamed tutor reply, both offline.
-  const mnemonicEngine = new MnemonicEngine(new StubAiProvider('{}'), {
-    model: 'demo-stub',
-    cache,
-    cacheTtlSeconds: 3600,
-  });
-  const tutorEngine = new TutorEngine(new StubAiProvider(DEMO_TUTOR_REPLY), { model: 'demo-stub' });
+  // AI: real OpenAI when a key is configured, deterministic stub otherwise.
+  const { mnemonicEngine, tutorEngine, live: aiLive } = buildDemoAi(cache);
 
   const container = createContainer({
     redis: null,
@@ -77,7 +112,7 @@ export function createDemoContainer(now: Date = new Date()): Container {
   });
 
   logger.info(
-    { words: words.length, demoUser: DEMO_CLERK_ID },
+    { words: words.length, demoUser: DEMO_CLERK_ID, ai: aiLive ? 'openai' : 'stub' },
     'Demo container assembled (in-memory, zero infra)',
   );
 
