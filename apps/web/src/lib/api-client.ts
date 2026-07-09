@@ -9,6 +9,7 @@ import type {
   CommunityListParams,
   CommunityMnemonicDto,
   DashboardDto,
+  NotificationDto,
   PlanInfo,
   ReportDto,
   SubscriptionDto,
@@ -148,6 +149,22 @@ export const api = {
       body: { targetType: string; targetId: string; reason: string; details?: string | null },
       token: string,
     ) => request<ApiSuccess<{ id: string }>>('/api/v1/community/reports', { method: 'POST', body, token }),
+  },
+  notifications: {
+    list: (token: string) =>
+      request<ApiSuccess<NotificationDto[]>>('/api/v1/notifications', { token }),
+    unreadCount: (token: string) =>
+      request<ApiSuccess<{ count: number }>>('/api/v1/notifications/unread-count', { token }),
+    markRead: (id: string, token: string) =>
+      request<ApiSuccess<{ id: string }>>(`/api/v1/notifications/${id}/read`, {
+        method: 'POST',
+        token,
+      }),
+    markAll: (token: string) =>
+      request<ApiSuccess<{ ok: boolean }>>('/api/v1/notifications/read-all', {
+        method: 'POST',
+        token,
+      }),
   },
   billing: {
     plans: () => request<ApiSuccess<PlanInfo[]>>('/api/v1/billing/plans'),

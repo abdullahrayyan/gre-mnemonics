@@ -6,6 +6,7 @@ import { Search, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { NotificationBell } from './notification-bell';
 import { ThemeToggle } from './theme-toggle';
 
 function HeaderSearch() {
@@ -101,6 +102,9 @@ export function SiteHeader() {
             Dashboard
           </Link>
           <HeaderSearch />
+          <SignedIn>
+            <NotificationBell />
+          </SignedIn>
           <ThemeToggle />
           <SignedOut>
             <SignInButton mode="modal">

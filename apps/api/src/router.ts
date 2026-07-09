@@ -7,6 +7,7 @@ import { createAnalyticsRouter } from './modules/analytics/analytics.routes.js';
 import { createBillingRouter } from './modules/billing/interface/billing.routes.js';
 import { createCommunityRouter } from './modules/community/interface/community.routes.js';
 import { createGamificationRouter } from './modules/gamification/interface/gamification.routes.js';
+import { createNotificationsRouter } from './modules/notifications/interface/notifications.routes.js';
 import { createQuizzesRouter } from './modules/quizzes/interface/quizzes.routes.js';
 import { createReviewsRouter } from './modules/reviews/interface/reviews.routes.js';
 import { createStatsRouter } from './modules/stats/interface/stats.routes.js';
@@ -32,6 +33,7 @@ export function createApiV1Router(container: Container): Router {
   router.use('/community', createCommunityRouter(container, auth));
   router.use('/admin', createAdminRouter(container, auth));
   router.use('/billing', createBillingRouter(container, auth));
+  router.use('/notifications', createNotificationsRouter(container, auth));
   router.use('/stats', createStatsRouter(container, auth));
   router.use('/analytics', createAnalyticsRouter(container, auth));
 

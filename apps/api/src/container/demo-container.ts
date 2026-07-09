@@ -7,6 +7,8 @@ import { InMemoryCommunityStore } from '../modules/community/infrastructure/in-m
 import { InMemorySubscriptionStore } from '../modules/billing/infrastructure/in-memory-subscription.store.js';
 import { StubBillingGateway } from '../modules/billing/infrastructure/stub-billing.gateway.js';
 import { InMemoryGamificationStore } from '../modules/gamification/infrastructure/in-memory-gamification.store.js';
+import { InMemoryNotificationStore } from '../modules/notifications/infrastructure/in-memory-notification.store.js';
+import { NoopNotificationSender } from '../modules/notifications/infrastructure/noop-notification.sender.js';
 import { InMemoryQuizStore } from '../modules/quizzes/infrastructure/in-memory-quiz.store.js';
 import { InMemoryReviewStore } from '../modules/reviews/infrastructure/in-memory-review.store.js';
 import { InMemoryStatsStore } from '../modules/stats/infrastructure/in-memory-stats.store.js';
@@ -146,6 +148,30 @@ function buildDemoCommunity(words: Word[], now: Date): InMemoryCommunityStore {
   return store;
 }
 
+/** Notification inbox pre-populated for the demo learner. */
+function buildDemoNotifications(now: Date): InMemoryNotificationStore {
+  const store = new InMemoryNotificationStore();
+  const at = (minutesAgo: number): Date => new Date(now.getTime() - minutesAgo * 60_000);
+  const seed = [
+    { type: 'ACHIEVEMENT', title: 'Badge earned! 🏅', body: 'You unlocked “Quiz Whiz” for a perfect quiz.', minutesAgo: 20, read: false },
+    { type: 'REVIEW_DUE', title: '8 reviews are due', body: 'Keep your streak alive — review them now.', minutesAgo: 90, read: false },
+    { type: 'COMMUNITY', title: 'New reply', body: 'Mei replied to your comment on “loquacious”.', minutesAgo: 240, read: true },
+    { type: 'STREAK_REMINDER', title: '3-day streak 🔥', body: 'You are on a roll — come back tomorrow to keep it going!', minutesAgo: 1440, read: true },
+  ];
+  seed.forEach((n, index) => {
+    store.seed({
+      id: `demo-notif-${index + 1}`,
+      userId: DEMO_USER_ID,
+      type: n.type,
+      title: n.title,
+      body: n.body,
+      readAt: n.read ? at(n.minutesAgo - 5) : null,
+      createdAt: at(n.minutesAgo),
+    });
+  });
+  return store;
+}
+
 /**
  * Assemble a fully in-memory container for the zero-infra demo server: seeded
  * words, a seeded demo user/profile, stub AI (mnemonic + tutor), and a demo auth
@@ -188,6 +214,8 @@ export function createDemoContainer(now: Date = new Date()): Container {
     communityStore: buildDemoCommunity(words, now),
     subscriptionStore: new InMemorySubscriptionStore(),
     billingGateway: new StubBillingGateway(),
+    notificationStore: buildDemoNotifications(now),
+    notificationSender: new NoopNotificationSender(),
     countUsers: () => Promise.resolve(DEMO_LEADERBOARD.length),
   });
 

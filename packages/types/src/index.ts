@@ -303,6 +303,18 @@ export interface CheckoutResultDto {
   upgraded: boolean;
 }
 
+// ── Notifications (Phase 15) ────────────────────────────────────────────────
+
+/** An in-app notification. */
+export interface NotificationDto {
+  id: string;
+  type: string;
+  title: string;
+  body: string;
+  readAt: string | null;
+  createdAt: string;
+}
+
 export type CommunitySort = 'new' | 'top';
 
 /** Query parameters for `GET /api/v1/community/mnemonics`. */

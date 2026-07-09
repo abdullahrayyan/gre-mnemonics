@@ -75,6 +75,12 @@ export const clerkEnvSchema = z.object({
   CLERK_WEBHOOK_SECRET: z.string().min(1).optional(),
 });
 
+/** Resend email configuration (validated lazily by the notifications module). */
+export const resendEnvSchema = z.object({
+  RESEND_API_KEY: z.string().min(1),
+  RESEND_FROM: z.string().min(1).default('Mnemonic Master <noreply@mnemonicmaster.ai>'),
+});
+
 /** Stripe billing configuration (validated lazily by the billing module). */
 export const stripeEnvSchema = z.object({
   STRIPE_SECRET_KEY: z.string().min(1),

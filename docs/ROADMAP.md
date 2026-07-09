@@ -21,7 +21,7 @@ verified before the next begins.
 | **12** | **Search**                           | Debounced multi-field search page (word/meaning/Hindi/synonym/root) + difficulty/POS filters + header search box | ✅ done |
 | **13** | **Admin Panel**                      | ADMIN-gated overview stats, community moderation (mnemonics + reports), AI word generation | ✅ done |
 | **14** | **Payments**                         | Subscription plans + entitlements + pricing page; demo instant-upgrade; Stripe gateway (REST) + signature-verified webhook, gated on keys | ✅ done |
-| 15     | Notifications                        | FCM push + Resend email reminders                                               |        |
+| **15** | **Notifications**                    | In-app inbox (store + header bell + page, mark read/all) + sender ports (Resend email via REST, gated; FCM noop) | ✅ done |
 | 16     | Voice                                | Native/slow pronunciation, recording, AI pronunciation scoring                   |        |
 | 17     | Bonus AI + PWA                       | Any-word generator, memory palace, OCR/PDF import, Chrome extension, offline PWA  |        |
 | 18     | Seed Data                            | 1000 GRE words with exam frequency (corpus captured: **1112 words / 38 gregmat groups**; AI-generation seed pipeline built) | 🔶 data in |

@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { MnemonicEngine, OpenAiProvider, TutorEngine } from '@mnemonic/ai';
-import { clerkEnvSchema, openaiEnvSchema, stripeEnvSchema } from '@mnemonic/config';
+import { clerkEnvSchema, openaiEnvSchema, resendEnvSchema, stripeEnvSchema } from '@mnemonic/config';
 import type { UserRepository, WordRepository } from '@mnemonic/core';
 import {
   PrismaWordRepository,
@@ -84,6 +84,17 @@ import {
 import { PrismaSubscriptionStore } from '../modules/billing/infrastructure/prisma-subscription.store.js';
 import { StripeBillingGateway } from '../modules/billing/infrastructure/stripe-billing.gateway.js';
 import { StubBillingGateway } from '../modules/billing/infrastructure/stub-billing.gateway.js';
+import type { NotificationSender } from '../modules/notifications/application/notification-sender.port.js';
+import type { NotificationStore } from '../modules/notifications/application/notification-store.port.js';
+import {
+  GetUnreadCountUseCase,
+  ListNotificationsUseCase,
+  MarkAllNotificationsReadUseCase,
+  MarkNotificationReadUseCase,
+} from '../modules/notifications/application/notification.usecases.js';
+import { NoopNotificationSender } from '../modules/notifications/infrastructure/noop-notification.sender.js';
+import { PrismaNotificationStore } from '../modules/notifications/infrastructure/prisma-notification.store.js';
+import { ResendEmailSender } from '../modules/notifications/infrastructure/resend-notification.sender.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -145,6 +156,13 @@ export interface BillingUseCases {
   applyPlan: ApplyPlanUseCase;
 }
 
+export interface NotificationUseCases {
+  list: ListNotificationsUseCase;
+  unreadCount: GetUnreadCountUseCase;
+  markRead: MarkNotificationReadUseCase;
+  markAll: MarkAllNotificationsReadUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -165,6 +183,8 @@ export interface Container {
   communityStore: CommunityStore;
   subscriptionStore: SubscriptionStore;
   billingGateway: BillingGateway;
+  notificationStore: NotificationStore;
+  notificationSender: NotificationSender;
   countUsers: () => Promise<number>;
   generateId: () => string;
   words: WordUseCases;
@@ -176,6 +196,7 @@ export interface Container {
   community: CommunityUseCases;
   admin: AdminUseCases;
   billing: BillingUseCases;
+  notifications: NotificationUseCases;
 }
 
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
@@ -233,6 +254,12 @@ function createBillingGateway(): BillingGateway {
     successUrl: parsed.data.BILLING_SUCCESS_URL,
     cancelUrl: parsed.data.BILLING_CANCEL_URL,
   });
+}
+
+function createNotificationSender(): NotificationSender {
+  const parsed = resendEnvSchema.safeParse(process.env);
+  if (!parsed.success) return new NoopNotificationSender();
+  return new ResendEmailSender({ apiKey: parsed.data.RESEND_API_KEY, from: parsed.data.RESEND_FROM });
 }
 
 /** Assemble the application graph. Overrides inject fakes in tests. */
@@ -314,6 +341,15 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     applyPlan: new ApplyPlanUseCase(subscriptionStore),
   };
 
+  const notificationStore = overrides.notificationStore ?? new PrismaNotificationStore(prisma);
+  const notificationSender = overrides.notificationSender ?? createNotificationSender();
+  const notifications: NotificationUseCases = overrides.notifications ?? {
+    list: new ListNotificationsUseCase(notificationStore),
+    unreadCount: new GetUnreadCountUseCase(notificationStore),
+    markRead: new MarkNotificationReadUseCase(notificationStore),
+    markAll: new MarkAllNotificationsReadUseCase(notificationStore),
+  };
+
   const countUsers = overrides.countUsers ?? (() => prisma.user.count());
   const admin: AdminUseCases = overrides.admin ?? {
     overview: new GetAdminOverviewUseCase(communityStore, wordRepository, countUsers),
@@ -344,6 +380,8 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     communityStore,
     subscriptionStore,
     billingGateway,
+    notificationStore,
+    notificationSender,
     countUsers,
     generateId,
     words,
@@ -355,5 +393,6 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     community,
     admin,
     billing,
+    notifications,
   };
 }
