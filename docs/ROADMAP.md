@@ -18,7 +18,7 @@ verified before the next begins.
 | **9**  | **AI Tutor**                         | Streaming provider + `TutorEngine` (9 actions), SSE `/tutor/chat` API (auth + rate-limit + AiHistory), streaming chat UI | ✅ done |
 | **10** | **Gamification**                     | Achievement engine (badges from criteria + auto-award), leaderboard API, badges + leaderboard UI (XP/level/streak already surfaced) | ✅ done |
 | **11** | **Community**                        | Submit mnemonics, votes, threaded comments, reports; sort newest/top; demo feed  | ✅ done |
-| 12     | Search                               | Multi-field search (word/meaning/Hindi/synonym/root/difficulty/category)         |        |
+| **12** | **Search**                           | Debounced multi-field search page (word/meaning/Hindi/synonym/root) + difficulty/POS filters + header search box | ✅ done |
 | 13     | Admin Panel                          | CRUD words, CSV/bulk import, regenerate AI, analytics, user + community mod       |        |
 | 14     | Payments                             | Stripe subscriptions, webhooks, entitlements                                     |        |
 | 15     | Notifications                        | FCM push + Resend email reminders                                               |        |

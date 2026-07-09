@@ -2,9 +2,35 @@
 
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@/lib/auth';
 import { Button } from '@mnemonic/ui';
-import { Sparkles } from 'lucide-react';
+import { Search, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { ThemeToggle } from './theme-toggle';
+
+function HeaderSearch() {
+  const router = useRouter();
+  const [term, setTerm] = useState('');
+  return (
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        router.push(term.trim() ? `/search?q=${encodeURIComponent(term.trim())}` : '/search');
+      }}
+      className="hidden items-center lg:flex"
+    >
+      <div className="relative">
+        <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+        <input
+          value={term}
+          onChange={(event) => setTerm(event.target.value)}
+          placeholder="Search words…"
+          className="w-44 rounded-lg border border-slate-200 bg-white/60 py-1.5 pl-8 pr-3 text-sm outline-none focus:w-56 focus:ring-2 focus:ring-indigo-400 dark:border-white/10 dark:bg-white/5"
+        />
+      </div>
+    </form>
+  );
+}
 
 export function SiteHeader() {
   return (
@@ -60,6 +86,7 @@ export function SiteHeader() {
           >
             Dashboard
           </Link>
+          <HeaderSearch />
           <ThemeToggle />
           <SignedOut>
             <SignInButton mode="modal">
