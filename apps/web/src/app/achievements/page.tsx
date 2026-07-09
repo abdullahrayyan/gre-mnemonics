@@ -1,6 +1,6 @@
 'use client';
 
-import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignInButton } from '@/lib/auth';
 import type { AchievementDto } from '@mnemonic/types';
 import { Badge, Button, Card, CardTitle, Skeleton, cn } from '@mnemonic/ui';
 import { useAchievements, useLeaderboard } from '@/hooks/use-gamification';

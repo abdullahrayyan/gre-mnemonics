@@ -1,6 +1,6 @@
 'use client';
 
-import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignInButton } from '@/lib/auth';
 import type { ReviewRatingValue } from '@mnemonic/types';
 import { Button, Card, Spinner, type ButtonVariant } from '@mnemonic/ui';
 import { useState } from 'react';

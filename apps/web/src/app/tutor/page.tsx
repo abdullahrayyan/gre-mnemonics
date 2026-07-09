@@ -1,6 +1,6 @@
 'use client';
 
-import { SignedIn, SignedOut, SignInButton, useAuth } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignInButton, useAuth } from '@/lib/auth';
 import { Button, Card, cn } from '@mnemonic/ui';
 import { useState } from 'react';
 import { streamTutor } from '@/lib/tutor-stream';

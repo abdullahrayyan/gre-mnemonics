@@ -1,6 +1,6 @@
 'use client';
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@/lib/auth';
 import { Button } from '@mnemonic/ui';
 import { Sparkles } from 'lucide-react';
 import Link from 'next/link';

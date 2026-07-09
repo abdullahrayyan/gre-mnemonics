@@ -1,6 +1,10 @@
 import { clerkMiddleware } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
-export default clerkMiddleware();
+// In demo mode there are no Clerk keys, so skip Clerk entirely and pass through.
+const demoMode = process.env.NEXT_PUBLIC_DEMO_MODE === '1';
+
+export default demoMode ? () => NextResponse.next() : clerkMiddleware();
 
 export const config = {
   matcher: [

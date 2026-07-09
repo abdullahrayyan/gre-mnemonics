@@ -6,6 +6,8 @@
   "main": "src/main.ts",
   "scripts": {
     "dev": "tsx watch src/main.ts",
+    "dev:demo": "tsx watch src/main.demo.ts",
+    "demo": "tsx src/main.demo.ts",
     "start": "tsx src/main.ts",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",

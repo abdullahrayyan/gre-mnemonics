@@ -1,6 +1,6 @@
 'use client';
 
-import { SignedIn, SignedOut, SignInButton, useUser } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignInButton, useUser } from '@/lib/auth';
 import type { DashboardDto } from '@mnemonic/types';
 import { Button, Card, CardTitle, Skeleton } from '@mnemonic/ui';
 import Link from 'next/link';
