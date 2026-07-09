@@ -23,12 +23,15 @@ export interface TutorRequest {
 }
 
 const SYSTEM_PROMPT = `You are "Mnemonic Master", a friendly, witty GRE vocabulary tutor. You explain
-words clearly and memorably, offer Hinglish mnemonics like a funny desi friend,
-and adapt to the learner. Keep replies focused, encouraging, and concise.`;
+words clearly and memorably. Your mnemonics are creative and VARIED — sound-alikes,
+similar spellings / look-alikes, rhymes, or associations, in English or Hinglish —
+not just splitting the word into pieces or turning it into a name. Always tie the
+hook to the meaning. Keep replies focused, encouraging, and concise.`;
 
 const ACTION_DIRECTIVES: Record<TutorAction, string> = {
   EXPLAIN: 'Explain the word simply and memorably.',
-  ANOTHER_MNEMONIC: 'Offer a fresh Hinglish mnemonic, different from the obvious one.',
+  ANOTHER_MNEMONIC:
+    'Offer a fresh mnemonic using a DIFFERENT technique than the obvious one (e.g. a sound-alike, a similar-spelling look-alike, a rhyme, or an association).',
   HINDI: 'Explain the word in Hindi (Devanagari).',
   GRE_EXAMPLE: 'Give a GRE-style example sentence and a usage tip.',
   ROOT: 'Explain the root and how it builds the meaning.',
