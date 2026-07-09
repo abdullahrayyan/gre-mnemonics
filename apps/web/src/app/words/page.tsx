@@ -1,17 +1,30 @@
 'use client';
 
-import { Skeleton } from '@mnemonic/ui';
+import { Skeleton, cn } from '@mnemonic/ui';
+import { useEffect, useRef, useState } from 'react';
 import { WordCard } from '@/components/word-card';
-import { useWords } from '@/hooks/use-words';
+import { WordCarousel } from '@/components/word-carousel';
+import { useAllWords } from '@/hooks/use-words';
 
 export default function WordsPage() {
-  const { data, isLoading, isError } = useWords({ pageSize: 24, status: 'PUBLISHED' });
+  const { data: words, isLoading, isError } = useAllWords({ status: 'PUBLISHED', sort: 'word', order: 'asc' });
+  const [index, setIndex] = useState(0);
+  const activeRef = useRef<HTMLButtonElement>(null);
+
+  // Keep the highlighted card in view as the carousel advances.
+  useEffect(() => {
+    activeRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [index]);
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Words</h1>
-        <p className="text-slate-500 dark:text-slate-400">Browse the vocabulary library.</p>
+    <div className="space-y-8">
+      <div className="flex flex-wrap items-end justify-between gap-2">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">Words</h1>
+          <p className="text-slate-500 dark:text-slate-400">
+            {words ? `Browse all ${words.length} GRE words — use ← → to flip through them.` : 'Browse the vocabulary library.'}
+          </p>
+        </div>
       </div>
 
       {isError ? (
@@ -20,17 +33,42 @@ export default function WordsPage() {
         </p>
       ) : null}
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {isLoading
-          ? Array.from({ length: 6 }).map((_, index) => (
-              <Skeleton key={index} className="h-44 w-full rounded-2xl" />
-            ))
-          : data?.data.map((word) => <WordCard key={word.id} word={word} />)}
-      </div>
+      {isLoading ? (
+        <Skeleton className="h-72 w-full rounded-3xl" />
+      ) : words && words.length > 0 ? (
+        <WordCarousel words={words} index={index} onIndexChange={setIndex} />
+      ) : null}
 
-      {data && data.data.length === 0 ? (
+      {words && words.length > 0 ? (
+        <div>
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-400">
+            All words
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {words.map((word, i) => (
+              <button
+                key={word.id}
+                ref={i === index ? activeRef : null}
+                type="button"
+                onClick={() => setIndex(i)}
+                className={cn(
+                  'rounded-2xl text-left outline-none transition',
+                  i === index
+                    ? 'ring-2 ring-indigo-400 ring-offset-2 ring-offset-transparent'
+                    : 'hover:opacity-90',
+                )}
+              >
+                <WordCard word={word} />
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {words && words.length === 0 ? (
         <p className="text-slate-500 dark:text-slate-400">
-          No words yet — seed the database with <code>pnpm db:seed:gre</code>.
+          No words yet — generate the corpus with{' '}
+          <code>node apps/api/scripts/generate-demo-corpus.ts</code>.
         </p>
       ) : null}
     </div>

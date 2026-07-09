@@ -1,3 +1,6 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import {
   Difficulty,
   PartOfSpeech,
@@ -356,14 +359,43 @@ const DEMO_WORD_INPUTS: CreateWordInput[] = [
   },
 ];
 
-/** Build the demo {@link Word} aggregates (all PUBLISHED) at a fixed base time. */
+/**
+ * Load the AI-generated corpus cache (all ~1112 GRE words) if it has been built
+ * via `scripts/generate-demo-corpus.ts`; otherwise return null so we fall back to
+ * the small curated set. Never throws — a missing/corrupt cache is non-fatal.
+ */
+function loadGeneratedCorpus(): CreateWordInput[] | null {
+  const path = resolve(dirname(fileURLToPath(import.meta.url)), 'demo-corpus.json');
+  if (!existsSync(path)) return null;
+  try {
+    const rows = JSON.parse(readFileSync(path, 'utf8')) as CreateWordInput[];
+    return Array.isArray(rows) && rows.length > 0 ? rows : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Build the demo {@link Word} aggregates (all PUBLISHED) at a fixed base time.
+ * Uses the full AI-generated corpus when present, else the curated fallback set.
+ * Malformed generated entries are skipped rather than failing the whole boot.
+ */
 export function buildDemoWords(now: Date): Word[] {
-  return DEMO_WORD_INPUTS.map((input, index) =>
-    Word.create(
-      { ...input, status: WordStatus.PUBLISHED },
-      { id: `demo-word-${String(index + 1).padStart(3, '0')}`, now },
-    ),
-  );
+  const inputs = loadGeneratedCorpus() ?? DEMO_WORD_INPUTS;
+  const words: Word[] = [];
+  inputs.forEach((input, index) => {
+    try {
+      words.push(
+        Word.create(
+          { ...input, status: WordStatus.PUBLISHED },
+          { id: `demo-word-${String(index + 1).padStart(4, '0')}`, now },
+        ),
+      );
+    } catch {
+      // Skip an occasional malformed AI entry; the rest of the corpus still loads.
+    }
+  });
+  return words;
 }
 
 /** Word DTOs the in-memory review store is seeded with. */
