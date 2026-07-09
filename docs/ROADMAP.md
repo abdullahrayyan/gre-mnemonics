@@ -24,7 +24,7 @@ verified before the next begins.
 | **15** | **Notifications**                    | In-app inbox (store + header bell + page, mark read/all) + sender ports (Resend email via REST, gated; FCM noop) | ✅ done |
 | **16** | **Voice**                            | Pronunciation practice — native + slow TTS and browser SpeechRecognition scoring (say-it → verdict), zero-infra | ✅ done |
 | **17** | **Bonus AI + PWA**                   | Any-word AI lookup (non-persisting `/words/preview`) + installable offline PWA (manifest, icon, service worker, prod-gated) | ✅ done |
-| 18     | Seed Data                            | 1000 GRE words with exam frequency (corpus captured: **1112 words / 38 gregmat groups**; AI-generation seed pipeline built) | 🔶 data in |
+| **18** | **Seed Data**                        | **1112 GRE words** fully AI-generated (meaning/Hindi/POS/synonyms/mnemonics), cached + committed (`demo-corpus.json`) and loaded by the demo; production DB seed pipeline (`seed-gre.ts`) built | ✅ done |
 
 ### Cross-cutting (woven through every phase)
 
