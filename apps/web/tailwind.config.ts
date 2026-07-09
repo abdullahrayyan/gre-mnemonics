@@ -1,11 +1,18 @@
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { Config } from 'tailwindcss';
+
+// Resolve content globs relative to THIS file, not the process CWD, so the
+// scan works regardless of where `next` is invoked from. Forward slashes are
+// required — Tailwind's glob matcher treats backslashes as escapes on Windows.
+const here = dirname(fileURLToPath(import.meta.url)).replace(/\\/g, '/');
 
 const config: Config = {
   darkMode: 'class',
   content: [
-    './src/**/*.{ts,tsx}',
+    `${here}/src/**/*.{ts,tsx}`,
     // Scan the shared design system so its Tailwind classes are included.
-    '../../packages/ui/src/**/*.{ts,tsx}',
+    `${here}/../../packages/ui/src/**/*.{ts,tsx}`,
   ],
   theme: {
     extend: {
