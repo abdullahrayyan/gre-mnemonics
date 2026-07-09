@@ -90,6 +90,8 @@ export const api = {
       request<PaginatedResponse<WordDto>>('/api/v1/words', { searchParams: params, token }),
     getBySlug: (slug: string, token?: string | null) =>
       request<ApiSuccess<WordDto>>(`/api/v1/words/slug/${slug}`, { token }),
+    preview: (word: string, token: string) =>
+      request<ApiSuccess<WordDto>>('/api/v1/words/preview', { method: 'POST', body: { word }, token }),
   },
   me: {
     get: (token: string) => request<ApiSuccess<MeDto>>('/api/v1/me', { token }),

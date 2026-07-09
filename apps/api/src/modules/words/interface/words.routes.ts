@@ -21,6 +21,7 @@ export function createWordsRouter(container: Container, auth: AuthMiddleware): R
   );
 
   router.get('/', asyncHandler(controller.list));
+  router.post('/preview', auth.requireAuth, generateLimiter, asyncHandler(controller.preview));
   router.post('/', admin, asyncHandler(controller.create));
   router.get('/slug/:slug', asyncHandler(controller.getBySlug));
   router.get('/:id', asyncHandler(controller.getById));

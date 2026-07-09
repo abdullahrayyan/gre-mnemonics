@@ -1,5 +1,6 @@
 import type { WordSearchFilter, WordSort } from '@mnemonic/core';
 import {
+  adminGenerateWordSchema,
   createWordSchema,
   updateWordSchema,
   wordIdParamSchema,
@@ -87,5 +88,11 @@ export class WordsController {
     const { id } = wordIdParamSchema.parse(req.params);
     const word = await this.words.generate.execute(id);
     res.status(200).json({ data: toWordResponse(word) });
+  };
+
+  preview = async (req: Request, res: Response): Promise<void> => {
+    const { word } = adminGenerateWordSchema.parse(req.body);
+    const result = await this.words.preview.execute(word);
+    res.status(200).json({ data: result });
   };
 }

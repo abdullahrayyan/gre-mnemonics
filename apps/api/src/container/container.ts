@@ -21,6 +21,7 @@ import type { AiHistoryRecorder } from '../modules/words/application/ai-history.
 import { CreateWordUseCase } from '../modules/words/application/create-word.usecase.js';
 import { DeleteWordUseCase } from '../modules/words/application/delete-word.usecase.js';
 import { GenerateWordMnemonicsUseCase } from '../modules/words/application/generate-word-mnemonics.usecase.js';
+import { GenerateWordPreviewUseCase } from '../modules/words/application/generate-word-preview.usecase.js';
 import { GetWordUseCase } from '../modules/words/application/get-word.usecase.js';
 import { SearchWordsUseCase } from '../modules/words/application/search-words.usecase.js';
 import { UpdateWordUseCase } from '../modules/words/application/update-word.usecase.js';
@@ -103,6 +104,7 @@ export interface WordUseCases {
   update: UpdateWordUseCase;
   remove: DeleteWordUseCase;
   generate: GenerateWordMnemonicsUseCase;
+  preview: GenerateWordPreviewUseCase;
 }
 
 export interface UserUseCases {
@@ -289,6 +291,7 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     update: new UpdateWordUseCase(wordRepository),
     remove: new DeleteWordUseCase(wordRepository),
     generate: new GenerateWordMnemonicsUseCase(wordRepository, mnemonicEngine, aiHistoryRecorder),
+    preview: new GenerateWordPreviewUseCase(mnemonicEngine),
   };
 
   const users: UserUseCases = overrides.users ?? {
