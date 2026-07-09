@@ -75,6 +75,16 @@ export const clerkEnvSchema = z.object({
   CLERK_WEBHOOK_SECRET: z.string().min(1).optional(),
 });
 
+/** Stripe billing configuration (validated lazily by the billing module). */
+export const stripeEnvSchema = z.object({
+  STRIPE_SECRET_KEY: z.string().min(1),
+  STRIPE_WEBHOOK_SECRET: z.string().min(1).optional(),
+  STRIPE_PRICE_PRO: z.string().min(1).optional(),
+  STRIPE_PRICE_PREMIUM: z.string().min(1).optional(),
+  BILLING_SUCCESS_URL: z.string().url().default('http://localhost:3000/pricing?upgraded=1'),
+  BILLING_CANCEL_URL: z.string().url().default('http://localhost:3000/pricing'),
+});
+
 export type NodeEnv = z.infer<typeof nodeEnvSchema>;
 export type LogLevel = z.infer<typeof logLevelSchema>;
 export type ApiEnv = z.infer<typeof apiEnvSchema>;

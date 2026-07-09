@@ -44,3 +44,5 @@ export type {
   ResolveReportDto,
   AdminGenerateWordDto,
 } from './admin.js';
+export { checkoutSchema } from './billing.js';
+export type { CheckoutDto } from './billing.js';

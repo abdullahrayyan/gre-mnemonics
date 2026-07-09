@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import { createContainer, type Container } from './container/container.js';
 import { env } from './env.js';
 import { createApiV1Router } from './router.js';
+import { createStripeWebhookRouter } from './modules/billing/interface/stripe-webhook.routes.js';
 import { createReadinessHandler } from './modules/health/health.readiness.js';
 import { healthRouter } from './modules/health/health.routes.js';
 import { createWebhooksRouter } from './modules/users/interface/webhooks.routes.js';
@@ -42,6 +43,7 @@ export function createApp(options: CreateAppOptions = {}): Express {
 
   // Webhooks verify a signature over the RAW body — mount before the JSON parser.
   app.use('/api/webhooks', createWebhooksRouter(container));
+  app.use('/api/webhooks', createStripeWebhookRouter(container));
 
   app.use(express.json({ limit: '1mb' }));
   app.use(express.urlencoded({ extended: true, limit: '1mb' }));

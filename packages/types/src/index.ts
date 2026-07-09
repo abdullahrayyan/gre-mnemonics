@@ -277,6 +277,32 @@ export interface AdminOverviewDto {
   users: number;
 }
 
+// ── Billing (Phase 14) ──────────────────────────────────────────────────────
+
+/** The current user's subscription. */
+export interface SubscriptionDto {
+  plan: string;
+  status: string;
+  currentPeriodEnd: string | null;
+  cancelAtPeriodEnd: boolean;
+}
+
+/** A pricing tier shown on the pricing page. */
+export interface PlanInfo {
+  plan: string;
+  name: string;
+  priceCents: number;
+  features: string[];
+}
+
+/** Result of starting checkout: a Stripe URL to redirect to, or an instant
+ * (demo) upgrade when no gateway is configured. */
+export interface CheckoutResultDto {
+  url: string | null;
+  plan: string;
+  upgraded: boolean;
+}
+
 export type CommunitySort = 'new' | 'top';
 
 /** Query parameters for `GET /api/v1/community/mnemonics`. */

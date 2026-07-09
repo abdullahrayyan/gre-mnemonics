@@ -20,7 +20,7 @@ verified before the next begins.
 | **11** | **Community**                        | Submit mnemonics, votes, threaded comments, reports; sort newest/top; demo feed  | ✅ done |
 | **12** | **Search**                           | Debounced multi-field search page (word/meaning/Hindi/synonym/root) + difficulty/POS filters + header search box | ✅ done |
 | **13** | **Admin Panel**                      | ADMIN-gated overview stats, community moderation (mnemonics + reports), AI word generation | ✅ done |
-| 14     | Payments                             | Stripe subscriptions, webhooks, entitlements                                     |        |
+| **14** | **Payments**                         | Subscription plans + entitlements + pricing page; demo instant-upgrade; Stripe gateway (REST) + signature-verified webhook, gated on keys | ✅ done |
 | 15     | Notifications                        | FCM push + Resend email reminders                                               |        |
 | 16     | Voice                                | Native/slow pronunciation, recording, AI pronunciation scoring                   |        |
 | 17     | Bonus AI + PWA                       | Any-word generator, memory palace, OCR/PDF import, Chrome extension, offline PWA  |        |

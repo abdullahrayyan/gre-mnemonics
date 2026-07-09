@@ -9,5 +9,6 @@ export {
   apiEnvSchema,
   openaiEnvSchema,
   clerkEnvSchema,
+  stripeEnvSchema,
 } from './schemas.js';
 export type { NodeEnv, LogLevel, ApiEnv, OpenAiEnv, ClerkEnv } from './schemas.js';

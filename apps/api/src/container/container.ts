@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { MnemonicEngine, OpenAiProvider, TutorEngine } from '@mnemonic/ai';
-import { clerkEnvSchema, openaiEnvSchema } from '@mnemonic/config';
+import { clerkEnvSchema, openaiEnvSchema, stripeEnvSchema } from '@mnemonic/config';
 import type { UserRepository, WordRepository } from '@mnemonic/core';
 import {
   PrismaWordRepository,
@@ -73,6 +73,17 @@ import {
   ModerateMnemonicUseCase,
   ResolveReportUseCase,
 } from '../modules/admin/application/admin.usecases.js';
+import type { BillingGateway } from '../modules/billing/application/billing-gateway.port.js';
+import type { SubscriptionStore } from '../modules/billing/application/subscription-store.port.js';
+import {
+  ApplyPlanUseCase,
+  GetSubscriptionUseCase,
+  ListPlansUseCase,
+  StartCheckoutUseCase,
+} from '../modules/billing/application/billing.usecases.js';
+import { PrismaSubscriptionStore } from '../modules/billing/infrastructure/prisma-subscription.store.js';
+import { StripeBillingGateway } from '../modules/billing/infrastructure/stripe-billing.gateway.js';
+import { StubBillingGateway } from '../modules/billing/infrastructure/stub-billing.gateway.js';
 
 export interface WordUseCases {
   create: CreateWordUseCase;
@@ -127,6 +138,13 @@ export interface AdminUseCases {
   generateWord: AdminGenerateWordUseCase;
 }
 
+export interface BillingUseCases {
+  getSubscription: GetSubscriptionUseCase;
+  listPlans: ListPlansUseCase;
+  startCheckout: StartCheckoutUseCase;
+  applyPlan: ApplyPlanUseCase;
+}
+
 export interface Container {
   prisma: PrismaClient;
   redis: Redis | null;
@@ -145,6 +163,8 @@ export interface Container {
   quizStore: QuizStore;
   gamificationStore: GamificationStore;
   communityStore: CommunityStore;
+  subscriptionStore: SubscriptionStore;
+  billingGateway: BillingGateway;
   countUsers: () => Promise<number>;
   generateId: () => string;
   words: WordUseCases;
@@ -155,6 +175,7 @@ export interface Container {
   gamification: GamificationUseCases;
   community: CommunityUseCases;
   admin: AdminUseCases;
+  billing: BillingUseCases;
 }
 
 function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
@@ -198,6 +219,20 @@ function createWebhookVerifier(): WebhookVerifier {
   if (secret) return new SvixWebhookVerifier(secret);
   logger.info('Clerk webhook secret not configured; webhooks will be rejected');
   return { verify: () => null };
+}
+
+function createBillingGateway(): BillingGateway {
+  const parsed = stripeEnvSchema.safeParse(process.env);
+  if (!parsed.success) {
+    logger.info('Stripe not configured; billing runs in stub mode (instant upgrade)');
+    return new StubBillingGateway();
+  }
+  return new StripeBillingGateway({
+    secretKey: parsed.data.STRIPE_SECRET_KEY,
+    priceByPlan: { PRO: parsed.data.STRIPE_PRICE_PRO, PREMIUM: parsed.data.STRIPE_PRICE_PREMIUM },
+    successUrl: parsed.data.BILLING_SUCCESS_URL,
+    cancelUrl: parsed.data.BILLING_CANCEL_URL,
+  });
 }
 
 /** Assemble the application graph. Overrides inject fakes in tests. */
@@ -270,6 +305,15 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     report: new ReportContentUseCase(communityStore, generateId),
   };
 
+  const subscriptionStore = overrides.subscriptionStore ?? new PrismaSubscriptionStore(prisma);
+  const billingGateway = overrides.billingGateway ?? createBillingGateway();
+  const billing: BillingUseCases = overrides.billing ?? {
+    getSubscription: new GetSubscriptionUseCase(subscriptionStore),
+    listPlans: new ListPlansUseCase(),
+    startCheckout: new StartCheckoutUseCase(subscriptionStore, billingGateway, userRepository),
+    applyPlan: new ApplyPlanUseCase(subscriptionStore),
+  };
+
   const countUsers = overrides.countUsers ?? (() => prisma.user.count());
   const admin: AdminUseCases = overrides.admin ?? {
     overview: new GetAdminOverviewUseCase(communityStore, wordRepository, countUsers),
@@ -298,6 +342,8 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     quizStore,
     gamificationStore,
     communityStore,
+    subscriptionStore,
+    billingGateway,
     countUsers,
     generateId,
     words,
@@ -308,5 +354,6 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     gamification,
     community,
     admin,
+    billing,
   };
 }

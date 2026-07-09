@@ -4,11 +4,14 @@ import type {
   AnswerResultDto,
   ApiError,
   ApiSuccess,
+  CheckoutResultDto,
   CommentDto,
   CommunityListParams,
   CommunityMnemonicDto,
   DashboardDto,
+  PlanInfo,
   ReportDto,
+  SubscriptionDto,
   LeaderboardEntryDto,
   MeDto,
   PaginatedResponse,
@@ -145,6 +148,17 @@ export const api = {
       body: { targetType: string; targetId: string; reason: string; details?: string | null },
       token: string,
     ) => request<ApiSuccess<{ id: string }>>('/api/v1/community/reports', { method: 'POST', body, token }),
+  },
+  billing: {
+    plans: () => request<ApiSuccess<PlanInfo[]>>('/api/v1/billing/plans'),
+    subscription: (token: string) =>
+      request<ApiSuccess<SubscriptionDto>>('/api/v1/billing/subscription', { token }),
+    checkout: (plan: string, token: string) =>
+      request<ApiSuccess<CheckoutResultDto>>('/api/v1/billing/checkout', {
+        method: 'POST',
+        body: { plan },
+        token,
+      }),
   },
   admin: {
     overview: (token: string) =>

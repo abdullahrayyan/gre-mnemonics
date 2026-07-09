@@ -4,6 +4,8 @@ import type { CacheStore } from '../shared/cache/cache-store.js';
 import { DemoAuthVerifier } from '../modules/auth/demo-auth-verifier.js';
 import type { AnalyticsRecorder } from '../modules/analytics/analytics-recorder.port.js';
 import { InMemoryCommunityStore } from '../modules/community/infrastructure/in-memory-community.store.js';
+import { InMemorySubscriptionStore } from '../modules/billing/infrastructure/in-memory-subscription.store.js';
+import { StubBillingGateway } from '../modules/billing/infrastructure/stub-billing.gateway.js';
 import { InMemoryGamificationStore } from '../modules/gamification/infrastructure/in-memory-gamification.store.js';
 import { InMemoryQuizStore } from '../modules/quizzes/infrastructure/in-memory-quiz.store.js';
 import { InMemoryReviewStore } from '../modules/reviews/infrastructure/in-memory-review.store.js';
@@ -184,6 +186,8 @@ export function createDemoContainer(now: Date = new Date()): Container {
     quizStore: new InMemoryQuizStore(),
     gamificationStore: new InMemoryGamificationStore(DEMO_ACHIEVEMENTS, DEMO_LEADERBOARD),
     communityStore: buildDemoCommunity(words, now),
+    subscriptionStore: new InMemorySubscriptionStore(),
+    billingGateway: new StubBillingGateway(),
     countUsers: () => Promise.resolve(DEMO_LEADERBOARD.length),
   });
 
