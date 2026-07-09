@@ -15,8 +15,8 @@ verified before the next begins.
 | **6**  | **Flashcards + SM-2 Spaced Repetition** | Complete SM-2 scheduler in `core`, review API (`/reviews/queue` + submit → schedule + progress + XP), animated flip flashcard UI (Again/Hard/Good/Easy) | ✅ done |
 | **7**  | **Daily Learning + Dashboard**       | XP↔level math in `core`, `/stats/dashboard` aggregation (goal/streak/retention/reviews-due/weekly), analytics events, dashboard UI (goal ring + selector + weekly chart) | ✅ done |
 | **8**  | **Quiz Engine**                      | 9-type quiz generator in `core` (MCQ w/ distractors), quiz API (start/answer/complete + XP, weak-words), quiz UI with instant feedback + results | ✅ done |
-| 9      | AI Tutor                             | Streaming chat, explain/another-mnemonic/compare/etc.                            | ⏭ next |
-| 10     | Gamification                         | XP, levels, streaks, badges, leaderboards                                        |        |
+| **9**  | **AI Tutor**                         | Streaming provider + `TutorEngine` (9 actions), SSE `/tutor/chat` API (auth + rate-limit + AiHistory), streaming chat UI | ✅ done |
+| 10     | Gamification                         | XP, levels, streaks, badges, leaderboards                                        | ⏭ next |
 | 11     | Community                            | Submit mnemonics, votes, comments, reports, moderation                          |        |
 | 12     | Search                               | Multi-field search (word/meaning/Hindi/synonym/root/difficulty/category)         |        |
 | 13     | Admin Panel                          | CRUD words, CSV/bulk import, regenerate AI, analytics, user + community mod       |        |

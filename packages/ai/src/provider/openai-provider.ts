@@ -68,6 +68,27 @@ export class OpenAiProvider implements AiProvider {
     }
   }
 
+  async *stream(request: AiCompletionRequest): AsyncIterable<string> {
+    const model = request.model ?? this.defaultModel;
+    try {
+      const stream = await this.client.chat.completions.create(
+        {
+          model,
+          messages: request.messages as OpenAI.Chat.Completions.ChatCompletionMessageParam[],
+          temperature: request.temperature ?? 0.8,
+          stream: true,
+        },
+        { signal: request.signal },
+      );
+      for await (const chunk of stream) {
+        const delta = chunk.choices[0]?.delta?.content;
+        if (delta) yield delta;
+      }
+    } catch (error) {
+      throw this.mapError(error, model);
+    }
+  }
+
   private mapError(error: unknown, model: string): AiError {
     if (error instanceof OpenAI.APIError) {
       return new AiError(`OpenAI request failed for model "${model}": ${error.message}`, {

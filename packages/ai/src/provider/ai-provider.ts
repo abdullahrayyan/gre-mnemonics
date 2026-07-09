@@ -37,6 +37,8 @@ export interface AiCompletion {
 export interface AiProvider {
   readonly name: string;
   complete(request: AiCompletionRequest): Promise<AiCompletion>;
+  /** Stream the completion as a sequence of content deltas. */
+  stream(request: AiCompletionRequest): AsyncIterable<string>;
 }
 
 /** Build an {@link AiUsage} with zeroed counters (e.g. for cache hits). */

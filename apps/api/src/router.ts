@@ -6,6 +6,7 @@ import { createAnalyticsRouter } from './modules/analytics/analytics.routes.js';
 import { createQuizzesRouter } from './modules/quizzes/interface/quizzes.routes.js';
 import { createReviewsRouter } from './modules/reviews/interface/reviews.routes.js';
 import { createStatsRouter } from './modules/stats/interface/stats.routes.js';
+import { createTutorRouter } from './modules/tutor/tutor.routes.js';
 import { createUsersRouter } from './modules/users/interface/users.routes.js';
 import { createWordsRouter } from './modules/words/interface/words.routes.js';
 
@@ -22,6 +23,7 @@ export function createApiV1Router(container: Container): Router {
   router.use('/me', createUsersRouter(container, auth));
   router.use('/reviews', createReviewsRouter(container, auth));
   router.use('/quizzes', createQuizzesRouter(container, auth));
+  router.use('/tutor', createTutorRouter(container, auth));
   router.use('/stats', createStatsRouter(container, auth));
   router.use('/analytics', createAnalyticsRouter(container, auth));
 

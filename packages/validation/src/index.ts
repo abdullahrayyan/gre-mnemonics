@@ -18,3 +18,5 @@ export { trackEventSchema } from './analytics.js';
 export type { TrackEventDto } from './analytics.js';
 export { startQuizSchema, answerQuestionSchema } from './quizzes.js';
 export type { StartQuizDto, AnswerQuestionDto } from './quizzes.js';
+export { tutorChatSchema, TUTOR_ACTIONS } from './tutor.js';
+export type { TutorChatDto } from './tutor.js';

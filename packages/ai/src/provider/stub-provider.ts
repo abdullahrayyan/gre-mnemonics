@@ -30,4 +30,13 @@ export class StubAiProvider implements AiProvider {
       },
     };
   }
+
+  async *stream(): AsyncIterable<string> {
+    const index = Math.min(this.calls, this.responses.length - 1);
+    const content = this.responses[index] ?? '';
+    this.calls += 1;
+    for (const token of content.split(/(\s+)/)) {
+      if (token) yield token;
+    }
+  }
 }

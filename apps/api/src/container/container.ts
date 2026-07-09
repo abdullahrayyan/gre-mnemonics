@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { MnemonicEngine, OpenAiProvider } from '@mnemonic/ai';
+import { MnemonicEngine, OpenAiProvider, TutorEngine } from '@mnemonic/ai';
 import { clerkEnvSchema, openaiEnvSchema } from '@mnemonic/config';
 import type { UserRepository, WordRepository } from '@mnemonic/core';
 import {
@@ -87,6 +87,7 @@ export interface Container {
   wordRepository: WordRepository;
   aiHistoryRecorder: AiHistoryRecorder;
   mnemonicEngine: MnemonicEngine | null;
+  tutorEngine: TutorEngine | null;
   authVerifier: AuthVerifier;
   webhookVerifier: WebhookVerifier;
   userRepository: UserRepository;
@@ -121,6 +122,17 @@ function createMnemonicEngine(cache: CacheStore): MnemonicEngine | null {
   });
 }
 
+function createTutorEngine(): TutorEngine | null {
+  const parsed = openaiEnvSchema.safeParse(process.env);
+  if (!parsed.success) return null;
+  const provider = new OpenAiProvider({
+    apiKey: parsed.data.OPENAI_API_KEY,
+    defaultModel: parsed.data.OPENAI_MODEL,
+    timeoutMs: parsed.data.OPENAI_REQUEST_TIMEOUT_MS,
+  });
+  return new TutorEngine(provider, { model: parsed.data.OPENAI_MODEL });
+}
+
 function createAuthVerifier(): AuthVerifier {
   const parsed = clerkEnvSchema.safeParse(process.env);
   if (parsed.success) return new ClerkAuthVerifier(parsed.data.CLERK_SECRET_KEY);
@@ -147,6 +159,8 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
   const aiHistoryRecorder = overrides.aiHistoryRecorder ?? new PrismaAiHistoryRecorder(prisma);
   const mnemonicEngine =
     overrides.mnemonicEngine !== undefined ? overrides.mnemonicEngine : createMnemonicEngine(cache);
+  const tutorEngine =
+    overrides.tutorEngine !== undefined ? overrides.tutorEngine : createTutorEngine();
 
   const authVerifier = overrides.authVerifier ?? createAuthVerifier();
   const webhookVerifier = overrides.webhookVerifier ?? createWebhookVerifier();
@@ -194,6 +208,7 @@ export function createContainer(overrides: Partial<Container> = {}): Container {
     wordRepository,
     aiHistoryRecorder,
     mnemonicEngine,
+    tutorEngine,
     authVerifier,
     webhookVerifier,
     userRepository,

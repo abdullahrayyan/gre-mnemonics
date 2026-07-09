@@ -33,6 +33,10 @@ export {
   type GenerationResult,
   type MnemonicEngineOptions,
 } from './mnemonic/mnemonic.engine.js';
+
+export { TutorEngine, type TutorEngineOptions } from './tutor/tutor.engine.js';
+export { buildTutorMessages } from './tutor/tutor.prompt.js';
+export type { TutorAction, TutorMessage, TutorRequest } from './tutor/tutor.prompt.js';
 export {
   generatedMnemonicSetSchema,
   generatedQuizQuestionSchema,
