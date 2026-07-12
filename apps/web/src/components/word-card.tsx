@@ -19,7 +19,12 @@ export function WordCard({ word }: { word: WordDto }) {
       <p className="text-xs uppercase tracking-wide text-slate-400">
         {word.partOfSpeech.toLowerCase()}
       </p>
-      <p className="text-sm text-slate-600 dark:text-slate-300">{word.meaning}</p>
+      <p className="text-sm text-slate-600 dark:text-slate-300">
+        {word.meaning}
+        {word.hindiMeaning ? (
+          <span className="font-medium text-slate-500 dark:text-slate-400"> ({word.hindiMeaning})</span>
+        ) : null}
+      </p>
       <div className="mt-auto space-y-2">
         {word.ai.englishMnemonic ? (
           <p className="rounded-lg bg-slate-100 p-3 text-sm text-slate-700 dark:bg-white/5 dark:text-slate-200">
