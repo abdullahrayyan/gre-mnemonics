@@ -20,11 +20,18 @@ export function WordCard({ word }: { word: WordDto }) {
         {word.partOfSpeech.toLowerCase()}
       </p>
       <p className="text-sm text-slate-600 dark:text-slate-300">{word.meaning}</p>
-      {word.ai.hinglishMnemonic ? (
-        <p className="mt-auto rounded-lg bg-indigo-50 p-3 text-sm text-indigo-900 dark:bg-indigo-500/10 dark:text-indigo-200">
-          💡 {word.ai.hinglishMnemonic}
-        </p>
-      ) : null}
+      <div className="mt-auto space-y-2">
+        {word.ai.englishMnemonic ? (
+          <p className="rounded-lg bg-slate-100 p-3 text-sm text-slate-700 dark:bg-white/5 dark:text-slate-200">
+            🔤 {word.ai.englishMnemonic}
+          </p>
+        ) : null}
+        {word.ai.hinglishMnemonic ? (
+          <p className="rounded-lg bg-indigo-50 p-3 text-sm text-indigo-900 dark:bg-indigo-500/10 dark:text-indigo-200">
+            💡 {word.ai.hinglishMnemonic}
+          </p>
+        ) : null}
+      </div>
     </Card>
   );
 }
