@@ -114,9 +114,15 @@ export function WordCarousel({ words, index, onIndexChange }: WordCarouselProps)
               <p className="text-base text-slate-500 dark:text-slate-400">{word.hindiMeaning}</p>
             ) : null}
 
+            {word.ai.englishMnemonic ? (
+              <p className="rounded-2xl bg-slate-100 p-4 text-slate-700 dark:bg-white/5 dark:text-slate-200">
+                <span className="font-semibold text-slate-900 dark:text-white">English:</span>{' '}
+                {word.ai.englishMnemonic}
+              </p>
+            ) : null}
             {word.ai.hinglishMnemonic ? (
               <p className="rounded-2xl bg-indigo-50 p-4 text-indigo-900 dark:bg-indigo-500/10 dark:text-indigo-100">
-                💡 {word.ai.hinglishMnemonic}
+                <span className="font-semibold">Hinglish:</span> {word.ai.hinglishMnemonic}
               </p>
             ) : null}
 
