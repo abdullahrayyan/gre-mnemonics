@@ -1,10 +1,6 @@
-// Launches `next dev` in DEMO mode: sets the public demo flag (which the auth
-// shim + middleware read) before Next compiles, then spawns Next with apps/web
-// as its cwd so config resolution works regardless of where this is invoked.
-//
-// Binds to 0.0.0.0 and points the web app at the API on this machine's LAN IP,
-// so the demo is reachable from a phone on the same Wi-Fi (localhost would
-// resolve to the phone itself).
+// Launches the app on 0.0.0.0 so it is reachable from a phone on the same Wi-Fi,
+// and prints that URL. The app is self-contained — the words ship with it, so
+// there is no API server, database, or login to start.
 import { spawn } from 'node:child_process';
 import { networkInterfaces } from 'node:os';
 import { dirname, resolve } from 'node:path';
@@ -12,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 
 const webDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
-/** Best-guess LAN IPv4 for this machine (prefers real Wi-Fi/Ethernet over virtual switches). */
+/** Best-guess LAN IPv4 (prefers real Wi-Fi/Ethernet over virtual switches). */
 function lanIp() {
   const candidates = [];
   for (const [name, addresses] of Object.entries(networkInterfaces())) {
@@ -30,10 +26,6 @@ function lanIp() {
 }
 
 const ip = lanIp();
-
-process.env.NEXT_PUBLIC_DEMO_MODE = '1';
-process.env.NEXT_PUBLIC_API_BASE_URL ??= `http://${ip ?? 'localhost'}:4000`;
-
 const nextBin = resolve(webDir, 'node_modules/next/dist/bin/next');
 const child = spawn(process.execPath, [nextBin, 'dev', '-H', '0.0.0.0', '-p', '3000'], {
   cwd: webDir,
@@ -41,8 +33,6 @@ const child = spawn(process.execPath, [nextBin, 'dev', '-H', '0.0.0.0', '-p', '3
   env: process.env,
 });
 
-if (ip) {
-  console.log(`\n📱 On your phone (same Wi-Fi): http://${ip}:3000\n`);
-}
+if (ip) console.log(`\n📱 On your phone (same Wi-Fi): http://${ip}:3000\n`);
 
 child.on('exit', (code) => process.exit(code ?? 0));

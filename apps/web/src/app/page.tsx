@@ -1,5 +1,6 @@
-import { LandingHero } from '@/components/landing-hero';
+import { GroupIndex } from '@/components/group-index';
+import { groupSummaries, WORDS } from '@/lib/words';
 
 export default function HomePage() {
-  return <LandingHero />;
+  return <GroupIndex groups={groupSummaries()} total={WORDS.length} />;
 }

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   // JIT workspace packages ship TypeScript source; Next transpiles them.
-  transpilePackages: ['@mnemonic/ui', '@mnemonic/types'],
+  transpilePackages: ['@mnemonic/ui'],
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },

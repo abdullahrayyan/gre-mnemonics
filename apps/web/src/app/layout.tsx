@@ -6,12 +6,11 @@ import { Providers } from '@/providers/providers';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Mnemonic Master AI',
-  description:
-    'Remember English words forever with AI-generated Hinglish mnemonics, spaced repetition, quizzes, and an AI tutor. Built for GRE and beyond.',
+  title: 'GRE Words',
+  description: 'Read 1,100+ GRE words with memory hooks, group by group, then revise them.',
   manifest: '/manifest.webmanifest',
-  applicationName: 'Mnemonic Master',
-  appleWebApp: { capable: true, title: 'Mnemonic', statusBarStyle: 'black-translucent' },
+  applicationName: 'GRE Words',
+  appleWebApp: { capable: true, title: 'GRE Words', statusBarStyle: 'black-translucent' },
   icons: { icon: '/icon.svg', apple: '/icon.svg' },
 };
 
@@ -25,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="font-sans">
         <Providers>
           <SiteHeader />
-          <main className="mx-auto w-full max-w-6xl px-4 py-10">{children}</main>
+          <main className="mx-auto w-full max-w-3xl px-4 py-8">{children}</main>
         </Providers>
         <ServiceWorkerRegister />
       </body>
