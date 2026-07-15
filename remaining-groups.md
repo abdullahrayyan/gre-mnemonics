@@ -3,7 +3,7 @@
 Words still using the generated (weaker) AI mnemonics, listed group by group.
 Copy a group into Gemini, paste the result back, and it gets imported.
 
-Curated: 500 / 1111 words. Remaining: 611.
+Curated: 750 / 1111 words. Remaining: 361.
 
 Regenerate this file with:
 
@@ -28,46 +28,6 @@ apprehension, apprise, approbation, appropriate, apropos, apt, arbitrary, arcane
 ## Group 5 (25)
 
 attenuate, attribute, audacious, augment, august, auspicious, austere, auxiliary, avaricious, aver, aversion, avert, avid, axiomatic, banal, banish, baroque, barrage, barren, base, bawdy, befuddled, beguile, beholden, belie
-
-## Group 26 (25)
-
-irreverent, itinerant, jeopardize, jettison, jocund, judicious, keen, laconic, lambaste, lament, lampoon, languid, languish, largesse, lassitude, latitude, laudable, lavish, lax, lethargic, levity, liability, libertine, limpid, lionize
-
-## Group 27 (25)
-
-loathe, loquacious, lucid, lucrative, lugubrious, lull, macabre, magisterial, magnanimous, makeshift, malevolent, malfeasance, malign, malleable, manacle, manifest, marginalize, martinet, mawkish, mediate, mendacity, mercenary, mercurial, meritorious, metaphorical
-
-## Group 28 (25)
-
-meticulous, mettlesome, mimic, minute, misanthropic, miscreant, miserly, misnomer, mitigate, modest, modish, mollify, momentary, monotonous, mordant, morose, multifaceted, mundane, munificent, mutiny, myopic, nadir, naive, narcissism, nascent
-
-## Group 29 (25)
-
-negligent, neophyte, nettlesome, neutralize, nimble, noble, nominal, nonchalant, nonplussed, noxious, nullify, numinous, obdurate, obeisance, obfuscate, objurgation, oblivious, obscure, obsequious, obsolete, obstinate, obstreperous, obviate, occlude, odious
-
-## Group 30 (25)
-
-officious, ominous, omit, omnipresent, omniscient, onerous, onetime, opaque, opportunistic, opprobrium, ornate, ossify, ostentatious, oust, outlandish, outstrip, overt, pacify, painstaking, palpable, paltry, panacea, panache, paradigmatic, paradoxical
-
-## Group 31 (25)
-
-paragon, parochial, parsimonious, partial, passable, passive, pastiche, patent, patronize, peccadillo, peculiar, pedantic, pedestrian, pejorative, pellucid, penchant, penetrating, pensive, penurious, perennial, perfidy, perfunctory, perilous, peripheral, pernicious
-
-## Group 32 (25)
-
-perpetrate, perpetuate, perseverance, perspicacious, pertinacious, pertinent, pervasive, petulant, philistine, phlegmatic, phony, picturesque, pious, piquant, pithy, placate, placid, plaintive, plastic, platitude, plausible, pliant, plodding, ploy, plucky
-
-## Group 33 (25)
-
-poignant, poise, polarize, polemical, polymath, pomposity, ponderous, portend, posturing, potent, precarious, precipitate, precipitous, preclude, precocious, predicament, predilection, prefigure, premeditate, presage, prescient, prescribe, presumptuous, pretentious, prevail
-
-## Group 34 (25)
-
-prevaricate, prime, pristine, probity, proclivity, prodigal, prodigious, proficient, profligate, profound, profundity, profuse, proliferate, prolix, propagate, propensity, prophetic, propitiate, propitious, propriety, prosaic, providential, provincial, provocative, prowess
-
-## Group 35 (25)
-
-proxy, prudent, prurient, puerile, pugnacious, punctilious, qualm, quandary, quarantine, quash, querulous, quibble, quiescent, quirky, quixotic, radical, raillery, ramble, ramification, rampant, rapacious, rational, ravage, recant, recapitulate
 
 ## Group 36 (25)
 
