@@ -1,0 +1,25 @@
+# Deploys apps/web as a static site. The app pre-renders every route from a
+# bundled JSON file, so there is nothing to run server-side — no Next.js runtime
+# plugin, no functions.
+[build]
+  command = "pnpm --filter @mnemonic/web build"
+  publish = "apps/web/out"
+
+[build.environment]
+  # Skip the Prisma client generation that packages/database runs on install.
+  # The deployed app never touches the database, and generating it here only
+  # adds a way for an unrelated package to break this build.
+  PRISMA_SKIP_POSTINSTALL_GENERATE = "true"
+
+# Hashed build assets are immutable — a changed file always gets a new URL.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# The service worker must never be served stale, or a client can pin itself to
+# an old one and keep serving a previous deploy's cached shell.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

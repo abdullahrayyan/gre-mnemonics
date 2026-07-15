@@ -1,7 +1,7 @@
 {
-  "name": "Mnemonic Master AI",
-  "short_name": "Mnemonic",
-  "description": "Remember English words forever with AI mnemonics, spaced repetition, quizzes, and an AI tutor.",
+  "name": "GRE Words with Mnemonics",
+  "short_name": "GRE Words",
+  "description": "Read 1111 GRE words with a hook and a Hindi meaning, in groups of 25, then revise each group.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
