@@ -3,7 +3,7 @@
 Words still using the generated (weaker) AI mnemonics, listed group by group.
 Copy a group into Gemini, paste the result back, and it gets imported.
 
-Curated: 93 / 1111 words. Remaining: 1018.
+Curated: 250 / 1111 words. Remaining: 861.
 
 Regenerate this file with:
 
@@ -28,34 +28,6 @@ apprehension, apprise, approbation, appropriate, apropos, apt, arbitrary, arcane
 ## Group 5 (25)
 
 attenuate, attribute, audacious, augment, august, auspicious, austere, auxiliary, avaricious, aver, aversion, avert, avid, axiomatic, banal, banish, baroque, barrage, barren, base, bawdy, befuddled, beguile, beholden, belie
-
-## Group 6 (25)
-
-belittle, belligerent, benchmark, beneficent, benevolent, benign, berate, bereft, betray, blighted, blithe, bogus, boisterous, bolster, bombastic, boon, boorish, bravado, brazen, brevity, bridle, bromide, brook, bucolic, buoyant
-
-## Group 7 (25)
-
-burgeon, burnish, buttress, byzantine, cacophonous, cajole, calamitous, callous, callow, calumny, candid, canny, canonize, capitulate, capricious, captious, caricature, castigate, cataclysmic, catastrophic, cathartic, caustic, cavalier, cease, censor
-
-## Group 8 (25)
-
-censure, cerebral, chagrin, champion, chary, chastise, chauvinistic, check, cherish, chicanery, chivalrous, churlish, circumscribe, circumspect, circumstantial, clamorous, clandestine, clangor, cloak, cloying, cluster, coalesce, coddle, coercion, cogent
-
-## Group 9 (25)
-
-cogitate, coherent, coin, collaborate, collude, comity, commence, commensurate, commiserate, compelling, competent, complacent, complementary, comply, compound, compromise, conciliatory, conclusive, condone, conducive, conflagration, confound, congenial, conjectural, connoisseur
-
-## Group 10 (25)
-
-consensus, conspicuous, conspire, construe, contemplate, contemporary, contempt, contend, content, contentious, contravene, contretemps, contrite, conundrum, convalescent, conventional, conviction, convivial, convoluted, copious, cordial, corporeal, correlate, corroborate, cosmopolitan
-
-## Group 11 (7)
-
-dawdle, dearth, debase, debilitating, debunk, decadent, decipher
-
-## Group 15 (25)
-
-droll, dubious, dupe, duplicitous, duress, dutiful, dwindling, ebullient, eccentric, echelon, eclectic, eclipse, economy, edify, efficacious, effrontery, egalitarian, egregious, elaborate, elated, elementary, elicit, elitist, eloquent, elucidate
 
 ## Group 16 (25)
 

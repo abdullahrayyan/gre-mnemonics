@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * Writes remaining-groups.md at the repo root: the words still using generated
  * mnemonics, grouped exactly as the app groups them, ready to paste into Gemini.

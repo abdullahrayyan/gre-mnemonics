@@ -1,4 +1,629 @@
 {
+  "belittle": {
+    "meaning": "Make someone or something seem unimportant.",
+    "hindiMeaning": "Neecha dikhana / Chhota samjhana",
+    "mnemonic": "\"Be + Little\": Treating someone like a little child to ruin their confidence."
+  },
+  "belligerent": {
+    "meaning": "Hostile and aggressive.",
+    "hindiMeaning": "Ladaaku / Yuddh-premi",
+    "mnemonic": "\"Belly-fight\": Think of two sumo wrestlers puffing out their bellies, ready to launch into an aggressive fight."
+  },
+  "benchmark": {
+    "meaning": "A standard or point of reference against which things may be compared.",
+    "hindiMeaning": "Manak / Kasauti",
+    "mnemonic": "\"Bench-Mark\": Drawing a clear mark on a bench to measure everyone's height against a set standard."
+  },
+  "beneficent": {
+    "meaning": "Resulting in good; doing good.",
+    "hindiMeaning": "Kalyankari / Punya-kari",
+    "mnemonic": "\"Benefit-Cent\": A kind act that provides 100 cents of benefit to poor families."
+  },
+  "benevolent": {
+    "meaning": "Well meaning and kindly.",
+    "hindiMeaning": "Dayalu / Bhalmansi",
+    "mnemonic": "\"Bene-Violent (Antonym)\": The exact opposite of violent; a gentle person who always wishes you well."
+  },
+  "benign": {
+    "meaning": "Gentle and kindly; harmless.",
+    "hindiMeaning": "Sajjan / Hanikarak nahi",
+    "mnemonic": "\"Be + Nice\": A tumor or condition that turns out to be nice and completely safe."
+  },
+  "berate": {
+    "meaning": "Scold or criticize someone angrily.",
+    "hindiMeaning": "Daantna / Fatkarna",
+    "mnemonic": "\"Buri-Rate\": A furious father giving his son a buri rate (terrible review) and scolding him for failing."
+  },
+  "bereft": {
+    "meaning": "Deprived of or lacking something.",
+    "hindiMeaning": "Vanchit / Khali",
+    "mnemonic": "\"Bear-Left\": A traveler left completely alone in the woods after his protective bear left him."
+  },
+  "betray": {
+    "meaning": "Unfaithfully break a trust.",
+    "hindiMeaning": "Dhokha dena",
+    "mnemonic": "\"Beech-Rasta\": Abandoning your best friend in the beech-rasta (middle of the road) to join the rival team."
+  },
+  "blighted": {
+    "meaning": "Spoiled, harmed, or destroyed.",
+    "hindiMeaning": "Barbad / Nasht",
+    "mnemonic": "\"Black-Light\": A dark, toxic black light that ruins and dries up a beautiful crop overnight."
+  },
+  "blithe": {
+    "meaning": "Showing a casual and cheerful indifference.",
+    "hindiMeaning": "Zindadil / Be-parwah",
+    "mnemonic": "\"Bliss-ful\": Being so happy and blissful that you don't care about tomorrow's deadlines."
+  },
+  "bogus": {
+    "meaning": "Not genuine or true; fake.",
+    "hindiMeaning": "Nakli / Jhootha",
+    "mnemonic": "\"Bogus-Bonus\": A scam email promising a fake bonus just to steal your bank password."
+  },
+  "boisterous": {
+    "meaning": "Noisy, energetic, and cheerful; rowdy.",
+    "hindiMeaning": "Udhrami / Shor-machane wala",
+    "mnemonic": "\"Boy-Stir\": A group of young boys stirring up a storm, shouting and dancing wildly at a concert."
+  },
+  "bolster": {
+    "meaning": "Support or strengthen; prop up.",
+    "hindiMeaning": "Sahara dena / Mazboot karna",
+    "mnemonic": "\"Pillow-Bolster\": Placing a heavy round bolster pillow behind your back to give you solid sitting support."
+  },
+  "bombastic": {
+    "meaning": "High-sounding but with little meaning; inflated.",
+    "hindiMeaning": "Bhadkeela / Dikhavati",
+    "mnemonic": "\"Bomb-Plastic\": A politician throwing verbal bombs in his speech, but the content is empty plastic."
+  },
+  "boon": {
+    "meaning": "A thing that is helpful or beneficial.",
+    "hindiMeaning": "Vardan / Vardaan",
+    "mnemonic": "\"Bonus\": Getting a massive unexpected bonus from your company that solves all your money problems."
+  },
+  "boorish": {
+    "meaning": "Rough and bad-mannered; coarse.",
+    "hindiMeaning": "Gavaar / Asabhya",
+    "mnemonic": "\"Bore-ish\": A rude person at a dinner party who acts so boorish that he becomes a total bore."
+  },
+  "bravado": {
+    "meaning": "A bold manner or a show of boldness intended to impress or intimidate.",
+    "hindiMeaning": "Geedad-bhabhki / Dikhavati bahaduri",
+    "mnemonic": "\"Bravo-Fake\": Yelling \"Bravo!\" loudly to act brave, even though your knees are shaking from fear."
+  },
+  "brazen": {
+    "meaning": "Bold and without shame.",
+    "hindiMeaning": "Besharam / Dheet",
+    "mnemonic": "\"Brass-Zen\": A person with a face as hard as solid brass who commits a crime in broad daylight without blinking."
+  },
+  "brevity": {
+    "meaning": "Concise and exact use of words in writing or speech.",
+    "hindiMeaning": "Sankshiptta",
+    "mnemonic": "\"Brief-ity\": Delivering a complex coding breakdown with absolute briefness, keeping it straight to the point."
+  },
+  "bridle": {
+    "meaning": "Show resentment or anger; bring under control.",
+    "hindiMeaning": "Gussa dikhana / Akadna",
+    "mnemonic": "\"Bride-Anger\": A horse throwing its head back in rage when the bridle (lagaam) is pulled tightly."
+  },
+  "bromide": {
+    "meaning": "A trite and unoriginal remark, typically intended to soothe or placate.",
+    "hindiMeaning": "Ghisapita vachan",
+    "mnemonic": "\"Boring-Idea\": A cliché, boring phrase like \"everything happens for a reason\" that makes you yawn."
+  },
+  "brook": {
+    "meaning": "Tolerate or allow.",
+    "hindiMeaning": "Sweekar karna / Jhelna",
+    "mnemonic": "\"Brave-it\": A strict professor who will not brook (tolerate) any cheating in his classroom."
+  },
+  "bucolic": {
+    "meaning": "Relating to the pleasant aspects of the countryside and country life.",
+    "hindiMeaning": "Dehati / Gramin",
+    "mnemonic": "\"Bull-Colony\": A beautiful, peaceful village full of green fields and farms where bulls roam freely."
+  },
+  "buoyant": {
+    "meaning": "Able or apt to stay afloat or rise to the top; cheerful.",
+    "hindiMeaning": "Khush-mizaaj / Tairne wala",
+    "mnemonic": "\"Boy-Ant\": An ant floating happily on a leaf in water, completely upbeat and unsinkable."
+  },
+  "burgeon": {
+    "meaning": "Begin to grow or increase rapidly; flourish.",
+    "hindiMeaning": "Tezi se badhna / Panapna",
+    "mnemonic": "\"Burger-Shop\": A new burger joint that opens up and rapidly expands into 50 branches within a month."
+  },
+  "burnish": {
+    "meaning": "Polish (something, especially metal) by rubbing.",
+    "hindiMeaning": "Chamakana / Sudharna",
+    "mnemonic": "\"Burn-to-Shine\": Rubbing a metallic shield so hard it looks like it's burning with pure shine."
+  },
+  "buttress": {
+    "meaning": "A source of defense or support.",
+    "hindiMeaning": "Sahara dena / Deewar ka sahara",
+    "mnemonic": "\"Butt-Rest\": Building a solid brick pillar to give a leaning wall a place to rest and stay strong."
+  },
+  "byzantine": {
+    "meaning": "Excessively complex, typically involving a great deal of administrative detail.",
+    "hindiMeaning": "Pechida / Jatil",
+    "mnemonic": "\"Busy-Teenagers\": A government system so tangled and complex that it keeps thousands of teenagers busy trying to figure it out."
+  },
+  "cacophonous": {
+    "meaning": "Involving or producing a harsh, discordant mixture of sounds.",
+    "hindiMeaning": "Karn-katu / Besura",
+    "mnemonic": "\"Cackling-Crow\": A thousand crows cackling together outside your bedroom window at 4 AM — terrible sound."
+  },
+  "cajole": {
+    "meaning": "Persuade someone to do something by sustained coaxing or flattery.",
+    "hindiMeaning": "Behlana-phuslana",
+    "mnemonic": "\"Kajol-Fan\": Flattering a stubborn developer like a star struck fan to cajole them into deploying your code."
+  },
+  "calamitous": {
+    "meaning": "Involving or causing sudden great damage or distress.",
+    "hindiMeaning": "Vinashkari / Aafat-bhara",
+    "mnemonic": "\"Kaal-amity\": A massive natural disaster that brings absolute kaal (destruction) to a town."
+  },
+  "callous": {
+    "meaning": "Showing or having an insensitive and cruel disregard for others.",
+    "hindiMeaning": "Nirdayi / Kathor-dil",
+    "mnemonic": "\"Calm-in-Loss\": A cruel person who remains completely calm during someone else's loss, showing no emotion."
+  },
+  "callow": {
+    "meaning": "Inexperienced and immature.",
+    "hindiMeaning": "Anubhav-heen / Kacha",
+    "mnemonic": "\"Cal-low (Caliber-low)\": A young rookie coder whose caliber is currently low because he just started today."
+  },
+  "calumny": {
+    "meaning": "The making of false and defamatory statements about someone.",
+    "hindiMeaning": "Badnami / Jhootha arop",
+    "mnemonic": "\"Kala-Naam\": Spreading nasty lies to put a kala daag (black stain) on an innocent person's reputation."
+  },
+  "candid": {
+    "meaning": "Truthful and straightforward; frank.",
+    "hindiMeaning": "Spasht-vaadi / Imandari-bhara",
+    "mnemonic": "\"Candy-Child\": A small kid who will tell you honestly if your app design looks bad in exchange for a candy."
+  },
+  "canny": {
+    "meaning": "Having or showing shrewdness and good judgment, especially in money.",
+    "hindiMeaning": "Chalaak / Tez-dimag",
+    "mnemonic": "\"Can-i-Know\": A sharp businessman who always asks, \"Can I know the exact profit margin?\" before investing."
+  },
+  "canonize": {
+    "meaning": "Treat as holy or benign; place in the canon of saints.",
+    "hindiMeaning": "Pavitra ghoshit karna / Sir par bithana",
+    "mnemonic": "\"Canon-Camera\": Treating a legendary photographer so highly you want to frame his photo with a Canon camera."
+  },
+  "capitulate": {
+    "meaning": "Cease to resist an opponent or an unwelcome demand; surrender.",
+    "hindiMeaning": "Atma-samarpan karna",
+    "mnemonic": "\"Captain-Late\": The army captain arrived too late, forcing the remaining soldiers to finally surrender."
+  },
+  "capricious": {
+    "meaning": "Given to sudden and unaccountable changes of mood.",
+    "hindiMeaning": "Chanchal / Anishchit",
+    "mnemonic": "\"Car-Price\": Market trends that fluctuate wildly, causing a car's price to jump up and down without warning."
+  },
+  "captious": {
+    "meaning": "Tending to find fault or raise petty objections.",
+    "hindiMeaning": "Aib-dhoondhne wala / Chhidranveshi",
+    "mnemonic": "\"Captain-Strict\": An annoying tester who is always capturing minor bugs just to complain."
+  },
+  "caricature": {
+    "meaning": "A picture or description of a person in which certain characteristics are exaggerated.",
+    "hindiMeaning": "Vyang-chitra",
+    "mnemonic": "\"Character-Cartoon\": Drawing a politician's character as a funny cartoon with a giant nose."
+  },
+  "castigate": {
+    "meaning": "Reprimand someone severely.",
+    "hindiMeaning": "Saza dena / Buri tarah daantna",
+    "mnemonic": "\"Cast-Gate\": Throwing a lazy guard out of the caste gate and scolding him brutally for sleeping."
+  },
+  "cataclysmic": {
+    "meaning": "Relating to or denoting a violent natural event.",
+    "hindiMeaning": "Pralaykari",
+    "mnemonic": "\"Cut-a-Climate\": A volcanic eruption so violent it completely cuts and alters the climate of the region."
+  },
+  "catastrophic": {
+    "meaning": "Involving or causing sudden great damage or suffering.",
+    "hindiMeaning": "Tabahkari",
+    "mnemonic": "\"Crash-Trophy\": Your racing car crashing right before the trophy line — a total disaster."
+  },
+  "cathartic": {
+    "meaning": "Providing psychological relief through the open expression of strong emotions.",
+    "hindiMeaning": "Sukun dene wala / Shuddhi-kari",
+    "mnemonic": "\"Cat-Heart\": Crying out all your worries while holding a pet cat close to your heart, feeling immediate relief."
+  },
+  "caustic": {
+    "meaning": "Sarcastic in a scathing and bitter way; able to burn.",
+    "hindiMeaning": "Jalane wala / Teekha",
+    "mnemonic": "\"Chemical-Acid\": A comment so sharp it burns your ears like caustic soda burns skin."
+  },
+  "cavalier": {
+    "meaning": "Showing a lack of proper concern; offhand.",
+    "hindiMeaning": "Laparwah / Ghamandi",
+    "mnemonic": "\"Cavalry-Soldier\": An elite soldier riding a horse who looks down on common pedestrians with careless arrogance."
+  },
+  "cease": {
+    "meaning": "Bring or come to an end.",
+    "hindiMeaning": "Rokna / Samaapt hona",
+    "mnemonic": "\"Ceasefire\": An official command to instantly stop all shooting on the battlefield."
+  },
+  "censor": {
+    "meaning": "Examine officially and suppress unacceptable parts.",
+    "hindiMeaning": "Kaat-chaant karna",
+    "mnemonic": "\"Sensor-Cut\": The regulatory board placing a sensor block over inappropriate movie scenes."
+  },
+  "censure": {
+    "meaning": "Express severe disapproval of, typically in a formal statement.",
+    "hindiMeaning": "Ninda karna / Tikhi aalochna",
+    "mnemonic": "\"Sensor-Reject\": The official board passing a formal censure motion to condemn a bad book."
+  },
+  "cerebral": {
+    "meaning": "Intellectual rather than emotional or physical.",
+    "hindiMeaning": "Dimagi / Buddhi-jeevi",
+    "mnemonic": "\"Brain-Cerebrum\": Using your cerebrum (the main part of the brain) to solve complex system architectures."
+  },
+  "chagrin": {
+    "meaning": "Annoyance or distress at having failed or been humiliated.",
+    "hindiMeaning": "Chid / Khij / Afsos",
+    "mnemonic": "\"Chai-Gir-Gayi\": The deep embarrassment you feel when your chai spills on your white shirt during a client meet."
+  },
+  "champion": {
+    "meaning": "Vigorously defend or support a cause.",
+    "hindiMeaning": "Samarthan karna / Aage badhana",
+    "mnemonic": "\"Champion for Poor\": Acting like a real sports champion who uses their fame to fight for equal rights."
+  },
+  "chary": {
+    "meaning": "Cautiously or suspiciously reluctant to do something.",
+    "hindiMeaning": "Satark / Savdhan",
+    "mnemonic": "\"Chai-se-Jala\": Like the Hindi proverb: Chai ka jala chach bhi phook kar peeta hai — extremely cautious."
+  },
+  "chastise": {
+    "meaning": "Rebuke or reprimand severely.",
+    "hindiMeaning": "Dand dena / Fatkarna",
+    "mnemonic": "\"Chest-Tight\": A strict drill sergeant scolding a soldier so hard that the rookie's chest tightens with fear."
+  },
+  "chauvinistic": {
+    "meaning": "Displaying excessive or prejudiced loyalty or support for a cause, group, or gender.",
+    "hindiMeaning": "Andh-deshbhakti / Katter",
+    "mnemonic": "\"Chauhan-Proud\": A warrior who blindly believes his group (Chauhans) is superior to the entire world."
+  },
+  "check": {
+    "meaning": "Stop or slow down the progress of something.",
+    "hindiMeaning": "Rokna / Niyantran karna",
+    "mnemonic": "\"Check-Dam\": Building a temporary wall to check the rapid flow of wild river water."
+  },
+  "cherish": {
+    "meaning": "Protect and care for someone lovingly; hold dear.",
+    "hindiMeaning": "Sanjo kar rakhna",
+    "mnemonic": "\"Cherry-on-Top\": Keeping a special childhood memory safely in your heart like the best cherry on a cake."
+  },
+  "chicanery": {
+    "meaning": "The use of trickery to achieve a political, financial, or legal purpose.",
+    "hindiMeaning": "Hera-pheri / Chalaaki",
+    "mnemonic": "\"Chic-Chalaak\": A shady lawyer using clever hera-pheri and shortcuts to win a corporate court case."
+  },
+  "chivalrous": {
+    "meaning": "Courteous and gallant, especially toward women.",
+    "hindiMeaning": "Udaar / Shisht",
+    "mnemonic": "\"Chevalier (Knight)\": An honorable knight who rushes to open the door and protect someone in need."
+  },
+  "churlish": {
+    "meaning": "Rude in a mean-spirited and surly way.",
+    "hindiMeaning": "Abhadra / Gavaar",
+    "mnemonic": "\"Church-Rude\": An ill-mannered tourist shouting and acting extremely rude inside a quiet church."
+  },
+  "circumscribe": {
+    "meaning": "Restrict something within limits.",
+    "hindiMeaning": "Seemit karna / Gherna",
+    "mnemonic": "\"Circle-Scribe\": Drawing a strict circle on paper and telling someone, \"You cannot step outside this line.\""
+  },
+  "circumspect": {
+    "meaning": "Wary and unwilling to take risks.",
+    "hindiMeaning": "Chaukanna / Savdhan",
+    "mnemonic": "\"Circle-Inspect\": Looking all around your circle to inspect for dangers before taking a single step."
+  },
+  "circumstantial": {
+    "meaning": "Pointing indirectly toward someone's guilt but not conclusively proving it.",
+    "hindiMeaning": "Paristhiti-janya",
+    "mnemonic": "\"Circumstance-Only\": Evidence based purely on the surrounding circumstances, not solid eye-witness proof."
+  },
+  "clamorous": {
+    "meaning": "Making a loud and confused noise.",
+    "hindiMeaning": "Shor-gul se bhara",
+    "mnemonic": "\"Claim-Loud\": A massive crowd of angry protestors loudly claiming their rights outside the assembly."
+  },
+  "clandestine": {
+    "meaning": "Kept secret or done secretively, especially because illicit.",
+    "hindiMeaning": "Gupt / Chhupa hua",
+    "mnemonic": "\"Clan-Destiny\": A secret meeting held by a hidden clan at midnight to plan their next move."
+  },
+  "clangor": {
+    "meaning": "A continuous loud banging or ringing sound.",
+    "hindiMeaning": "Jhankar / Khadkhadahat",
+    "mnemonic": "\"Clan-of-Gongs\": A huge group of people banging metal gongs together in a closed room."
+  },
+  "cloak": {
+    "meaning": "Hide, cover, or disguise.",
+    "hindiMeaning": "Chhupana / Parda daalna",
+    "mnemonic": "\"Invisibility Cloak\": Putting on a Harry Potter cloak to disappear from your enemies completely."
+  },
+  "cloying": {
+    "meaning": "Excessively sweet, rich, or sentimental to the point of disgusting.",
+    "hindiMeaning": "Atyadhik meetha",
+    "mnemonic": "\"Clog-with-Sugar\": A dessert so heavy and overly sweet that it literally clogs your throat after one bite."
+  },
+  "cluster": {
+    "meaning": "A group of similar things or people positioned closely together.",
+    "hindiMeaning": "Guchha / Jhund",
+    "mnemonic": "\"Star-Cluster\": A dense group of stars packed closely together in one part of the sky."
+  },
+  "coalesce": {
+    "meaning": "Come together to form one mass or whole.",
+    "hindiMeaning": "Milna / Ek hona",
+    "mnemonic": "\"Coal-Mix\": Small pieces of hot coal melting and merging together to form one giant fire block."
+  },
+  "coddle": {
+    "meaning": "Treat in an indulgent or overprotective way.",
+    "hindiMeaning": "Laad-pyaar karna",
+    "mnemonic": "\"Cradle-Baby\": Keeping a grown-up teenager wrapped up in a baby cradle, spoiling them completely."
+  },
+  "coercion": {
+    "meaning": "The practice of persuading someone to do something by using force or threats.",
+    "hindiMeaning": "Zabardasti / Bal-prayog",
+    "mnemonic": "\"Course-Force\": Threatening a student with a stick to force them to complete the coding course."
+  },
+  "cogent": {
+    "meaning": "Clear, logical, and convincing.",
+    "hindiMeaning": "Prabhavshali / Thos",
+    "mnemonic": "\"Code-Agent\": An expert developer who presents a logic so clean it convinces the entire tech board instantly."
+  },
+  "cogitate": {
+    "meaning": "Think deeply about something; meditate or reflect.",
+    "hindiMeaning": "Chintan karna / Sochna",
+    "mnemonic": "\"Computer-Agitate\": Agitating your brain cells to think deeply and code a complex layout."
+  },
+  "coherent": {
+    "meaning": "Logical and consistent; clear.",
+    "hindiMeaning": "Spasht / Juda hua",
+    "mnemonic": "\"Co-Header\": A project report where the sub-headers match the main header perfectly, making total sense."
+  },
+  "coin": {
+    "meaning": "Invent or devise a new word or phrase.",
+    "hindiMeaning": "Naya shabd banana",
+    "mnemonic": "\"Bitcoin-Mint\": Designing a completely new digital currency framework and coining the term for it."
+  },
+  "collaborate": {
+    "meaning": "Work jointly on an activity or project.",
+    "hindiMeaning": "Milkar kaam karna",
+    "mnemonic": "\"Co-Labor\": Two developers putting in joint labor to build an autonomous AI assistant app."
+  },
+  "collude": {
+    "meaning": "Cooperate in a secret or unlawful way in order to deceive others.",
+    "hindiMeaning": "Mili-bhagat karna",
+    "mnemonic": "\"Co-Illusion\": Two corrupt brokers creating a fake illusion together to trick retail stock investors."
+  },
+  "comity": {
+    "meaning": "Courtesy and considerate behavior toward others.",
+    "hindiMeaning": "Shishtachar / Bhaichara",
+    "mnemonic": "\"Committee-Polite\": A global committee where every country leader speaks with absolute respect and politeness."
+  },
+  "commence": {
+    "meaning": "Begin.",
+    "hindiMeaning": "Shuruat karna",
+    "mnemonic": "\"Commencement Day\": The official first day where university classes kick off and begin."
+  },
+  "commensurate": {
+    "meaning": "Corresponding in size or degree; in proportion.",
+    "hindiMeaning": "Anuroop / Barabar",
+    "mnemonic": "\"Common-Salary\": Getting a paycheck that is perfectly equal to the high skills you put into the project."
+  },
+  "commiserate": {
+    "meaning": "Express or feel sympathy or pity; sympathize.",
+    "hindiMeaning": "Dukh jatana / Hamdardi dikhana",
+    "mnemonic": "\"Common-Misery\": Sitting with a friend who also failed the test to share the common misery together."
+  },
+  "compelling": {
+    "meaning": "Evoking interest, attention, or admiration in a powerfully irresistible way.",
+    "hindiMeaning": "Dilchasp / Mazboor karne wala",
+    "mnemonic": "\"Compel-Attention\": A thriller movie plot so intense it forces your eyes to stay glued to the screen."
+  },
+  "competent": {
+    "meaning": "Having the necessary ability, knowledge, or skill to do something successfully.",
+    "hindiMeaning": "Kushal / Yogya",
+    "mnemonic": "\"Competition-Ready\": A coder who has enough practical knowledge to face any global hackathon successfully."
+  },
+  "complacent": {
+    "meaning": "Showing smug or uncritical satisfaction with oneself or one's achievements.",
+    "hindiMeaning": "Aatm-santoshi / Ghamandi",
+    "mnemonic": "\"Comfy-Placement\": Getting an easy college placement and stopping all hard work because you feel too secure."
+  },
+  "complementary": {
+    "meaning": "Combining in such a way as to enhance or emphasize the qualities of each other.",
+    "hindiMeaning": "Purak / Ek doosre ko pura karne wale",
+    "mnemonic": "\"Complete-Mentary\": Like React and Tailwind CSS — two tech stacks that complete each other beautifully."
+  },
+  "comply": {
+    "meaning": "Act in accordance with a wish or command.",
+    "hindiMeaning": "Agya ka palan karna",
+    "mnemonic": "\"Company-Rule\": Modifying your server settings to strictly follow the data safety laws."
+  },
+  "compound": {
+    "meaning": "Make something bad worse; intensify.",
+    "hindiMeaning": "Badhana / Mishran karna",
+    "mnemonic": "\"Compound-Interest\": Leaving an unresolved error in your repository until it multiplies and becomes a nightmare."
+  },
+  "compromise": {
+    "meaning": "Expediently accept standards that are lower than is desirable.",
+    "hindiMeaning": "Samjhauta karna / Khatre mein daalna",
+    "mnemonic": "\"Compromised-Server\": Lowering your firewall security, which puts your entire system database at risk."
+  },
+  "conciliatory": {
+    "meaning": "Intended or likely to placate or pacify.",
+    "hindiMeaning": "Samjhauta-vadi / Shant karne wala",
+    "mnemonic": "\"Console-Story\": Offering your angry client a free feature upgrade as a soothing story to calm them down."
+  },
+  "conclusive": {
+    "meaning": "Serving to settle an issue; convincing.",
+    "hindiMeaning": "Nirnayak / Pakka",
+    "mnemonic": "\"Conclusion-Reached\": Finding the exact missing server log that provides final, absolute proof of the bug."
+  },
+  "condone": {
+    "meaning": "Accept and allow behavior that is considered wrong to continue.",
+    "hindiMeaning": "Maaf karna / Nazarandaz karna",
+    "mnemonic": "\"Kaun-Done\": The manager asking \"Kaun kiya?\" and then saying \"Done, let it go\", overlooking the mistake."
+  },
+  "conducive": {
+    "meaning": "Making a certain situation or outcome likely or possible.",
+    "hindiMeaning": "Sahayak / Anukul",
+    "mnemonic": "\"Conduct-ive\": A quiet, dark room is highly helpful and perfect for deep focus coding sessions."
+  },
+  "conflagration": {
+    "meaning": "A large fire that destroys a great deal of land or property.",
+    "hindiMeaning": "Bhayanak aag",
+    "mnemonic": "\"Conflict-Fire\": A massive, uncontrollable fire storm that burns down an entire industrial sector."
+  },
+  "confound": {
+    "meaning": "Prove a theory, expectation, or prediction wrong; confuse.",
+    "hindiMeaning": "Chakit karna / Ulajhana",
+    "mnemonic": "\"Confusion-Found\": An anomaly in your calculation that completely baffles and puzzles the researchers."
+  },
+  "congenial": {
+    "meaning": "Pleasant because of a personality, qualities, or interests that are similar to one's own.",
+    "hindiMeaning": "Anukul / Man-pasand",
+    "mnemonic": "\"Genial-Genius\": Working with a friendly fellow genius dev who shares your exact interest in AI agents."
+  },
+  "conjectural": {
+    "meaning": "Based on or involving conjecture; speculative.",
+    "hindiMeaning": "Anumanit / Kalpanik",
+    "mnemonic": "\"Con-Jee-Lecture\": A college theory based purely on guesses and assumptions, with zero practical proof."
+  },
+  "connoisseur": {
+    "meaning": "An expert judge in matters of taste.",
+    "hindiMeaning": "Parakhi / Visheshagya",
+    "mnemonic": "\"Kaun-Sir\": Pointing to an old master chef and asking, \"Kaun sir hain jo food ka taste parakh sakte hain?\""
+  },
+  "consensus": {
+    "meaning": "A general agreement.",
+    "hindiMeaning": "Aam sehamati",
+    "mnemonic": "\"Common-Sense-Us\": When an entire team reaches an agreement because a solution makes total common sense to us."
+  },
+  "conspicuous": {
+    "meaning": "Clearly visible; attracting notice or attention.",
+    "hindiMeaning": "Su-spasht / Saaf dikhne wala",
+    "mnemonic": "\"Kaun-Speak-Us\": If someone stands up to speak to us wearing a neon jacket, you ask, \"Kaun hai?\" because they are so easily noticed."
+  },
+  "conspire": {
+    "meaning": "Make secret plans jointly to commit an unlawful or harmful act.",
+    "hindiMeaning": "Sazish rachna",
+    "mnemonic": "\"Con-Spire\": A group of cons (criminals) gathering under a church spire at midnight to plan a bank heist."
+  },
+  "construe": {
+    "meaning": "Interpret a word or action in a particular way.",
+    "hindiMeaning": "Arth nikalna / Samjhana",
+    "mnemonic": "\"Construct-True\": Taking someone's messy words and constructing a true meaning out of them."
+  },
+  "contemplate": {
+    "meaning": "Look thoughtfully for a long time at; think deeply about.",
+    "hindiMeaning": "Chintan karna / Ghaur karna",
+    "mnemonic": "\"Temple-Meditate\": Sitting quietly inside a temple to meditate and ponder deeply over life decisions."
+  },
+  "contemporary": {
+    "meaning": "Living or occurring at the same time; modern.",
+    "hindiMeaning": "Samkalin / Aadhunik",
+    "mnemonic": "\"Common-Time-Period\": Things or artists existing together in the same common time block."
+  },
+  "contempt": {
+    "meaning": "The feeling that a person or a thing is worthless or beneath consideration.",
+    "hindiMeaning": "Tiraskar / Ghrina",
+    "mnemonic": "\"Con-Attempt\": Looking at a con man's attempt to cheat you with absolute disgust and scorn."
+  },
+  "contend": {
+    "meaning": "Struggle to surmount a difficulty; assert something in an argument.",
+    "hindiMeaning": "Dawa karna / Sangharsh karna",
+    "mnemonic": "\"Can-Tend\": Fighting hard in a match so you can tend to walk away as the winner."
+  },
+  "content": {
+    "meaning": "In a state of peaceful happiness and satisfaction.",
+    "hindiMeaning": "Santusht",
+    "mnemonic": "\"Contentment\": Feeling completely happy and satisfied with your current project progress."
+  },
+  "contentious": {
+    "meaning": "Causing or likely to cause an argument; controversial.",
+    "hindiMeaning": "Vivadit / Ladaaku",
+    "mnemonic": "\"Content-of-Fight\": A hot, controversial topic that contains all the content for a major fight."
+  },
+  "contravene": {
+    "meaning": "Violate the prohibition or order of a law or treaty.",
+    "hindiMeaning": "Ullanghan karna",
+    "mnemonic": "\"Counter-Vene\": Going completely counter (against) the rules, breaking a legal contract."
+  },
+  "contretemps": {
+    "meaning": "An unexpected and unfortunate occurrence; a minor dispute.",
+    "hindiMeaning": "Achanak aayi musibat / Kaha-suni",
+    "mnemonic": "\"Counter-Time\": A minor accident or argument that happens at the worst possible counter time (bad timing)."
+  },
+  "contrite": {
+    "meaning": "Feeling or expressing remorse or penitence.",
+    "hindiMeaning": "Pachhtawa karne wala / Pashchatapi",
+    "mnemonic": "\"Count-the-Right\": Realizing your mistake and sitting down to count what is right to fix it because you feel sorry."
+  },
+  "conundrum": {
+    "meaning": "A confusing and difficult problem or question.",
+    "hindiMeaning": "Paheli / Dharamsankat",
+    "mnemonic": "\"Kaun-Drum\": A mystery where you don't know kaun (who) hid the prize inside which drum — a total riddle."
+  },
+  "convalescent": {
+    "meaning": "A person recovering from an illness or medical treatment.",
+    "hindiMeaning": "Bimari ke baad sudharne wala",
+    "mnemonic": "\"Convert-to-Excellent\": A patient whose weak health is gradually converting back to excellent health."
+  },
+  "conventional": {
+    "meaning": "Based on or in accordance with what is generally done or believed.",
+    "hindiMeaning": "Paramparik / Sadharan",
+    "mnemonic": "\"Convention\": Following standard protocols discussed at a standard tech convention, nothing radical."
+  },
+  "conviction": {
+    "meaning": "A firmly held belief or opinion; a formal declaration of guilt.",
+    "hindiMeaning": "Dridh vishwas / Dosh-siddhi",
+    "mnemonic": "\"Convict-Conviction\": A judge holding a firm belief that the suspect is guilty, leading to a formal verdict."
+  },
+  "convivial": {
+    "meaning": "Friendly, lively, and enjoyable (of an atmosphere or event).",
+    "hindiMeaning": "Khush-mizaaj / Milansar",
+    "mnemonic": "\"With-Vivian\": Throwing a party with Vivian (who is super energetic), making the whole atmosphere lively and fun."
+  },
+  "convoluted": {
+    "meaning": "Extremely complex and difficult to follow.",
+    "hindiMeaning": "Jatil / Pechida",
+    "mnemonic": "\"Conversion-Twisted\": A messy piece of source code that is twisted into too many loops, making it hard to read."
+  },
+  "copious": {
+    "meaning": "Abundant in supply or quantity.",
+    "hindiMeaning": "Prachur / Bahut jyada",
+    "mnemonic": "\"Copy-Excessive\": Hitting the copy-paste command a million times until you have an absolute abundance of data."
+  },
+  "cordial": {
+    "meaning": "Warm and friendly.",
+    "hindiMeaning": "Mitratapurna / Aadar-sahit",
+    "mnemonic": "\"Dil-se (Cor = Heart)\": Welcoming house guests with a warm, heart-felt smile and offering them juice."
+  },
+  "corporeal": {
+    "meaning": "Relating to a person's body, especially as opposed to their spirit.",
+    "hindiMeaning": "Sharirik / Bhautik",
+    "mnemonic": "\"Corporal/Corpse\": Dealing with the actual physical body or physical frame, not the soul."
+  },
+  "correlate": {
+    "meaning": "Have a mutual relationship or connection.",
+    "hindiMeaning": "Paraspar sambandh hona",
+    "mnemonic": "\"Co-Relation\": Establishing a clear, mathematical joint relationship between two active variables."
+  },
+  "corroborate": {
+    "meaning": "Confirm or support with additional evidence.",
+    "hindiMeaning": "Pushti karna / Saboot dena",
+    "mnemonic": "\"Collaborate-Robbery\": A partner collaborating with authorities to provide proof that confirms the crime timeline."
+  },
+  "cosmopolitan": {
+    "meaning": "Familiar with and at ease in many different countries and cultures.",
+    "hindiMeaning": "Vishwa-nagrik",
+    "mnemonic": "\"Cosmo-Polis (City)\": A modern citizen of the world who treats the entire cosmos as their home city."
+  },
   "countenance": {
     "meaning": "A person's face or facial expression; support.",
     "hindiMeaning": "Chehra / Samarthan",
@@ -88,6 +713,41 @@
     "meaning": "Seeming difficult to deal with in anticipation; intimidating.",
     "hindiMeaning": "Daraona / Kathin",
     "mnemonic": "\"Daantna\": A task so massive it feels like a strict teacher daant-ing (scolding) you just by looking at it."
+  },
+  "dawdle": {
+    "meaning": "Waste time; be slow.",
+    "hindiMeaning": "Samay barbad karna / Aalas karna",
+    "mnemonic": "\"Dheela-Dheela\": Moving dheela-dheela (incredibly slowly) and wasting time when you should be rushing to class."
+  },
+  "dearth": {
+    "meaning": "A scarcity or lack of something.",
+    "hindiMeaning": "Kami / Akaal",
+    "mnemonic": "\"Dear-Earth\": When essential resources become rare on earth, they become highly dear (expensive)."
+  },
+  "debase": {
+    "meaning": "Reduce something in quality or value; degrade.",
+    "hindiMeaning": "Degrade karna / Neeche girana",
+    "mnemonic": "\"De-Base\": Dropping the foundational base quality level of a product down to something cheap."
+  },
+  "debilitating": {
+    "meaning": "Making someone very weak and infirm.",
+    "hindiMeaning": "Kamzori lane wala / Durbal karne wala",
+    "mnemonic": "\"De-Ability\": A severe fever that completely strips away your ability to stand up or walk."
+  },
+  "debunk": {
+    "meaning": "Expose the falseness or hollowness of a myth or belief.",
+    "hindiMeaning": "Pardafash karna",
+    "mnemonic": "\"De-Bunk\": Checking the classroom logs to prove a student was bunking, completely shattering their fake excuse."
+  },
+  "decadent": {
+    "meaning": "Reflecting a state of moral or cultural decline due to luxury.",
+    "hindiMeaning": "Vilasi / Patan-sheel",
+    "mnemonic": "\"Decay-dent\": A wealthy society whose moral values are decaying, creating a huge dent in their culture."
+  },
+  "decipher": {
+    "meaning": "Succeed in understanding, interpreting, or identifying something.",
+    "hindiMeaning": "Arth nikalna / Saaf samajhna",
+    "mnemonic": "\"De-Cipher (Zero)\": Cracking an ancient encrypted script until there is zero cipher mystery left in your mind."
   },
   "decorum": {
     "meaning": "Behavior in keeping with good taste and propriety.",
@@ -463,5 +1123,130 @@
     "meaning": "Excessively harsh and severe.",
     "hindiMeaning": "Kayi-kathor / Nirdayi",
     "mnemonic": "\"Dracula's Laws\": Imagine Dracula becoming the prime minister and passing terrifyingly cruel, severe punishments for tiny mistakes."
+  },
+  "droll": {
+    "meaning": "Curious or unusual in a way that provokes dry amusement.",
+    "hindiMeaning": "Mazedaar / Ajeeb aur hansaane wala",
+    "mnemonic": "\"Doll-Funny\": A weird, quirky looking uproarious doll that makes everyone chuckle just by sitting there."
+  },
+  "dubious": {
+    "meaning": "Hesitating or doubting; not to be relied upon.",
+    "hindiMeaning": "Sandehaspad / Shakki",
+    "mnemonic": "\"Doubt-Full\": A fishy investment scheme that keeps you completely doubtful and highly suspicious."
+  },
+  "dupe": {
+    "meaning": "Deceive or trick someone.",
+    "hindiMeaning": "Bewakoof banana / Thagna",
+    "mnemonic": "\"Duplicate\": Handing someone a duplicate watch instead of the original to trick them out of their money."
+  },
+  "duplicitous": {
+    "meaning": "Deceitful; double-dealing.",
+    "hindiMeaning": "Dhokhebaaz / Kapat-purna",
+    "mnemonic": "\"Duplicate-Face\": A fake friend who carries a duplicate face to stab you in the back later."
+  },
+  "duress": {
+    "meaning": "Threats, violence, constraints, or other action brought to bear on someone to do something against their will.",
+    "hindiMeaning": "Zabardasti / Dabaav",
+    "mnemonic": "\"Due-Stress\": Forcing a developer under extreme stress and threats to deploy a production build at midnight."
+  },
+  "dutiful": {
+    "meaning": "Conscientiously or obediently fulfilling one's duty.",
+    "hindiMeaning": "Kartavya-parayan / Agyakari",
+    "mnemonic": "\"Duty-Full\": A reliable engineer who is always full of respect for their duty, completing sprints on time."
+  },
+  "dwindling": {
+    "meaning": "Gradually diminishing in size, amount, or strength.",
+    "hindiMeaning": "Ghatna / Kam hona",
+    "mnemonic": "\"Dwindle-Down\": A water reservoir drying up and shrinking down to a tiny puddle during a hot summer."
+  },
+  "ebullient": {
+    "meaning": "Cheerful and full of energy.",
+    "hindiMeaning": "Joshila / Ullasit",
+    "mnemonic": "\"Boiling-Energy\": A developer whose enthusiasm is boiling over like hot water because their startup secured funding."
+  },
+  "eccentric": {
+    "meaning": "Unconventional and slightly strange.",
+    "hindiMeaning": "Ajeeb / Sanki",
+    "mnemonic": "\"Ex-Centric\": Someone whose behavior has moved out of the center circle of regular normalcy."
+  },
+  "echelon": {
+    "meaning": "A level or rank in an organization, a profession, or society.",
+    "hindiMeaning": "Star / Pad-kram",
+    "mnemonic": "\"Scale-On\": Climbing up the scale to reach the highest corporate execution rank in a tech firm."
+  },
+  "eclectic": {
+    "meaning": "Deriving ideas, style, or taste from a broad and diverse range of sources.",
+    "hindiMeaning": "Udaar / Vividhta-purna",
+    "mnemonic": "\"Elect-Select\": Carefully selecting parts from Python, Node.js, and Go to build the ultimate unified backend architecture."
+  },
+  "eclipse": {
+    "meaning": "Obscure the light from; surpass or outshine.",
+    "hindiMeaning": "Grahan lagna / Peeche chhod dena",
+    "mnemonic": "\"Solar-Eclipse\": A brilliant junior engineer whose coding speed completely eclipses (outshines) the senior team leads."
+  },
+  "economy": {
+    "meaning": "Careful management of available resources; thrift.",
+    "hindiMeaning": "Kifayat / Bachat",
+    "mnemonic": "\"Eco-Save\": Running a lean microservice architecture to save maximum hosting costs and compute power."
+  },
+  "edify": {
+    "meaning": "Instruct or improve someone morally or intellectually.",
+    "hindiMeaning": "Shikshit karna / Updesh dena",
+    "mnemonic": "\"Ed-i-Fix (Education-Fix)\": Using high-quality technical education to fix gaps in a beginner's knowledge framework."
+  },
+  "efficacious": {
+    "meaning": "Successful in producing a desired or intended result.",
+    "hindiMeaning": "Asardar / Prabhavkari",
+    "mnemonic": "\"Effect-Cause\": A refactored database query that has the exact positive effect of speeding up the production client database."
+  },
+  "effrontery": {
+    "meaning": "Insolent or impertinent behavior; audacity.",
+    "hindiMeaning": "Besharmi / Dheet-pan",
+    "mnemonic": "\"In-Front-of-All\": Having the shameless audacity to scream in front of the whole boardroom at the manager."
+  },
+  "egalitarian": {
+    "meaning": "Believing in the principle that all people are equal.",
+    "hindiMeaning": "Samata-vadi / Barabari ka",
+    "mnemonic": "\"Equal-itarian\": A workplace culture built entirely on treating every team member as an absolute equal."
+  },
+  "egregious": {
+    "meaning": "Outstandingly bad; shocking.",
+    "hindiMeaning": "Nindniya / Bhayanak bura",
+    "mnemonic": "\"Aggressive-Grave\": A massive production code mistake so bad it causes a grave financial crash for the enterprise."
+  },
+  "elaborate": {
+    "meaning": "Involving many carefully arranged parts or details; detailed.",
+    "hindiMeaning": "Vistrit / Pechida",
+    "mnemonic": "\"Elaborate-Plan\": Spending hours writing a highly detailed architectural blueprint for an LLM research graph."
+  },
+  "elated": {
+    "meaning": "Ecstatically happy.",
+    "hindiMeaning": "Bahut khush / Phoole na samana",
+    "mnemonic": "\"Elevated-Mood\": Hitting a perfect 340/340 mock score, instantly elevating your mood to the absolute clouds."
+  },
+  "elementary": {
+    "meaning": "Relating to the rudiments of a subject; basic.",
+    "hindiMeaning": "Prathmik / Saral",
+    "mnemonic": "\"Element-Basic\": Mastering the basic core chemical elements before building complex engineering solutions."
+  },
+  "elicit": {
+    "meaning": "Evoke or draw out a response from someone in reaction to one's own actions.",
+    "hindiMeaning": "Nikalwana / Ujaagar karna",
+    "mnemonic": "\"Illegal-Sit\": Asking sharp investigative questions to draw out the hidden truth from a hacker."
+  },
+  "elitist": {
+    "meaning": "Demonstrating a belief that a society or system should be led by an elite.",
+    "hindiMeaning": "Abhijat-vadi / Ghamandi",
+    "mnemonic": "\"Elite-Only\": An exclusive tech club that looks down on beginners, claiming it is strictly for elite minds only."
+  },
+  "eloquent": {
+    "meaning": "Fluent or persuasive in speaking or writing.",
+    "hindiMeaning": "Su-vakta / Asardar bolne wala",
+    "mnemonic": "\"Elegant-Quotes\": A speaker who constructs elegant quotes that flow smoothly and convince the whole audience."
+  },
+  "elucidate": {
+    "meaning": "Make something clear; explain.",
+    "hindiMeaning": "Saaf-saaf samjhana / Spasht karna",
+    "mnemonic": "\"Lucy-Date\": Breaking down a complex database schematic so clearly that even a child can understand it."
   }
 }

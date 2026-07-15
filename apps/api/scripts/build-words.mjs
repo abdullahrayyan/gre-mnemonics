@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * Merges the word corpus with the curated (hand-checked) mnemonics and writes
  * the single JSON file the web app ships with.

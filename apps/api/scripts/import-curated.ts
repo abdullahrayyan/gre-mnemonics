@@ -4,13 +4,16 @@
  *
  *   node --import tsx apps/api/scripts/import-curated.ts <batch-file>
  *
- * The batch file is one word per line, pipe-delimited:
+ * One word per line, pipe-delimited, in either shape:
  *
  *   word | english meaning | hindi gloss | "Hook": sentence using the word
+ *   word | english meaning (hindi gloss) | "Hook": sentence using the word
  *
- * Blank lines, `#` comments, and a markdown header/separator row are ignored, so
- * you can paste a markdown table straight in. Existing entries are overwritten,
- * others are left untouched (safe to re-run and to import batch after batch).
+ * The 3-column shape is what Gemini emits, with the Hindi tucked into a trailing
+ * parenthetical; it is split back out here. Markdown `**bold**`/`*italic*` markers
+ * are stripped, so a copied table can be pasted in untouched. Blank lines, `#`
+ * comments, and header/separator rows are ignored. Existing entries are
+ * overwritten and others left alone, so this is safe to re-run batch after batch.
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -32,29 +35,51 @@ let added = 0;
 let updated = 0;
 const skipped: string[] = [];
 
+/** Drop markdown emphasis and collapse the whitespace it leaves behind. */
+const clean = (cell: string) => cell.replace(/\*+/g, '').replace(/\s+/g, ' ').trim();
+
+/**
+ * Pull a trailing "(hindi gloss)" off an English meaning. Anchored to the end so
+ * a meaning with its own aside — "enjoyable (of an atmosphere or event) (Milansar)"
+ * — keeps the aside and yields only the last group as the gloss.
+ */
+const splitGloss = (meaning: string): [string, string] => {
+  const match = /^(.*?)\s*\(([^()]*)\)\s*$/.exec(meaning);
+  return match?.[1] && match[2] ? [match[1].trim(), match[2].trim()] : [meaning, ''];
+};
+
 for (const raw of readFileSync(batchFile, 'utf8').split(/\r?\n/)) {
   const line = raw.trim().replace(/^\|/, '').replace(/\|$/, '').trim();
   if (!line || line.startsWith('#')) continue;
   if (/^[\s|:-]+$/.test(line)) continue; // markdown separator row
 
-  const cells = line.split('|').map((cell) => cell.trim());
-  if (cells.length < 4) {
+  const cells = line.split('|').map(clean);
+  const word = cells[0];
+  if (!word || /^word$/i.test(word)) continue; // header row of a pasted table
+
+  // 3 columns is Gemini's shape (gloss inside the meaning); 4+ is the explicit
+  // shape, where any extra pipes belong to the mnemonic sentence.
+  let meaning = cells[1] ?? '';
+  let hindiMeaning = '';
+  let mnemonic = '';
+  if (cells.length === 3) {
+    [meaning, hindiMeaning] = splitGloss(meaning);
+    mnemonic = cells[2] ?? '';
+  } else if (cells.length >= 4) {
+    hindiMeaning = cells[2] ?? '';
+    mnemonic = cells.slice(3).join(' | ').trim();
+  }
+
+  if (!meaning || !mnemonic) {
     skipped.push(raw.trim().slice(0, 60));
     continue;
   }
-  const [word, meaning, hindiMeaning, ...rest] = cells;
-  if (!word || !rest.join('|').trim()) {
-    skipped.push(raw.trim().slice(0, 60));
-    continue;
-  }
-  // Header row of a pasted table.
-  if (/^word$/i.test(word)) continue;
 
   const key = word.toLowerCase();
   const entry: CuratedEntry = {
-    ...(meaning ? { meaning } : {}),
+    meaning,
     ...(hindiMeaning ? { hindiMeaning } : {}),
-    mnemonic: rest.join('|').trim(),
+    mnemonic,
   };
   if (existing[key]) updated += 1;
   else added += 1;
