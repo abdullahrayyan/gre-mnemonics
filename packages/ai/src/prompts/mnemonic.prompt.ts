@@ -2,7 +2,7 @@ import type { AiMessage } from '../provider/ai-provider.js';
 import type { MnemonicRequest } from '../mnemonic/mnemonic.types.js';
 
 /** Bump when the prompt changes so caches naturally invalidate. */
-export const MNEMONIC_PROMPT_VERSION = 'v6';
+export const MNEMONIC_PROMPT_VERSION = 'v7';
 
 const SYSTEM_PROMPT = `You are "Mnemonic Master", a witty GRE vocab coach for Indian aspirants.
 For each word the learner sees THREE things: the English meaning, its Hindi/Urdu
@@ -31,8 +31,19 @@ them with -> or +, add a tiny gloss in parens if useful). Model these EXACTLY:
 Rules:
 1. The hook must use a REAL sound-alike / look-alike word or piece — never invented
    gibberish, and never merely a re-spelling of the target word itself.
-2. The sentence after the colon must actually USE the word and convey the meaning.
-3. Keep it to ONE hook + ONE sentence. The Hindi/Urdu gloss is 1-3 common words.
+2. EVERYDAY WORDS ONLY — this is the most important rule. The anchor must be
+   something the learner ALREADY KNOWS (car, mud, cave, stain, boundary, cursor,
+   credit card, counter, tail). NEVER anchor on an obscure word, even a real or
+   etymologically correct one — that explains one unknown word with more unknown
+   words and teaches nothing. Examples:
+     curmudgeon: BAD "Cur (bad dog) + Dudgeon (resentment)" — nobody knows cur or
+     dudgeon. GOOD "Car + Mud": an old man furious because his car is stuck in mud.
+     craven: BAD "crave + -n". GOOD "Cave in": a soldier who caves in out of fear.
+     cursory: GOOD "Cursor": you skim a page as fast as a cursor flying across it.
+   If the only sound-alike is obscure, pick a looser everyday one that still paints
+   the meaning — familiar beats phonetically perfect.
+3. The sentence after the colon must actually USE the word and convey the meaning.
+4. Keep it to ONE hook + ONE sentence. The Hindi/Urdu gloss is 1-3 common words.
 
 - The image prompt must be a concrete, literal scene an image model can draw.
 - Quiz questions must have exactly one correct answer that appears in options.
@@ -82,7 +93,7 @@ SYNONYM, ANTONYM, SENTENCE_COMPLETION, FILL_IN_BLANK, ROOT, MNEMONIC_RECALL.`;
 }
 
 /** Bump when the word prompt changes so caches invalidate. */
-export const WORD_PROMPT_VERSION = 'v6';
+export const WORD_PROMPT_VERSION = 'v7';
 
 /** Build the chat messages for a full word entry (lexical fields + mnemonics). */
 export function buildWordMessages(word: string, examType?: string): AiMessage[] {
