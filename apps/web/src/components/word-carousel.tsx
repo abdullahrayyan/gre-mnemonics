@@ -116,7 +116,9 @@ export function WordCarousel({ words, index, onIndexChange }: WordCarouselProps)
 
             {word.ai.englishMnemonic ? (
               <p className="rounded-2xl bg-slate-100 p-4 text-slate-700 dark:bg-white/5 dark:text-slate-200">
-                <span className="font-semibold text-slate-900 dark:text-white">English:</span>{' '}
+                <span className="font-semibold text-slate-900 dark:text-white">
+                  {word.ai.hinglishMnemonic ? 'English:' : 'Mnemonic:'}
+                </span>{' '}
                 {word.ai.englishMnemonic}
               </p>
             ) : null}

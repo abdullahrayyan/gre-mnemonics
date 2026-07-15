@@ -13,6 +13,7 @@ import {
 import type { AchievementDto, LeaderboardEntryDto } from '@mnemonic/types';
 import type { RawStats } from '../modules/stats/application/stats-store.port.js';
 import { toWordResponse, type WordResponse } from '../modules/words/application/word.dto.js';
+import { CURATED_MNEMONICS } from './curated-mnemonics.js';
 
 /** Stable identity for the seeded demo learner (matches {@link DEMO_CLERK_ID}). */
 export const DEMO_USER_ID = 'demo-user-0000-0000-0000-000000000001';
@@ -376,9 +377,26 @@ function loadGeneratedCorpus(): CreateWordInput[] | null {
 }
 
 /**
+ * Overlay a hand-vetted mnemonic over an AI-generated entry when we have one.
+ * A curated word carries a single reviewed hook, so the English/Hinglish pair is
+ * collapsed to that one mnemonic (hinglish cleared).
+ */
+function applyCurated(input: CreateWordInput): CreateWordInput {
+  const curated = CURATED_MNEMONICS[input.word.toLowerCase()];
+  if (!curated) return input;
+  return {
+    ...input,
+    meaning: curated.meaning ?? input.meaning,
+    hindiMeaning: curated.hindiMeaning ?? input.hindiMeaning,
+    ai: { ...input.ai, englishMnemonic: curated.mnemonic, hinglishMnemonic: null },
+  };
+}
+
+/**
  * Build the demo {@link Word} aggregates (all PUBLISHED) at a fixed base time.
- * Uses the full AI-generated corpus when present, else the curated fallback set.
- * Malformed generated entries are skipped rather than failing the whole boot.
+ * Uses the full AI-generated corpus when present, else the curated fallback set,
+ * with hand-vetted mnemonics overlaid on top. Malformed generated entries are
+ * skipped rather than failing the whole boot.
  */
 export function buildDemoWords(now: Date): Word[] {
   const inputs = loadGeneratedCorpus() ?? DEMO_WORD_INPUTS;
@@ -387,7 +405,7 @@ export function buildDemoWords(now: Date): Word[] {
     try {
       words.push(
         Word.create(
-          { ...input, status: WordStatus.PUBLISHED },
+          { ...applyCurated(input), status: WordStatus.PUBLISHED },
           { id: `demo-word-${String(index + 1).padStart(4, '0')}`, now },
         ),
       );

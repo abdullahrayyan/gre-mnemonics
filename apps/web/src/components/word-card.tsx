@@ -28,7 +28,9 @@ export function WordCard({ word }: { word: WordDto }) {
       <div className="mt-auto space-y-2">
         {word.ai.englishMnemonic ? (
           <p className="rounded-lg bg-slate-100 p-3 text-sm text-slate-700 dark:bg-white/5 dark:text-slate-200">
-            <span className="font-semibold text-slate-900 dark:text-white">English:</span>{' '}
+            <span className="font-semibold text-slate-900 dark:text-white">
+              {word.ai.hinglishMnemonic ? 'English:' : 'Mnemonic:'}
+            </span>{' '}
             {word.ai.englishMnemonic}
           </p>
         ) : null}
