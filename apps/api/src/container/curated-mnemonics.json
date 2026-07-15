@@ -88,5 +88,130 @@
     "meaning": "Seeming difficult to deal with in anticipation; intimidating.",
     "hindiMeaning": "Daraona / Kathin",
     "mnemonic": "\"Daantna\": A task so massive it feels like a strict teacher daant-ing (scolding) you just by looking at it."
+  },
+  "decorum": {
+    "meaning": "Behavior in keeping with good taste and propriety.",
+    "hindiMeaning": "Shishtachar / Maryada",
+    "mnemonic": "\"Decorate the Room\": When guests arrive, you decorate the room and maintain proper, polite manners (decorum)."
+  },
+  "decry": {
+    "meaning": "Publicly denounce or criticize.",
+    "hindiMeaning": "Ninda karna / Chillakar virodh karna",
+    "mnemonic": "\"Deep + Cry\": Crying out loud in public to protest against something bad."
+  },
+  "defame": {
+    "meaning": "Damage the good reputation of someone.",
+    "hindiMeaning": "Badnaam karna",
+    "mnemonic": "\"De (Down) + Fame\": Pulling someone's fame down by spreading rumors."
+  },
+  "deference": {
+    "meaning": "Polite submission and respect.",
+    "hindiMeaning": "Sammaan / Aadar",
+    "mnemonic": "\"Respect the Difference\": Recognizing the difference in age or rank and showing high respect to an elder."
+  },
+  "deflect": {
+    "meaning": "Cause something to change direction; turn aside.",
+    "hindiMeaning": "Mishna / Rasta badalna",
+    "mnemonic": "\"Reflect vs Deflect\": Like a mirror reflects light, a shield deflects an incoming arrow away from you."
+  },
+  "deft": {
+    "meaning": "Neatly skillful and quick in one's movements.",
+    "hindiMeaning": "Chataur / Phurtila",
+    "mnemonic": "\"Deaf to Distractions\": A master craftsman or coder who is so focused and deft with their hands that they are deaf to outside noise."
+  },
+  "deify": {
+    "meaning": "Treat or worship someone as a god.",
+    "hindiMeaning": "Devta banana / Bhagwan manna",
+    "mnemonic": "\"Deity\": Turning a regular human into a deity (God) because you admire them too much."
+  },
+  "deleterious": {
+    "meaning": "Causing harm or damage.",
+    "hindiMeaning": "Hanikarak",
+    "mnemonic": "\"Delete + Serious\": Something so harmful that it causes serious damage, forcing you to delete it from your life."
+  },
+  "deliberate": {
+    "meaning": "Done consciously and intentionally; carefully weighed.",
+    "hindiMeaning": "Jaan-bujhkar / Socha-samjha",
+    "mnemonic": "\"Daily + Debate\": Thinking so carefully that it feels like a daily debate in your mind before making a final choice."
+  },
+  "delineate": {
+    "meaning": "Describe or portray something precisely.",
+    "hindiMeaning": "Ruprekha banana / Saaf samjhana",
+    "mnemonic": "\"De-Line-Ate\": Drawing a clear line on paper to show boundaries step-by-step."
+  },
+  "delusion": {
+    "meaning": "A belief firmly maintained despite being contradicted by reality.",
+    "hindiMeaning": "Bhram / Vehm",
+    "mnemonic": "\"Illusion in Mind\": A permanent illusion stuck in your head making you believe things that aren't real."
+  },
+  "demur": {
+    "meaning": "Raise doubts or objections; show reluctance.",
+    "hindiMeaning": "Aapatti jatana",
+    "mnemonic": "\"Damn + Mur (Mudna)\": Stopping right where you are, turning around (mudna), and saying, \"Damn, I object to this!\""
+  },
+  "denigrate": {
+    "meaning": "Criticize unfairly; disparage.",
+    "hindiMeaning": "Neecha dikhana / Badnaam karna",
+    "mnemonic": "\"Degrade + Negate\": Trying to negate someone's hard work and degrade their value in front of others."
+  },
+  "denounce": {
+    "meaning": "Publicly declare to be wrong or evil.",
+    "hindiMeaning": "Arop lagana / Khuleaam ninda karna",
+    "mnemonic": "\"Announce the Crime\": Making a loud public announcement that a politician or policy is completely corrupt."
+  },
+  "deportment": {
+    "meaning": "A person's behavior or manners.",
+    "hindiMeaning": "Aachran / Dhang",
+    "mnemonic": "\"How you behave at the Airport/Port\": Your behavioral etiquette (deportment) matters when you interact with authorities at a port."
+  },
+  "depose": {
+    "meaning": "Remove from office suddenly and forcefully; testify.",
+    "hindiMeaning": "Pad se hatana / Bayaan dena",
+    "mnemonic": "\"De-Position\": Kicking a dictator out of his royal position by force."
+  },
+  "depravity": {
+    "meaning": "Moral corruption; wickedness.",
+    "hindiMeaning": "Bhrashtachar / Paap",
+    "mnemonic": "\"Deep + Gravity\": Someone sinking deep into the gravity of crimes and bad morals."
+  },
+  "deprecate": {
+    "meaning": "Express disapproval of; deplore.",
+    "hindiMeaning": "Niradar karna / Asahmti jatana",
+    "mnemonic": "\"Depreciate Value\": Looking down on an idea or criticizing it, lowering its importance (self-deprecating humor = making fun of yourself)."
+  },
+  "deride": {
+    "meaning": "Express contempt for; ridicule.",
+    "hindiMeaning": "Mazaak udana / Upahaas",
+    "mnemonic": "\"De-Ride\": Making fun of someone so badly that you completely ruin their ride or confidence."
+  },
+  "derivative": {
+    "meaning": "Imitative of the work of another person, and usually disapproved of for that reason.",
+    "hindiMeaning": "Nakal kiya hua / Upaj",
+    "mnemonic": "\"Derived from Calculus\": Not original — something derived entirely from an existing formula or idea."
+  },
+  "desiccate": {
+    "meaning": "Remove the moisture from something; cause to become completely dry.",
+    "hindiMeaning": "Sukhana",
+    "mnemonic": "\"Desert + Cake\": Leaving a cake out in the hot desert sun until it becomes completely dry and crumbly."
+  },
+  "despotic": {
+    "meaning": "Characteristic of a despot; tyrannical.",
+    "hindiMeaning": "Tanashah",
+    "mnemonic": "\"Boss + Dictator\": A cruel, absolute ruler who acts like a ruthless boss over everyone."
+  },
+  "desultory": {
+    "meaning": "Lacking a plan, purpose, or enthusiasm.",
+    "hindiMeaning": "Asangad / Bina maqsad ke",
+    "mnemonic": "\"Result-less Story\": Jumping from one topic to another without a plan, leading to a result-less story."
+  },
+  "detente": {
+    "meaning": "The easing of hostility or strained relations, especially between countries.",
+    "hindiMeaning": "Tanaav mein kami",
+    "mnemonic": "\"De-Tension\": The absolute easing of tension between two warring nations."
+  },
+  "deter": {
+    "meaning": "Discourage someone from doing something by instilling doubt or fear of the consequences.",
+    "hindiMeaning": "Rokna / Darna",
+    "mnemonic": "\"Detergent bars the dirt\": Like soap keeps dirt away, a heavy fine deters people from breaking traffic laws."
   }
 }
