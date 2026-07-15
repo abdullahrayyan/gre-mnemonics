@@ -213,5 +213,255 @@
     "meaning": "Discourage someone from doing something by instilling doubt or fear of the consequences.",
     "hindiMeaning": "Rokna / Darna",
     "mnemonic": "\"Detergent bars the dirt\": Like soap keeps dirt away, a heavy fine deters people from breaking traffic laws."
+  },
+  "detract": {
+    "meaning": "Reduce or take away the worth or value of something.",
+    "hindiMeaning": "Kam karna / Mahtva ghatana",
+    "mnemonic": "\"De (Down) + Attract\": Pulling the attraction or value of an achievement down by pointing out minor flaws."
+  },
+  "detrimental": {
+    "meaning": "Tending to cause harm.",
+    "hindiMeaning": "Hanikarak",
+    "mnemonic": "\"Nutrient ka Ulta\": Nutrients are good for health; something detrimental acts like a poison that ruins health."
+  },
+  "deviate": {
+    "meaning": "Depart from an established course or standard.",
+    "hindiMeaning": "Bhatakna / Rasta badalna",
+    "mnemonic": "\"De-Route via Alternative\": Turning away from the main highway to take a side road."
+  },
+  "devious": {
+    "meaning": "Showing a skillful use of underhanded tactics to achieve goals; winding.",
+    "hindiMeaning": "Chalaak / Ghumao-dar",
+    "mnemonic": "\"Devil-ish\": A devious plan is a cunning, devil-ish scheme to trick someone."
+  },
+  "dexterous": {
+    "meaning": "Showing or having skill, especially with the hands.",
+    "hindiMeaning": "Kushal / Phurtila",
+    "mnemonic": "\"Dexter's Laboratory\" / \"Dexterity\": Think of an expert scientist or coder who is incredibly quick and skilled with his hands."
+  },
+  "diatribe": {
+    "meaning": "A forceful and bitter verbal attack against someone or something.",
+    "hindiMeaning": "Ninda / Tikhi aalochna",
+    "mnemonic": "\"Die + Tribe\": An angry speech wishing a whole tribe would die — a massive verbal teardown."
+  },
+  "dichotomy": {
+    "meaning": "A division or contrast between two things represented as being opposed or entirely different.",
+    "hindiMeaning": "Dvibhajani / Do bhaagon mein batna",
+    "mnemonic": "\"Di (Two) + Cut\": Literally cutting something cleanly into two completely opposite halves."
+  },
+  "dictate": {
+    "meaning": "State with authoritative force; command.",
+    "hindiMeaning": "Hukm chalana / Likhwana",
+    "mnemonic": "\"Dictator\": Giving orders like an absolute ruler that everyone else must follow without question."
+  },
+  "dictum": {
+    "meaning": "A formal pronouncement from an authoritative source.",
+    "hindiMeaning": "Kahaavat / Aadesh",
+    "mnemonic": "\"Dictator's words\": An official, wise, or authoritative saying that is treated as law."
+  },
+  "didactic": {
+    "meaning": "Intended to teach, particularly in having moral instruction as an ulterior motive.",
+    "hindiMeaning": "Shikshatmak / Updesh-atmak",
+    "mnemonic": "\"Didi + Act\": Your elder Didi always acting like a school teacher, trying to give you life lessons and moral lectures."
+  },
+  "diffident": {
+    "meaning": "Modest or shy because of a lack of self-confidence.",
+    "hindiMeaning": "Sharmila / Aatm-vishwas ki kami",
+    "mnemonic": "\"Difficult to Confide\": Someone who finds it difficult to talk to people because they lack confidence."
+  },
+  "diffuse": {
+    "meaning": "Spread out over a large area; not concentrated.",
+    "hindiMeaning": "Phailana / Vistrit",
+    "mnemonic": "\"Diffuser\": Like a room freshener diffuser that spreads a scent widely across the entire hall."
+  },
+  "digression": {
+    "meaning": "A temporary departure from the main subject in speech or writing.",
+    "hindiMeaning": "Bhatkaav / Vishayantar",
+    "mnemonic": "\"Diversion on Highway\": Leaving the main topic during a lecture to tell a random story, then coming back."
+  },
+  "dilatory": {
+    "meaning": "Slow to act; intended to cause delay.",
+    "hindiMeaning": "Dheema / Vilambkari",
+    "mnemonic": "\"Delay-tory\": Doing tasks so slowly that you deliberately cause a delay."
+  },
+  "dilettante": {
+    "meaning": "A person who cultivates an area of interest without real commitment or knowledge.",
+    "hindiMeaning": "Nau-sikhia / Shaukiya",
+    "mnemonic": "\"Dil se thoda sa\": Someone who dabbles in coding, photography or music just for fun (dil se), but isn't a serious professional."
+  },
+  "diminutive": {
+    "meaning": "Extremely or unusually small.",
+    "hindiMeaning": "Chhota / Nanha",
+    "mnemonic": "\"Diminish\": Something that has diminished in size so much that it has become tiny."
+  },
+  "dirge": {
+    "meaning": "A lament for the dead, especially one forming part of a funeral rite.",
+    "hindiMeaning": "Shok-geet",
+    "mnemonic": "\"Die + Song\": A sad song sung when someone has died."
+  },
+  "discernible": {
+    "meaning": "Able to be discerned; perceptible.",
+    "hindiMeaning": "Saaf dikhne wala / Pehchana jaane yogya",
+    "mnemonic": "\"Discoverable\": Clear enough to be noticed or discovered by the eyes or mind."
+  },
+  "disciple": {
+    "meaning": "A personal follower of a teacher, philosopher, or religious leader.",
+    "hindiMeaning": "Shishya / Chela",
+    "mnemonic": "\"Discipline\": A student who follows a master with strict discipline."
+  },
+  "discomfit": {
+    "meaning": "Make someone feel uneasy or embarrassed.",
+    "hindiMeaning": "Ghabra dena / Bechain karna",
+    "mnemonic": "\"Dis-comfort\": Literally putting someone out of their comfort zone and making them blush or sweat."
+  },
+  "disconcerting": {
+    "meaning": "Causing one to feel unsettled.",
+    "hindiMeaning": "Chintajanak / Bechain karne wala",
+    "mnemonic": "\"Dis-concert\": If the music stops suddenly during a live concert, the sudden silence is highly disconcerting."
+  },
+  "discount": {
+    "meaning": "Regard a possibility or fact as being unworthy of consideration; reduce price.",
+    "hindiMeaning": "Kharij karna / Nazarandaz",
+    "mnemonic": "\"Dismiss the Count\": Throwing an idea out of calculations because you think it's highly unlikely."
+  },
+  "discreet": {
+    "meaning": "Careful and circumspect in one's speech or actions, especially to avoid causing offense.",
+    "hindiMeaning": "Samajhdar / Savdhan",
+    "mnemonic": "\"Secret Keeper\": Being quiet and careful so secrets don't leak — the double 'e' looks like two closed eyes keeping a secret, unlike discrete which means separate."
+  },
+  "discrepancy": {
+    "meaning": "An illogical or surprising lack of compatibility between two or more facts.",
+    "hindiMeaning": "Visangati / Antar",
+    "mnemonic": "\"Difference in Receipt\": A mismatch between the money you spent and the amount written on the final bill."
+  },
+  "disdain": {
+    "meaning": "The feeling that someone or something is unworthy of one's consideration or respect.",
+    "hindiMeaning": "Tiraskar / Ghrina",
+    "mnemonic": "\"Dis-respect the Stain\": Looking down on someone with absolute contempt, treating them like a dirty stain."
+  },
+  "disentangle": {
+    "meaning": "Free something from an entanglement; extricate.",
+    "hindiMeaning": "Suljhana",
+    "mnemonic": "\"Dis + Tangle\": Untangling a messy knot of wires or a complicated situation."
+  },
+  "disingenuous": {
+    "meaning": "Not candid or sincere, typically by pretending that one knows less about something than one really does.",
+    "hindiMeaning": "Kapat-purna / Banawati",
+    "mnemonic": "\"Dis (Not) + Genuine\": Someone who pretends to be innocent but is secretly playing a game."
+  },
+  "disinterested": {
+    "meaning": "Not influenced by considerations of personal advantage; unbiased.",
+    "hindiMeaning": "Nishpaksh",
+    "mnemonic": "\"Distance from Interest\": A judge who keeps his personal profits away from a case so he can remain completely fair (not the same as bored/uninterested)."
+  },
+  "dismantle": {
+    "meaning": "Take a machine or structure to pieces.",
+    "hindiMeaning": "Tukde-tukde karna / Todna",
+    "mnemonic": "\"Mantelpiece nikalna\": Taking an entire engine or structure apart piece by piece."
+  },
+  "disparate": {
+    "meaning": "Essentially different in kind; not allowing comparison.",
+    "hindiMeaning": "Binn / Bilkul alag",
+    "mnemonic": "\"Dis-separate\": Keeping things completely different and separate because they don't match."
+  },
+  "dispense": {
+    "meaning": "Distribute or provide a service or information; manage without (dispense with).",
+    "hindiMeaning": "Baantna / Chhutkara paana",
+    "mnemonic": "\"Dispenser\": Like a sanitizer dispenser giving out soap, or dispensing with old rules (throwing them away)."
+  },
+  "disperse": {
+    "meaning": "Distribute or spread over a wide area.",
+    "hindiMeaning": "Bikherna / Titra-bitra hona",
+    "mnemonic": "\"Dis-purse\": If a purse snaps open on the street, all the coins disperse (scatter) everywhere."
+  },
+  "dissemble": {
+    "meaning": "Conceal one's true motives, feelings, or beliefs.",
+    "hindiMeaning": "Dhong karna / Chhupana",
+    "mnemonic": "\"Dis-assemble your real self\": Hiding your true, angry face behind a fake smile to fool people."
+  },
+  "disseminate": {
+    "meaning": "Spread something, especially information, widely.",
+    "hindiMeaning": "Prachar karna / Phailana",
+    "mnemonic": "\"Discuss via Internet\": Blasting information, news or knowledge across the web so millions see it."
+  },
+  "dissent": {
+    "meaning": "The expression or holding of opinions at variance with those officially held.",
+    "hindiMeaning": "Matbhed / Asahmti",
+    "mnemonic": "\"Dis-sentiment\": Going completely against the popular sentiment, or voting \"No\" when everyone else votes \"Yes\"."
+  },
+  "dissident": {
+    "meaning": "A person who opposes official policy, especially that of an authoritarian state.",
+    "hindiMeaning": "Vidrohi",
+    "mnemonic": "\"Dis-Sident (sidhe baithne ka ulta)\": A rebel who refuses to sit down quietly and actively protests against the government."
+  },
+  "distend": {
+    "meaning": "Swell or cause to swell by pressure from inside.",
+    "hindiMeaning": "Phoolna / Sujan",
+    "mnemonic": "\"Distance + Extend\": A stomach or balloon extending its size and expanding outwards due to gas or water."
+  },
+  "distill": {
+    "meaning": "Extract the essential elements of something; purify a liquid.",
+    "hindiMeaning": "Saar nikalna / Shuddh karna",
+    "mnemonic": "\"Distilled Water\": Boiling away the waste to extract only the purest, most concentrated essence of a topic or liquid."
+  },
+  "distort": {
+    "meaning": "Pull or twist out of shape; give a misleading account of.",
+    "hindiMeaning": "Marodna / Galat roop mein dikhana",
+    "mnemonic": "\"Dis-torture the truth\": Twisting facts or a picture so much that the original shape and meaning is ruined."
+  },
+  "distressed": {
+    "meaning": "Suffering from anxiety, sorrow, or pain.",
+    "hindiMeaning": "Peedit / Pareshan",
+    "mnemonic": "\"Stress extreme level\": Being deeply troubled, heartbroken, or facing a highly stressful emergency."
+  },
+  "divergent": {
+    "meaning": "Tending to be different or develop in different directions.",
+    "hindiMeaning": "Binn / Alag disha mein jaane wala",
+    "mnemonic": "\"Diverge\": Lines or opinions that start at the same point but split up and head in totally opposite directions."
+  },
+  "divorced": {
+    "meaning": "Separate or disconnected from something.",
+    "hindiMeaning": "Alag / Tuta hua",
+    "mnemonic": "\"Divorce\": Permanently separated from reality or from another entity — his theories are completely divorced from reality."
+  },
+  "divulge": {
+    "meaning": "Make known private or sensitive information.",
+    "hindiMeaning": "Rahasya kholna / Pardafash karna",
+    "mnemonic": "\"Die + Vulg (vulgar secret)\": Promising you won't reveal a secret until you die, but then divulging (leaking) it to everyone."
+  },
+  "doctrinaire": {
+    "meaning": "Seeking to impose a doctrine in all circumstances without regard to practical considerations.",
+    "hindiMeaning": "Katter / Siddhant-vaadi",
+    "mnemonic": "\"Doctor of Rules\": A rigid person who stubbornly insists on following bookish theories, completely ignoring reality."
+  },
+  "documentary": {
+    "meaning": "Consisting of official written or printed matter; a factual film.",
+    "hindiMeaning": "Dastawezi / Tathya-atmak",
+    "mnemonic": "\"Documents\": Based entirely on solid, real-life documents and facts rather than fiction."
+  },
+  "dogged": {
+    "meaning": "Having or showing tenacity and grim persistence.",
+    "hindiMeaning": "Ziddi / Dhuni",
+    "mnemonic": "\"Dog-like chase\": Chasing a goal relentlessly, like a hunting dog that absolutely refuses to give up the scent."
+  },
+  "dogmatic": {
+    "meaning": "Inclined to lay down principles as incontrovertibly true.",
+    "hindiMeaning": "Hatt-dharmi / Kattar",
+    "mnemonic": "\"Dog is Must\": My way is the only right way — rigidly imposing your beliefs on everyone else."
+  },
+  "dormant": {
+    "meaning": "Having normal physical functions suspended or slowed down for a period of time.",
+    "hindiMeaning": "Nishkriya / Soya hua",
+    "mnemonic": "\"Dormitory\": Like students sleeping soundly in a university dormitory — a volcano or virus that is currently inactive but alive."
+  },
+  "dowdy": {
+    "meaning": "Unfashionable and without style in appearance.",
+    "hindiMeaning": "Ghisapita / Fika",
+    "mnemonic": "\"Dull + Lady\": Dressing in old, sloppy, unfashionable clothes that lack colour or sharpness."
+  },
+  "draconian": {
+    "meaning": "Excessively harsh and severe.",
+    "hindiMeaning": "Kayi-kathor / Nirdayi",
+    "mnemonic": "\"Dracula's Laws\": Imagine Dracula becoming the prime minister and passing terrifyingly cruel, severe punishments for tiny mistakes."
   }
 }
