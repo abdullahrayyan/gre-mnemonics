@@ -7,4 +7,15 @@ coverage/
 pnpm-lock.yaml
 *.md
 CHANGELOG.md
-packages/database/prisma/migrations/
+
+# Static export — build output, not source.
+out/
+
+# Generated: scripts/build-words.mjs writes this minified on purpose, since the
+# browser downloads it. Formatting it would inflate what every visitor fetches,
+# and the next build would undo the formatting anyway.
+apps/web/src/data/words.json
+
+# Bulk source data, not code. data/curated.json is deliberately NOT ignored —
+# it is hand-edited, so keeping it formatted keeps its diffs reviewable.
+data/corpus.json

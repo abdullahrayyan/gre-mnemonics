@@ -187,7 +187,9 @@ export function GroupRevision({ group, words }: { group: number; words: Word[] }
           </Button>
         )}
       </div>
-      <p className="text-center text-xs text-slate-400">Swipe or use ← → · tap the card to reveal</p>
+      <p className="text-center text-xs text-slate-400">
+        Swipe or use ← → · tap the card to reveal
+      </p>
     </div>
   );
 }

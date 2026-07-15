@@ -14,25 +14,6 @@ jobs:
     name: Lint · Typecheck · Test · Build
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:16-alpine
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: mnemonic_test
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U postgres"
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 10
-
-    env:
-      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/mnemonic_test?schema=public
-      DIRECT_URL: postgresql://postgres:postgres@localhost:5432/mnemonic_test?schema=public
-
     steps:
       - uses: actions/checkout@v4
 
@@ -64,3 +45,12 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      # The deployed artifact is a folder of static files. Building it in CI only
+      # proves the build exits 0; this proves it actually emitted the site.
+      - name: Check the static export was emitted
+        run: |
+          test -f apps/web/out/index.html
+          test -f apps/web/out/group/1.html
+          test -f apps/web/out/group/45/revise.html
+          echo "pages: $(find apps/web/out -name '*.html' | wc -l)"

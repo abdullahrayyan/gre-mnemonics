@@ -40,7 +40,8 @@ export function GroupIndex({ groups, total }: { groups: GroupSummary[]; total: n
               <Card
                 className={cn(
                   'flex h-full items-center justify-between gap-3 transition hover:border-indigo-300 hover:shadow-md dark:hover:border-indigo-500/40',
-                  complete && 'border-emerald-300 bg-emerald-50/50 dark:border-emerald-500/30 dark:bg-emerald-500/5',
+                  complete &&
+                    'border-emerald-300 bg-emerald-50/50 dark:border-emerald-500/30 dark:bg-emerald-500/5',
                 )}
               >
                 <div className="min-w-0">

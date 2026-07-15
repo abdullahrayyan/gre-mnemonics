@@ -1,93 +1,118 @@
-# Mnemonic Master AI
+# GRE Words with Mnemonics
 
-> AI-powered vocabulary learning platform. Remember English words forever with
-> AI-generated Hinglish mnemonics, funny stories, visual imagination, spaced
-> repetition, quizzes, gamification, and an AI tutor.
+Read 1111 GRE words, each with a memory hook and a Hindi meaning, in groups of
+25 — then revise the group you just read.
 
-Starts with **GRE**, and expands to TOEFL, IELTS, SAT, GMAT, CAT, UPSC, SSC, and
-General English — all on one backend serving web and future Android/iOS clients.
+**Live:** https://gremnemonics.netlify.app
 
----
+That is the whole product. There is no account, no AI at runtime, no backend.
+Progress ("which groups are done") lives in your browser's localStorage.
 
-## Tech stack
-
-| Layer         | Choice                                                          |
-| ------------- | -------------------------------------------------------------- |
-| Frontend      | Next.js (App Router), React, TypeScript, TailwindCSS, Framer Motion, React Query, Zustand, RHF + Zod |
-| Backend       | Node.js, Express, TypeScript                                   |
-| Database      | PostgreSQL (Supabase) + Prisma ORM                             |
-| Auth          | Clerk                                                          |
-| AI            | OpenAI API                                                     |
-| Storage       | Supabase Storage                                               |
-| Payments      | Stripe                                                         |
-| Email / Push  | Resend / Firebase Cloud Messaging                              |
-| Infra         | Turborepo + pnpm · Vercel (web) · Railway (api)                |
-
-## Monorepo layout
+## How it works
 
 ```
-apps/
-  api/          Express + TypeScript backend  → Railway
-  web/          Next.js App Router frontend    → Vercel   (Phase 5)
-packages/
-  database/     Prisma schema + client         ✅
-  core/         Framework-free domain layer    ✅
-  ai/           AI mnemonic engine (OpenAI)    ✅
-  validation/   Zod schemas shared FE↔BE       ✅
-  types/        Shared DTOs / contracts        ✅
-  config/       Fail-fast env validation       ✅
-  logger/       Pino structured logging        ✅
-  ui/           React design system            ✅
-  tsconfig/     Shared TypeScript configs      ✅
-  eslint-config/ Shared ESLint flat config     ✅
-docs/           Architecture, roadmap, ADRs
+/                    45 groups of 25, with done ticks and a progress bar
+/group/[id]          read the words — swipe, or use ← →
+/group/[id]/revise   flashcards: word → tap to reveal → next
 ```
 
-See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the layering rules and
-[`docs/ROADMAP.md`](docs/ROADMAP.md) for the phase-by-phase build plan.
+Every word ships with the app in a single JSON file, so each route is
+pre-rendered to static HTML at build time. The deployed site is a folder of
+files — nothing runs on a server.
 
-## Prerequisites
+It is also a PWA: add it to your phone's home screen and it works offline.
 
-- **Node.js** `>=20.11` (see [`.nvmrc`](.nvmrc))
-- **pnpm** `>=9` — `corepack enable && corepack prepare pnpm@9.15.4 --activate`
-- **Docker** (for local Postgres + Redis)
+## The words
+
+All 1111 mnemonics are hand-checked, not generated at runtime. A hook only works
+if it is anchored to something the reader already knows — "Car + Mud" for
+*curmudgeon* — so each one was reviewed rather than accepted from a model.
+
+```
+data/curated.json   source of truth: meaning, Hindi gloss, hook (1111 entries)
+data/corpus.json    the word list and parts of speech
+```
+
+`apps/web/src/data/words.json` is generated from those two. Never edit it by
+hand — it is overwritten on every build of the word data.
+
+### Adding or fixing mnemonics
+
+Paste a batch into a file, one word per line, in either shape:
+
+```
+word | english meaning | hindi gloss | "Hook": sentence using the word
+word | english meaning (hindi gloss) | "Hook": sentence using the word
+```
+
+The second is what Gemini emits; a copied markdown table can be pasted in
+untouched, bold markers and all. Then:
+
+```bash
+pnpm words:import path/to/batch.md   # merge into data/curated.json
+pnpm words:build                     # regenerate words.json + remaining-groups.md
+```
+
+Both steps are required — importing alone changes nothing the app can show. A
+headword that is not in the corpus is rejected rather than imported, because an
+entry the corpus cannot match would silently never appear.
+
+[`remaining-groups.md`](remaining-groups.md) lists any words still lacking a
+curated mnemonic, grouped as the app groups them. It is currently empty.
+
+## Layout
+
+```
+apps/web/           the app (Next.js App Router, static export)
+packages/ui/        React design system
+packages/tsconfig/  shared TypeScript configs
+packages/eslint-config/
+data/               word data (source of truth)
+scripts/            word pipeline
+```
 
 ## Getting started
 
+Needs Node `>=20.11` (see [`.nvmrc`](.nvmrc)) and pnpm `>=9`
+(`corepack enable && corepack prepare pnpm@9.15.4 --activate`). No `.env`, no
+database, no Docker.
+
 ```bash
-# 1. Install dependencies
 pnpm install
-
-# 2. Configure environment
-cp .env.example .env        # then fill in secrets
-
-# 3. Start local infrastructure (Postgres + Redis)
-docker compose up -d
-
-# 4. Run the API (http://localhost:4000/health)
-pnpm --filter @mnemonic/api dev
-
-# 5. Run the web app (http://localhost:3000)
-pnpm --filter @mnemonic/web dev
+pnpm --filter @mnemonic/web dev    # http://localhost:3000
 ```
 
-## Workspace scripts
+To reach it from your phone on the same Wi-Fi, `node apps/web/scripts/dev-demo.mjs`
+serves on your LAN address and prints the URL.
 
-| Command             | Description                                  |
-| ------------------- | -------------------------------------------- |
-| `pnpm dev`          | Run all apps in dev mode (Turborepo)         |
-| `pnpm build`        | Build every package/app                      |
-| `pnpm lint`         | ESLint across the workspace                  |
-| `pnpm typecheck`    | `tsc --noEmit` across the workspace          |
-| `pnpm test`         | Run all unit/integration tests (Vitest)      |
-| `pnpm format`       | Prettier write                               |
+## Scripts
+
+| Command            | Description                                              |
+| ------------------ | -------------------------------------------------------- |
+| `pnpm build`       | Build the site into `apps/web/out` — this is what deploys |
+| `pnpm dev`         | Dev server                                                |
+| `pnpm lint`        | ESLint across the workspace                               |
+| `pnpm typecheck`   | `tsc --noEmit` across the workspace                       |
+| `pnpm test`        | Vitest                                                    |
+| `pnpm format`      | Prettier write                                            |
+| `pnpm words:import`| Merge a mnemonic batch into `data/curated.json`           |
+| `pnpm words:build` | Regenerate `words.json` + `remaining-groups.md`           |
+
+## Deploying
+
+`pnpm build` writes `apps/web/out`. Any static host serves it as-is.
+
+[`netlify.toml`](netlify.toml) configures a Netlify build from this repo. Note
+it only applies to a git-connected or CLI deploy — dragging `out/` to Netlify
+Drop uploads that folder alone, so Netlify never sees the config and falls back
+to its defaults.
 
 ## Quality gates
 
-Every package ships with `lint`, `typecheck`, and `test`. CI
-([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs format-check →
-lint → typecheck → test → build on every push and PR.
+[CI](.github/workflows/ci.yml) runs format-check → lint → typecheck → test →
+build on every push and PR, and asserts the static export was actually emitted —
+a build that exits 0 without producing pages is the failure worth catching.
 
 ## License
 
-Proprietary © Mnemonic Master AI.
+Proprietary.
