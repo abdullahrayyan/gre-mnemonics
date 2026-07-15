@@ -2,7 +2,7 @@
   "name": "mnemonic-master",
   "version": "0.0.0",
   "private": true,
-  "description": "Mnemonic Master AI — AI-powered vocabulary learning platform (GRE and beyond).",
+  "description": "GRE words with mnemonics — read 1111 words in groups of 25, then revise.",
   "packageManager": "pnpm@9.15.4",
   "engines": {
     "node": ">=20.11.0",
@@ -19,10 +19,8 @@
     "typecheck": "turbo run typecheck",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
-    "db:generate": "pnpm --filter @mnemonic/database db:generate",
-    "db:migrate": "pnpm --filter @mnemonic/database db:migrate",
-    "db:seed": "pnpm --filter @mnemonic/database db:seed",
-    "db:studio": "pnpm --filter @mnemonic/database db:studio",
+    "words:import": "node scripts/import-curated.mjs",
+    "words:build": "node scripts/build-words.mjs && node scripts/build-remaining.mjs",
     "clean": "turbo run clean && rimraf node_modules"
   },
   "devDependencies": {
@@ -35,11 +33,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@clerk/shared",
-      "@prisma/client",
-      "@prisma/engines",
-      "esbuild",
-      "prisma"
+      "esbuild"
     ]
   }
 }
