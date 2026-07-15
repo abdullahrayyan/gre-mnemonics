@@ -24,9 +24,20 @@ const config: Config = {
           from: { opacity: '0', transform: 'translateY(8px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
+        // Card slides in from the side you swiped/arrowed from.
+        'slide-from-right': {
+          from: { opacity: '0', transform: 'translateX(56px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        'slide-from-left': {
+          from: { opacity: '0', transform: 'translateX(-56px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
       },
       animation: {
         'fade-in': 'fade-in 0.5s ease-out both',
+        'slide-from-right': 'slide-from-right 0.22s ease-out both',
+        'slide-from-left': 'slide-from-left 0.22s ease-out both',
       },
     },
   },
