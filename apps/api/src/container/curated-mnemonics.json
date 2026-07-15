@@ -1248,5 +1248,1255 @@
     "meaning": "Make something clear; explain.",
     "hindiMeaning": "Saaf-saaf samjhana / Spasht karna",
     "mnemonic": "\"Lucy-Date\": Breaking down a complex database schematic so clearly that even a child can understand it."
+  },
+  "elusive": {
+    "meaning": "Difficult to find, catch, or achieve.",
+    "hindiMeaning": "Hath na aane wala / Pakad se door",
+    "mnemonic": "\"Illusion\": Something that disappears as fast as an illusion every time you try to grasp it."
+  },
+  "embellish": {
+    "meaning": "Make something more attractive by the addition of decorative details.",
+    "hindiMeaning": "Sajana / Badha-chadhakar kehna",
+    "mnemonic": "\"Bell\": Decorating a plain room with colorful shiny bells to make it look fancy."
+  },
+  "empathetic": {
+    "meaning": "Showing an ability to understand and share the feelings of another.",
+    "hindiMeaning": "Sahanubhuti-purna",
+    "mnemonic": "\"Empathy\": Walking in someone else's shoes to truly feel their emotional pain."
+  },
+  "empirical": {
+    "meaning": "Based on, concerned with, or verifiable by observation or experience rather than theory.",
+    "hindiMeaning": "Prayogik / Tathya-parak",
+    "mnemonic": "\"Empire State Experiment\": Collecting real-world data by measuring the actual Empire State building rather than just guessing its height."
+  },
+  "emulate": {
+    "meaning": "Match or surpass a person or achievement, typically by imitation.",
+    "hindiMeaning": "Nakal karna / Barabari karna",
+    "mnemonic": "\"Emulator\": Running an Android emulator on your PC to copy the mobile environment perfectly."
+  },
+  "enchant": {
+    "meaning": "Fill someone with great delight; charm.",
+    "hindiMeaning": "Moh lena / Jadu karna",
+    "mnemonic": "\"Chant\": A magical chant that completely charms the listener and makes them fall in love."
+  },
+  "encroach": {
+    "meaning": "Intrude on a person's territory or a right.",
+    "hindiMeaning": "Atikraman karna / Ghusna",
+    "mnemonic": "\"Cockroach\": A sneaky cockroach creeping across the border line into your clean kitchen counter."
+  },
+  "encyclopedic": {
+    "meaning": "Comprehensive in terms of information.",
+    "hindiMeaning": "Vishwa-kosh jaisa / Vistrit",
+    "mnemonic": "\"Encyclopedia\": A mind or data bank that holds everything, just like a massive multi-volume encyclopedia."
+  },
+  "endemic": {
+    "meaning": "Regularly found among particular people or in a certain area.",
+    "hindiMeaning": "Sthaniya / Khas kshetra ka",
+    "mnemonic": "\"End-in-Dem (Democracy/People)\": A disease or custom that is permanently stuck inside a specific group of people."
+  },
+  "endow": {
+    "meaning": "Provide with a quality, asset, or source of income.",
+    "hindiMeaning": "Daan dena / Pradaan karna",
+    "mnemonic": "\"Dowry\": Giving a large financial asset or a special natural talent to someone as a lifelong gift."
+  },
+  "enervate": {
+    "meaning": "Cause someone to feel drained of energy or vitality.",
+    "hindiMeaning": "Kamzor karna / Urja sokhna",
+    "mnemonic": "\"Energy-Drain\": A grueling 14-hour continuous coding sprint that completely drains your energy."
+  },
+  "engender": {
+    "meaning": "Cause or give rise to a feeling, situation, or condition.",
+    "hindiMeaning": "Paida karna / Upjana",
+    "mnemonic": "\"Generate\": Sounds like generate. To launch a new policy that generates massive public trust."
+  },
+  "enigmatic": {
+    "meaning": "Difficult to interpret or understand; mysterious.",
+    "hindiMeaning": "Rahasya-mayi",
+    "mnemonic": "\"Enigma machine\": The complex World War II Enigma code machine that was incredibly hard to crack."
+  },
+  "enmity": {
+    "meaning": "The state or feeling of being actively opposed or hostile to someone.",
+    "hindiMeaning": "Dushmani / Vair",
+    "mnemonic": "\"Enemy-ties\": Being tied down to an old, bitter blood feud with a bitter enemy."
+  },
+  "ennui": {
+    "meaning": "A feeling of listlessness and dissatisfaction arising from a lack of occupation or excitement.",
+    "hindiMeaning": "Glani / Aalas / Khali-pan",
+    "mnemonic": "\"Annoy-we\": The deep boredom where we get annoyed simply because there is absolutely nothing fun to do."
+  },
+  "ensue": {
+    "meaning": "Happen or occur afterward or as a result.",
+    "hindiMeaning": "Pari-naam svaroop hona",
+    "mnemonic": "\"In-Sue\": If you breach the client contract, a massive legal battle will immediately sue (follow) as a result."
+  },
+  "enthrall": {
+    "meaning": "Capture the fascinated attention of.",
+    "hindiMeaning": "Mugdh karna / Moh lena",
+    "mnemonic": "\"Enter-Hall\": A magician performing so brilliantly that the moment you enter the hall, your eyes are locked."
+  },
+  "entitled": {
+    "meaning": "Believing oneself to be inherently deserving of privileges or special treatment.",
+    "hindiMeaning": "Haqdaar / Ghamandi",
+    "mnemonic": "\"Title-holder\": Someone acting like they own a royal title, demanding free VIP treatment everywhere."
+  },
+  "entreat": {
+    "meaning": "Ask someone earnestly or anxiously to do something.",
+    "hindiMeaning": "Gidgidana / Vinamra nivedan",
+    "mnemonic": "\"Enter-Treat\": Begging your angry friend, \"Please let me enter, I will give you a treat!\""
+  },
+  "entrenched": {
+    "meaning": "Firmly established and difficult or unlikely to change (of an attitude, habit, or belief).",
+    "hindiMeaning": "Dridh / Pakka",
+    "mnemonic": "\"Trench\": An army hiding deep inside a dug-out trench, making it impossible to move them."
+  },
+  "ephemeral": {
+    "meaning": "Lasting for a very short time.",
+    "hindiMeaning": "Kshanik / Ek-din ka",
+    "mnemonic": "\"E-Funeral\": A digital trend that arrives today and faces a funeral (dies out) by tomorrow morning."
+  },
+  "equanimity": {
+    "meaning": "Mental calmness, composure, and evenness of temper, especially in a difficult situation.",
+    "hindiMeaning": "Dheeraj / Santulan",
+    "mnemonic": "\"Equal-Enemy\": Maintaining a perfectly calm and equal mind even when standing face-to-face with your worst enemy."
+  },
+  "equitable": {
+    "meaning": "Fair and impartial.",
+    "hindiMeaning": "Nishpaksh / Nyay-sangat",
+    "mnemonic": "\"Equal-Table\": Dividing profits perfectly down the middle so everyone at the table gets an equal share."
+  },
+  "equivocate": {
+    "meaning": "Use ambiguous language so as to conceal the truth or avoid committing oneself.",
+    "hindiMeaning": "Golmol baat karna",
+    "mnemonic": "\"Equal-Vocal\": Speaking in two completely opposite vocal directions at once to keep your answer confusing."
+  },
+  "eradicate": {
+    "meaning": "Destroy completely; put an end to.",
+    "hindiMeaning": "Jad se khatam karna",
+    "mnemonic": "\"Eraser-Radical\": Using a powerful eraser to completely scrub out all errors from the root database."
+  },
+  "erratic": {
+    "meaning": "Not even or regular in pattern or movement; unpredictable.",
+    "hindiMeaning": "Anishchit / Bhatkne wala",
+    "mnemonic": "\"Error-matic\": An application full of errors that crashes automatically and randomly at any time."
+  },
+  "erstwhile": {
+    "meaning": "Former; belonging to a past time.",
+    "hindiMeaning": "Purana / Bhoot-poorva",
+    "mnemonic": "\"First-While\": Someone who was your first priority a while ago, but is now an ex-partner."
+  },
+  "erudite": {
+    "meaning": "Having or showing great knowledge or learning.",
+    "hindiMeaning": "Gyani / Vidvan",
+    "mnemonic": "\"E-Rude-Out\": A highly educated scholar who throws all rude behavior out because they are deeply wise."
+  },
+  "escalate": {
+    "meaning": "Increase rapidly; become more intense or serious.",
+    "hindiMeaning": "Tezi se badhna",
+    "mnemonic": "\"Escalator\": Stepping onto a mall escalator that rapidly carries you straight to the top floor."
+  },
+  "eschew": {
+    "meaning": "Deliberately avoid using; abstain from.",
+    "hindiMeaning": "Tyagna / Door rehna",
+    "mnemonic": "\"Ah-Choo! (Sneeze)\": Stepping away and avoiding someone who is loudly sneezing right next to you."
+  },
+  "esoteric": {
+    "meaning": "Intended for or likely to be understood by only a small number of people with a specialized knowledge.",
+    "hindiMeaning": "Gupt / Rahasya-mayi",
+    "mnemonic": "\"Einstein-Topic\": A deep quantum theory that only a tiny group of genius scientists can follow."
+  },
+  "estimable": {
+    "meaning": "Worthy of great respect.",
+    "hindiMeaning": "Pratishthit / Sammaan-yogya",
+    "mnemonic": "\"High-Estimate\": Someone whose character is held in such high estimation that everyone salutes them."
+  },
+  "estranged": {
+    "meaning": "No longer close or affectionate to someone; alienated.",
+    "hindiMeaning": "Alag hua / Ajnabi",
+    "mnemonic": "\"Acting-Stranger\": A close friend who suddenly starts acting like a complete stranger to you."
+  },
+  "euphemism": {
+    "meaning": "A mild or indirect word or expression substituted for one considered to be too harsh or blunt.",
+    "hindiMeaning": "Priya-vachan",
+    "mnemonic": "\"You-Feminism\": Using gentle, polite phrases instead of blunt words to avoid hurting someone's feelings. (e.g., \"Passed away\" instead of \"Died\")."
+  },
+  "euphoric": {
+    "meaning": "Characterized by or feeling intense excitement and happiness.",
+    "hindiMeaning": "Bahut khush / Aahladit",
+    "mnemonic": "\"You-Fantastic\": The wild, joyful high you feel when the evaluator says, \"Your AI architecture is fantastic!\""
+  },
+  "evade": {
+    "meaning": "Escape or avoid, especially by cleverness or trickery.",
+    "hindiMeaning": "Bach nikalna / Talna",
+    "mnemonic": "\"Tax-Evade\": Changing your accounting books to cleverly escape paying government dues."
+  },
+  "evanescent": {
+    "meaning": "Soon passing out of sight, memory, or existence; quickly fading.",
+    "hindiMeaning": "Kshan-bhangur / Gayab hone wala",
+    "mnemonic": "\"Scent-Vanish\": Spraying an expensive perfume whose scent vanishes completely within five minutes."
+  },
+  "evasive": {
+    "meaning": "Tending to avoid commitment or self-revelation, especially by responding indirectly.",
+    "hindiMeaning": "Golmol / Dhokhe-baaz",
+    "mnemonic": "\"Evade-Answer\": Giving vague, tricky replies to evade a direct question from the manager."
+  },
+  "evoke": {
+    "meaning": "Bring or recall to the conscious mind.",
+    "hindiMeaning": "Yaad dilana / Ujaagar karna",
+    "mnemonic": "\"E-Voice\": An old song whose voice instantly brings back beautiful childhood memories."
+  },
+  "exacerbate": {
+    "meaning": "Make a problem, bad situation, or negative feeling worse.",
+    "hindiMeaning": "Buri sthiti ko aur bigadna",
+    "mnemonic": "\"Ex-A-Crate\": Pouring a crate of fuel directly onto an open fire, making the blaze ten times worse."
+  },
+  "exacting": {
+    "meaning": "Making great demands on one's skill, care, or effort.",
+    "hindiMeaning": "Kathin / Zyaada maangne wala",
+    "mnemonic": "\"Exact-Match\": A strict supervisor who demands an exact match to the specifications, forcing you to sweat."
+  },
+  "exasperated": {
+    "meaning": "Intensely irritated and frustrated.",
+    "hindiMeaning": "Chid-chida / Gusse mein bhara",
+    "mnemonic": "\"Excess-Separate\": Trying to separate tangled wires for three hours until you drop them in absolute frustration."
+  },
+  "excoriate": {
+    "meaning": "Censure or criticize severely.",
+    "hindiMeaning": "Buri tarah ninda karna / Chamdi udhedna",
+    "mnemonic": "\"X-Core-Ate\": Criticizing a developer so brutally that you eat up their core confidence in public."
+  },
+  "exculpate": {
+    "meaning": "Show or declare that someone is not guilty of a wrongdoing.",
+    "hindiMeaning": "Dosh-mukt karna",
+    "mnemonic": "\"Ex-Culprit\": Presenting a fresh server log that proves the dev is innocent, making them an ex-culprit."
+  },
+  "exegesis": {
+    "meaning": "Critical explanation or interpretation of a text, especially of scripture.",
+    "hindiMeaning": "Vyaakhya / Teeka",
+    "mnemonic": "\"Exam-Gesis (Thesis)\": Writing a deep, step-by-step critical explanation of a complex philosophical thesis."
+  },
+  "exhaustive": {
+    "meaning": "Examining, considering, or including all elements or aspects; fully comprehensive.",
+    "hindiMeaning": "Vistrit / Thos",
+    "mnemonic": "\"Exhaust-All\": Testing every single edge case until you exhaust all possibilities, leaving no bugs behind."
+  },
+  "exhilarating": {
+    "meaning": "Making one feel very happy, animated, or elated.",
+    "hindiMeaning": "Romanchak",
+    "mnemonic": "\"Riding a Rollercoaster\": A fast, thrilling experience that gets your heart pumping with pure excitement."
+  },
+  "exhort": {
+    "meaning": "Strongly encourage or urge someone to do something.",
+    "hindiMeaning": "Uksana / Prerit karna",
+    "mnemonic": "\"Ex-Egg-On\": A cricket coach egging on his team, shouting loudly to urge them to smash a victory."
+  },
+  "exigent": {
+    "meaning": "Pressing; demanding.",
+    "hindiMeaning": "Atyavashyak / Apat-kalin",
+    "mnemonic": "\"Exit-Emergency\": A critical server crash where you must find the exit door and fix it right this second."
+  },
+  "exonerate": {
+    "meaning": "Absolve someone from blame for a fault or wrongdoing.",
+    "hindiMeaning": "Dosh-mukt karna / Bari karna",
+    "mnemonic": "\"Ex-Honor-Returned\": Clearing a man's name completely and returning his honor after proving his innocence."
+  },
+  "exorbitant": {
+    "meaning": "Unreasonably high (of a price or amount charged).",
+    "hindiMeaning": "Atyadhik / Bahut zyaada",
+    "mnemonic": "\"Out-of-Orbit\": A restaurant bill so insanely high that it flies completely out of the orbit of your budget."
+  },
+  "exorcise": {
+    "meaning": "Drive out an evil spirit from a person or place.",
+    "hindiMeaning": "Bhoot bhagana / Safaya karna",
+    "mnemonic": "\"Exercise-Evil\": Forcing a dark spirit to do strenuous exercise until it gets tired and flees the house."
+  },
+  "exotic": {
+    "meaning": "Originating in or characteristic of a distant foreign country.",
+    "hindiMeaning": "Videshi / Ajeeb aur akarshak",
+    "mnemonic": "\"X-Taxi\": Taking a strange, colorful foreign taxi through the tropical streets of an island."
+  },
+  "expatiate": {
+    "meaning": "Speak or write at length or in detail about.",
+    "hindiMeaning": "Vistrit charcha karna",
+    "mnemonic": "\"Expect-Space\": Giving a speaker unlimited space and time so they can discuss a topic in full detail."
+  },
+  "expedient": {
+    "meaning": "Convenient and practical although possibly improper or immoral.",
+    "hindiMeaning": "Fayde-mand / Swarthi",
+    "mnemonic": "\"Expert-Expedite\": Taking a shady shortcut simply because it is convenient to hit the project deadline."
+  },
+  "expedite": {
+    "meaning": "Make an action or process happen sooner or be accomplished more quickly.",
+    "hindiMeaning": "Tezi se aage badhana",
+    "mnemonic": "\"Expert-Speed\": Hiring an expert developer to rush the production deployment and speed things up."
+  },
+  "explicable": {
+    "meaning": "Able to be accounted for or understood.",
+    "hindiMeaning": "Samjhane-yogya / Spasht",
+    "mnemonic": "\"Explain-able\": An error code that has a clear documentation link, making it completely explainable."
+  },
+  "exploitative": {
+    "meaning": "Making use of a situation or treating others unfairly in order to gain an advantage.",
+    "hindiMeaning": "Shoshan-kari",
+    "mnemonic": "\"Exploit-Worker\": A cruel company that exploits junior interns by making them work 18 hours for zero pay."
+  },
+  "extant": {
+    "meaning": "Still in existence; surviving.",
+    "hindiMeaning": "Jeevit / Abhi tak maujood",
+    "mnemonic": "\"Ex-Stand\": An ancient historical monument that is still standing proudly out in the real world today. (Opposite of extinct)."
+  },
+  "extemporize": {
+    "meaning": "Compose, perform, or produce something such as a speech or music without preparation.",
+    "hindiMeaning": "Bina taiyari ke bolna",
+    "mnemonic": "\"Ex-Tempo\": Standing up on stage out of your regular tempo and giving a speech out of thin air."
+  },
+  "extenuating": {
+    "meaning": "Making a guilt or an offense seem less serious or more forgivable.",
+    "hindiMeaning": "Kam karne wala / Shaman-kari",
+    "mnemonic": "\"Extend-Excuse\": Presenting a medical note to extend mercy and make a late submission forgivable."
+  },
+  "extol": {
+    "meaning": "Praise enthusiastically.",
+    "hindiMeaning": "Tareef karna / Sir par bithana",
+    "mnemonic": "\"Ex-Tall\": Standing up tall in public to shout out the great achievements of your tech lead."
+  },
+  "extraneous": {
+    "meaning": "Irrelevant or unrelated to the subject being dealt with.",
+    "hindiMeaning": "Faltu / Asangat",
+    "mnemonic": "\"Extra-News\": A lecture full of extra, useless news that has absolutely nothing to do with the exam syllabus."
+  },
+  "extrapolate": {
+    "meaning": "Estimate or conclude something by assuming that existing trends will continue.",
+    "hindiMeaning": "Anuman lagana",
+    "mnemonic": "\"Extra-Plot\": Using last month's user metrics to plot an extra curve showing future startup growth."
+  },
+  "extravagant": {
+    "meaning": "Lacking restraint in spending money or using resources.",
+    "hindiMeaning": "Fizool-kharch",
+    "mnemonic": "\"Extra-Vagant (Vacation)\": Spending thousands of dollars on extra, ultra-luxurious hotels during a small trip."
+  },
+  "fabricate": {
+    "meaning": "Invent or concoct something, typically with deceitful intent.",
+    "hindiMeaning": "Banawati / Jhooth ghadna",
+    "mnemonic": "\"Fabric-Weave\": Weaving a complex web of fake stories out of thin air to fool the police."
+  },
+  "facetious": {
+    "meaning": "Treating serious issues with deliberately inappropriate humor; flippant.",
+    "hindiMeaning": "Hasmukh / Chichora",
+    "mnemonic": "\"Funny-Face\": Making a silly funny face and cracking jokes during a very serious company crisis meeting."
+  },
+  "facility": {
+    "meaning": "An ability to do or learn something well and easily.",
+    "hindiMeaning": "Kushalata / Aasani",
+    "mnemonic": "\"Facile-Easy\": Having such a sharp natural talent that you master new MERN frameworks with absolute ease."
+  },
+  "factious": {
+    "meaning": "Relating or caused by faction; dissenting.",
+    "hindiMeaning": "Gut-baazi / Vivad-grast",
+    "mnemonic": "\"Faction-Fight\": A tech team splitting up into bitter factions (groups) and fighting over code ownership."
+  },
+  "fallacious": {
+    "meaning": "Based on a mistaken belief.",
+    "hindiMeaning": "Bhramik / Jhootha",
+    "mnemonic": "\"False-Logic\": An argument that sounds beautiful but is structurally false and full of logical gaps."
+  },
+  "fallible": {
+    "meaning": "Capable of making mistakes or being erroneous.",
+    "hindiMeaning": "Bhoolne-yogya / Galti karne wala",
+    "mnemonic": "\"Fail-able\": Realizing that every human coder is capable of failing and deploying a buggy script."
+  },
+  "fallow": {
+    "meaning": "Plowed and left unseeded for a season or more; uncultivated.",
+    "hindiMeaning": "Banjar / Khali chhodna",
+    "mnemonic": "\"Follow-Empty\": Leaving a plot of fertile agricultural land completely empty to let the soil recover."
+  },
+  "falter": {
+    "meaning": "Start to lose strength or momentum.",
+    "hindiMeaning": "Ladkhadana / Kamzor hona",
+    "mnemonic": "\"Fail-to-Walk\": Your confidence stumbling right before you walk up onto the main stage to speak."
+  },
+  "fanciful": {
+    "meaning": "Existing only in the imagination or fancy; unrealistic.",
+    "hindiMeaning": "Kalpanik",
+    "mnemonic": "\"Fantasy\": A wild fantasy design for a flying car that cannot be built using current modern engineering."
+  },
+  "fastidious": {
+    "meaning": "Very attentive to and concerned about accuracy and detail.",
+    "hindiMeaning": "Nakhre-baaz / Tunuk-mizaaj",
+    "mnemonic": "\"Fast-Devious-Tester\": An annoying quality analyst who checks every single line of code to find microscopic formatting bugs."
+  },
+  "fathom": {
+    "meaning": "Understand a difficult problem or an enigmatic person after much thought.",
+    "hindiMeaning": "Samajhna / Thaah lena",
+    "mnemonic": "\"Phantom\": Trying to understand the mysterious nature of the Phantom superhero — it's hard to fathom."
+  },
+  "fawn": {
+    "meaning": "Display exaggerated flattery or affection.",
+    "hindiMeaning": "Chaaploosi karna",
+    "mnemonic": "\"Fan-Fawn\": A crazy fan tracking a celebrity's every move, fawning over them to get an autograph."
+  },
+  "feasible": {
+    "meaning": "Possible to do easily or conveniently.",
+    "hindiMeaning": "Sambhav / Vyavaharik",
+    "mnemonic": "\"Fees-able\": An engineering college course with a fees structure that is affordable (able), making it feasible to join."
+  },
+  "feckless": {
+    "meaning": "Lacking initiative or strength of character; irresponsible.",
+    "hindiMeaning": "Nikkama / Laparwah",
+    "mnemonic": "\"Fake-less\": A lazy worker who has less real output and is completely feckless (worthless) to the team."
+  },
+  "fecund": {
+    "meaning": "Producing or capable of producing an abundance of offspring or new growth; fertile.",
+    "hindiMeaning": "Upjau / Urvar",
+    "mnemonic": "\"Second-offspring\": Fertile agricultural soil or a mind so fecund it creates a second genius project layout immediately."
+  },
+  "feeble": {
+    "meaning": "Lacking physical strength, especially as a result of age or illness.",
+    "hindiMeaning": "Kamzor / Durbal",
+    "mnemonic": "\"Fee-bleeding\": A startup so broke it looks feeble because its cash reserves are bleeding out."
+  },
+  "feign": {
+    "meaning": "Pretend to be affected by (a feeling, state, or injury).",
+    "hindiMeaning": "Dhong karna / Banawati roop dharna",
+    "mnemonic": "\"Fake-ing\": Sounds like fake-ing. Feign an illness to skip your morning university lecture."
+  },
+  "feint": {
+    "meaning": "A deceptive or distracted movement, typically during a fight.",
+    "hindiMeaning": "Chalaak chaal / Dhokha",
+    "mnemonic": "\"Faint-acting\": Boxer pretending to fall faint on the left, then throwing a heavy punch from the right."
+  },
+  "felicitous": {
+    "meaning": "Well chosen or suited to the circumstances; apt.",
+    "hindiMeaning": "Aanand-mayi / Anukul",
+    "mnemonic": "\"Felicity (Happiness)\": A smooth, felicitous comment during an interview that makes the evaluator very happy."
+  },
+  "fervent": {
+    "meaning": "Having or displaying a passionate intensity.",
+    "hindiMeaning": "Utsuk / Joshila",
+    "mnemonic": "\"Fever-like\": An intensity so high it feels like a fever of excitement for full-stack AI orchestration."
+  },
+  "fervid": {
+    "meaning": "Intensively enthusiastic or passionate, especially to an excessive degree.",
+    "hindiMeaning": "Kattar / Ugra",
+    "mnemonic": "\"Fever-Video\": A viral video that sets off a fervid, wild fan base across social media overnight."
+  },
+  "fervor": {
+    "meaning": "Intense and passionate feeling.",
+    "hindiMeaning": "Josh / Utsaah",
+    "mnemonic": "\"Fever-of-Work\": Diving into a continuous hackathon build with absolute fervor and zero sleep."
+  },
+  "fester": {
+    "meaning": "Become worse or more intense, especially through long-term neglect.",
+    "hindiMeaning": "Sadna / Zakhm ka badhna",
+    "mnemonic": "\"Pester\": An emotional wound or physical injury left untreated that keeps pestering you and becomes festering."
+  },
+  "fickle": {
+    "meaning": "Changing frequently, especially as regards one's loyalties, interests, or affection.",
+    "hindiMeaning": "Chanchal / Asthir",
+    "mnemonic": "\"Fickle-Minded\": A user who changes their app preferences every five seconds — completely unpredictable."
+  },
+  "figurative": {
+    "meaning": "Departing from a literal use of words; metaphorical.",
+    "hindiMeaning": "Alankarik / Rupak",
+    "mnemonic": "\"Figure-of-Speech\": Using expressions like \"drowning in code\" instead of saying you are busy."
+  },
+  "finicky": {
+    "meaning": "Fussy about one's needs or requirements.",
+    "hindiMeaning": "Nakhre-baaz / Nakhreli",
+    "mnemonic": "\"Finish-Clean\": A client who is so finicky about the front-end styling that they check every pixel."
+  },
+  "fitful": {
+    "meaning": "Active or occurring spasmodically or intermittently; not regular or steady.",
+    "hindiMeaning": "Ruk-ruk kar hone wala",
+    "mnemonic": "\"Fits-and-Starts\": Broken sleep full of nightmares, or a buggy backend server running in fitful cycles."
+  },
+  "flagrant": {
+    "meaning": "Conspicuously or obviously offensive.",
+    "hindiMeaning": "Nindniya / Khuleaam bura",
+    "mnemonic": "\"Flag-Burning\": Committing an illegal act so openly it's like burning a national flag in broad daylight."
+  },
+  "flamboyant": {
+    "meaning": "Tending to attract attention because of their exuberance, confidence, and stylishness.",
+    "hindiMeaning": "Bhadkeela / Rangeela",
+    "mnemonic": "\"Flame-Boyant\": A rockstar who dresses like a bright flame, commanding attention the second he enters."
+  },
+  "fledgling": {
+    "meaning": "A person or organization that is immature, inexperienced, or underdeveloped.",
+    "hindiMeaning": "Nau-sikhia / Naya",
+    "mnemonic": "\"Fly-ling\": A tiny baby bird just learning how to use its wings; a fledgling startup brand."
+  },
+  "florid": {
+    "meaning": "Having a red or flushed complexion; elaborately or excessively ornamented.",
+    "hindiMeaning": "Lal-tamatar / Bhadkeela",
+    "mnemonic": "\"Floral-Design\": A front-end layout packed with too many floral designs, making it look overly complicated."
+  },
+  "flout": {
+    "meaning": "Openly disregard a rule or law.",
+    "hindiMeaning": "Ullanghan karna",
+    "mnemonic": "\"Follow-Out\": If you refuse to follow the security rules, you get kicked out. You flout them."
+  },
+  "flummoxed": {
+    "meaning": "Bewildered or perplexed.",
+    "hindiMeaning": "Chakit / Bhramit",
+    "mnemonic": "\"Flume-Stuck\": Finding an absolute nightmare logic bug in your code that leaves you completely flummoxed."
+  },
+  "flustered": {
+    "meaning": "Agitated or confused.",
+    "hindiMeaning": "Ghabraya hua / Bechain",
+    "mnemonic": "\"Flurry-of-Tasks\": Getting so hit by a sudden flurry of bugs right before deployment that you get completely flustered."
+  },
+  "foil": {
+    "meaning": "Prevent (something wrong or undesirable) from succeeding.",
+    "hindiMeaning": "Naakaam karna / Rokna",
+    "mnemonic": "\"Aluminum Foil Shield\": Wrapping your data in an aluminum foil shield to foil the attempts of hackers."
+  },
+  "foment": {
+    "meaning": "Instigate or stir up (an undesirable or violent sentiment or course of action).",
+    "hindiMeaning": "Bhadkana / Uksana",
+    "mnemonic": "\"Foam-Up\": Stirring up a liquid until it foams up violently; fomenting an angry rebellion."
+  },
+  "foolhardy": {
+    "meaning": "Recklessly bold or rash.",
+    "hindiMeaning": "Laparwah bahaduri / Dheet",
+    "mnemonic": "\"Fool-Hardy\": A foolish person trying to act hard by jumping off a high bridge without a safety rope."
+  },
+  "forbear": {
+    "meaning": "Politely or patiently restrain oneself from doing or saying something.",
+    "hindiMeaning": "Parhez karna / Dheeraj rakhna",
+    "mnemonic": "\"Bear-Pain\": Choosing to bear the pain quietly and forbear from punching a rude client."
+  },
+  "forebode": {
+    "meaning": "Act as an advance warning of (something bad).",
+    "hindiMeaning": "Asubh sanket hona",
+    "mnemonic": "\"Before-Bad\": A dark, heavy storm cloud that forebodes a major flash flood coming before long."
+  },
+  "foreseeable": {
+    "meaning": "Able to be anticipated or predicted.",
+    "hindiMeaning": "Anumanit / Dekhne yogya",
+    "mnemonic": "\"Before-See-Able\": A future market crash that is completely see-able before it actually happens."
+  },
+  "forestall": {
+    "meaning": "Prevent or obstruct (an anticipated event or action) by taking action ahead of time.",
+    "hindiMeaning": "Pehle hi rok lena",
+    "mnemonic": "\"Before-Stall\": Setting up a clean backup server before the main database crashes to forestall downtime."
+  },
+  "forgo": {
+    "meaning": "Omit or decline to take (something pleasant or valuable); go without.",
+    "hindiMeaning": "Tyagna / Chhodna",
+    "mnemonic": "\"For-Go (Let Go)\": Deciding to let go of sleep to complete an AI orchestration integration sprint."
+  },
+  "forsake": {
+    "meaning": "Abandon or leave.",
+    "hindiMeaning": "Sath chhodna / Tyagna",
+    "mnemonic": "\"For-Sake-of-Money\": A corrupt co-founder who forsakes his original garage team for the sake of quick money."
+  },
+  "fortitude": {
+    "meaning": "Courage in pain or adversity.",
+    "hindiMeaning": "Dheeraj / Mansik mazbooti",
+    "mnemonic": "\"Fortress-Mind\": A mind built like an unbreakable stone fortress that shows fortitude during bankruptcy."
+  },
+  "fortuitous": {
+    "meaning": "Happening by accident or chance rather than design.",
+    "hindiMeaning": "Achanak / Aakasmik",
+    "mnemonic": "\"Fortune-Accident\": A lucky accident where you randomly found a massive bug solution by pure chance."
+  },
+  "fractious": {
+    "meaning": "Irritable and quarrelsome.",
+    "hindiMeaning": "Jhagdaalu / Chidchida",
+    "mnemonic": "\"Fraction-Fight\": A business team that breaks into fractions because everyone is acting fractious and angry."
+  },
+  "frailty": {
+    "meaning": "The condition of being weak and delicate.",
+    "hindiMeaning": "Kamzori / Durbalta",
+    "mnemonic": "\"Fragile\": Like a fragile glass vase that breaks down easily under minimal operational pressure."
+  },
+  "frank": {
+    "meaning": "Open, honest, and direct in speech or writing.",
+    "hindiMeaning": "Spasht-vaadi / Imandari",
+    "mnemonic": "\"Frankly-Speaking\": Speaking completely straight from the heart without adding fake filters."
+  },
+  "fraught": {
+    "meaning": "Filled with or likely to result in (something undesirable).",
+    "hindiMeaning": "Chinta-janak / Bhara hua",
+    "mnemonic": "\"Freight-Full\": A tense negotiation path that is full of heavy freight (danger and high risks)."
+  },
+  "frenetic": {
+    "meaning": "Fast and energetic in a rather wild and uncontrolled way.",
+    "hindiMeaning": "Uth-patang / Unmadi",
+    "mnemonic": "\"Frantic-Energetic\": Running around the office in a frantic frenzy trying to patch a broken live build."
+  },
+  "fret": {
+    "meaning": "Be constantly or visibly anxious or worried.",
+    "hindiMeaning": "Chinta karna / Pareshan hona",
+    "mnemonic": "\"Frustrate-Fret\": Sitting in front of an empty IDE screen, fretting about missing the final runtime sprint."
+  },
+  "fringe": {
+    "meaning": "Not part of the mainstream; unconventional, peripheral, or extreme.",
+    "hindiMeaning": "Kinara / Alag-kshetra",
+    "mnemonic": "\"Fringe-Border\": Theories or ideas that sit out on the farthest borders of normal physics."
+  },
+  "frivolous": {
+    "meaning": "Not having any serious purpose or value.",
+    "hindiMeaning": "Fizool / Tuchh",
+    "mnemonic": "\"Free-Wireless-Toys\": Wasting thousands of dollars on useless wireless toys that have no professional value."
+  },
+  "fruitful": {
+    "meaning": "Producing good or helpful results; productive.",
+    "hindiMeaning": "Phaldai / Safal",
+    "mnemonic": "\"Fruit-bearing\": A beautiful strategic brainstorming layout that yields rich fruits of success."
+  },
+  "fulcrum": {
+    "meaning": "The pivot point on which a lever turns; a thing that plays a central role.",
+    "hindiMeaning": "Aadhaar / Kendra-bindu",
+    "mnemonic": "\"Full-Crumble-without-it\": The core single database node that acts as the absolute pivot point of the framework."
+  },
+  "fungible": {
+    "meaning": "Replaceable by another identical item; mutually interchangeable.",
+    "hindiMeaning": "Badle-jaane-yogya",
+    "mnemonic": "\"Fun-to-Exchange\": Items like standard 100-rupee notes that are 100% identical and exchangeable."
+  },
+  "furtive": {
+    "meaning": "Attempting to avoid notice or attention, typically because of guilt.",
+    "hindiMeaning": "Chhupa-chhupi / Gupt",
+    "mnemonic": "\"Fart-ive\": Sneaking around a quiet library corner like someone trying to pass gas without anyone noticing."
+  },
+  "futile": {
+    "meaning": "Pointless or useless.",
+    "hindiMeaning": "Vyarth / Bekar",
+    "mnemonic": "\"Few-Tile-Left\": Trying to finish an entire roof build when you have only a few tiles left — completely futile."
+  },
+  "gaffe": {
+    "meaning": "An unintentional act or remark causing embarrassment; a blunder.",
+    "hindiMeaning": "Bhool / Badi galti",
+    "mnemonic": "\"Goofy-Mistake\": A silly, goofy blunder like leaking your production AWS API key on a public GitHub repo."
+  },
+  "gainsay": {
+    "meaning": "Deny or contradict (a fact or statement).",
+    "hindiMeaning": "Khandan karna / Jhutlana",
+    "mnemonic": "\"Against-Say\": Standing up in the boardroom to say something against the team lead's decision."
+  },
+  "galvanize": {
+    "meaning": "Shock or excite someone into taking action.",
+    "hindiMeaning": "Prerit karna / Josh me lana",
+    "mnemonic": "\"Galvanized-Iron\": Passing a massive electric shock through iron to wake it up and activate it."
+  },
+  "garrulous": {
+    "meaning": "Excessively talkative, especially on trivial matters.",
+    "hindiMeaning": "Baatuni / Bakwaasi",
+    "mnemonic": "\"Girls-Rule-Chat\": A long, never-ending voice note from someone who keeps talking endlessly about nothing."
+  },
+  "gauche": {
+    "meaning": "Lacking ease or grace; unsophisticated and socially awkward.",
+    "hindiMeaning": "Abhadra / Gavaar",
+    "mnemonic": "\"Go-Ouch!\": A socially clumsy person who walks into a high-end corporate party and knocks over the table (Ouch!)."
+  },
+  "gawky": {
+    "meaning": "Nervously awkward and ungainly.",
+    "hindiMeaning": "Bhaddha / Dheela-dhala",
+    "mnemonic": "\"Hawk-Reverse\": A tall, clumsy teenager who moves like a nervous hawk that forgot how to stand straight."
+  },
+  "germane": {
+    "meaning": "Relevant to a subject under consideration.",
+    "hindiMeaning": "Sangat / Upayukt",
+    "mnemonic": "\"Germany-Logic\": Introducing a logic parameter that is perfectly relevant to your structural design."
+  },
+  "glib": {
+    "meaning": "Fluent and voluble but insincere and shallow.",
+    "hindiMeaning": "Chikni-chupdi baat karne wala",
+    "mnemonic": "\"Ghee-Lip\": Someone with smooth ghee on their lips, talking lightning-fast just to slide past your questions."
+  },
+  "gloat": {
+    "meaning": "Dwell on one's own success or another's misfortune with smugness or malignant pleasure.",
+    "hindiMeaning": "Dusro ke dukh par khushi manana",
+    "mnemonic": "\"Goat-Laugh\": A toxic competitor laughing like a smug goat right in front of your broken screen."
+  },
+  "glum": {
+    "meaning": "Looking or feeling dejected; morose.",
+    "hindiMeaning": "Udaas / Chup-chaap",
+    "mnemonic": "\"Glue-Mouth\": Someone sitting silently in a corner with their mouth glued shut because they failed the test."
+  },
+  "goad": {
+    "meaning": "Provoke or annoy someone so as to stimulate some action or reaction.",
+    "hindiMeaning": "Uksana / Dhakelna",
+    "mnemonic": "\"Go-Ahead!\": Poking someone with a sharp stick continuously until they snap and launch into action."
+  },
+  "gratify": {
+    "meaning": "Indulge or satisfy (a desire); give pleasure to.",
+    "hindiMeaning": "Santusht karna",
+    "mnemonic": "\"Gratitude-Feel\": Deploying a perfectly optimized app module that makes your users feel immense satisfaction."
+  },
+  "gratuitous": {
+    "meaning": "Uncalled for; lacking good reason; unwarranted.",
+    "hindiMeaning": "Muft ka / Bina vajah",
+    "mnemonic": "\"Gratis (Free) Attack\": An unprovoked, free verbal attack from a stranger that makes absolutely no sense."
+  },
+  "gregarious": {
+    "meaning": "Fond of company; sociable.",
+    "hindiMeaning": "Milansar / Jhund me rehne wala",
+    "mnemonic": "\"Greg-and-Us\": A friendly guy named Greg who loves hanging out with us at every single weekend meetup."
+  },
+  "grievance": {
+    "meaning": "A real or imagined wrong or other cause for complaint or protest.",
+    "hindiMeaning": "Shikayat / Dukh",
+    "mnemonic": "\"Grief-Cause\": A major systemic error that gives your clients a heavy cause for grief and complaints."
+  },
+  "grovel": {
+    "meaning": "Act in an obsequious way in order to obtain someone's forgiveness or favor.",
+    "hindiMeaning": "Naak-ragadna / Gidgidana",
+    "mnemonic": "\"Gravel-Fall\": Falling flat down onto the sharp gravel stones to beg your manager for a final chance."
+  },
+  "grumble": {
+    "meaning": "Complain about something in a bad-tempered way.",
+    "hindiMeaning": "Badbadana / Shikayat",
+    "mnemonic": "\"Grumble-Belly\": Making low, angry rumbling sounds because you hate the new scheduling policy."
+  },
+  "gullible": {
+    "meaning": "Easily persuaded to believe something; credulous.",
+    "hindiMeaning": "Bhola / Aasani se dhokha khane wala",
+    "mnemonic": "\"Gull-Gull (Swallow)\": Someone so innocent they will swallow any fake story you feed them out of thin air."
+  },
+  "hackneyed": {
+    "meaning": "Lacking significance through having been overused; cliché.",
+    "hindiMeaning": "Ghisapita",
+    "mnemonic": "\"Hacked-too-much\": An old tech joke that has been hacked and used a billion times until it loses all flavor."
+  },
+  "hamper": {
+    "meaning": "Hinder or impede the movement or progress of.",
+    "hindiMeaning": "Rukavat daalna",
+    "mnemonic": "\"Heavy-Hamper\": Trying to run a fast sprint while holding a massive, heavy laundry hamper in your arms."
+  },
+  "haphazard": {
+    "meaning": "Lacking any obvious principle of organization.",
+    "hindiMeaning": "Ast-vyast / Bina tarteeb",
+    "mnemonic": "\"Hap-Hazard (Accident)\": Scattering source code modules randomly everywhere, creating a hazard of confusion."
+  },
+  "hapless": {
+    "meaning": "Unfortunate; unlucky.",
+    "hindiMeaning": "Badkismat / Bechaara",
+    "mnemonic": "\"Helpless-less-Hap\": A deeply unfortunate, unlucky person whose production database crashes on their birthday."
+  },
+  "harangue": {
+    "meaning": "A lengthy and aggressive speech.",
+    "hindiMeaning": "Tikhi aur lambi aalochna",
+    "mnemonic": "\"Harry-Angry\": An angry lecture from a manager that goes on for four straight hours without a break."
+  },
+  "harbinger": {
+    "meaning": "A person or thing that announces or signals the approach of another.",
+    "hindiMeaning": "Aage chalne wala / Sanket",
+    "mnemonic": "\"Her-Binger (Bringer)\": A sudden drop in user metrics that acts as a clear signal of a coming business storm."
+  },
+  "harrowing": {
+    "meaning": "Acutely distressing.",
+    "hindiMeaning": "Daraona / Dil-dahlane wala",
+    "mnemonic": "\"Horror-wing\": A terrifying, acutely painful experience like losing your entire digital infrastructure overnight."
+  },
+  "haughty": {
+    "meaning": "Arrogantly superior and disdainful.",
+    "hindiMeaning": "Ghamandi / Akadbaaz",
+    "mnemonic": "\"Hot-Headed-High\": An arrogant senior developer who thinks they sit so high that common coders are beneath them."
+  },
+  "headstrong": {
+    "meaning": "Self-willed and obstinate.",
+    "hindiMeaning": "Ziddi / Hatthi",
+    "mnemonic": "\"Strong-Head\": A stubborn developer who sets their head strongly in one wrong logic direction and refuses to pivot."
+  },
+  "heady": {
+    "meaning": "Potent; intoxicating; passionate or exciting.",
+    "hindiMeaning": "Nashila / Romanchak",
+    "mnemonic": "\"Head-Spin\": A wild, rapid operational success that makes your head spin with pure excitement."
+  },
+  "heed": {
+    "meaning": "Pay close attention to; take notice of.",
+    "hindiMeaning": "Dhyan dena",
+    "mnemonic": "\"Head-Up\": Keep your head up and listen carefully to the warning so you don't face systemic crashes."
+  },
+  "heterodox": {
+    "meaning": "Not conforming with accepted or orthodox beliefs or standards.",
+    "hindiMeaning": "Parampara-virodhi",
+    "mnemonic": "\"Hetero (Different) + Orthodox\": Going completely against the conventional, standard way of building structures."
+  },
+  "heterogeneous": {
+    "meaning": "Diverse in character or content.",
+    "hindiMeaning": "Vividh / Bhinn",
+    "mnemonic": "\"Hetero (Different) + Genous (Types)\": A massive system database containing completely different types of data objects."
+  },
+  "hidebound": {
+    "meaning": "Unwilling or unable to change because of tradition or dogmatic principles.",
+    "hindiMeaning": "Lakir ka fakeer / Katter",
+    "mnemonic": "\"Bound-in-Hide\": Someone wrapped tight in old, dead leather (hide), refusing to learn new MERN architectures."
+  },
+  "hinder": {
+    "meaning": "Create difficulties for someone or something, resulting in delay.",
+    "hindiMeaning": "Rokna / Baadha daalna",
+    "mnemonic": "\"Behind-er\": Throwing obstacles in front of a process to drag it back and make it stay behind."
+  },
+  "histrionic": {
+    "meaning": "Overly theatrical or melodramatic in character or style.",
+    "hindiMeaning": "Natakiya",
+    "mnemonic": "\"History-Drama\": Acting with extreme, loud theatrical drama over a tiny formatting error."
+  },
+  "hodgepodge": {
+    "meaning": "A confused mixture.",
+    "hindiMeaning": "Khichdi / Mishran",
+    "mnemonic": "\"Hotch-Potch\": A messy codebase that looks like a confused khichdi thrown together by five beginners."
+  },
+  "homogeneous": {
+    "meaning": "Of the same kind; alike.",
+    "hindiMeaning": "Samroop / Ek jaisa",
+    "mnemonic": "\"Homo (Same) + Genous (Type)\": An array containing elements that are all of the exact same data type."
+  },
+  "humdrum": {
+    "meaning": "Lacking excitement or variety; dull; monotonous.",
+    "hindiMeaning": "Nirasa / Ghisapita",
+    "mnemonic": "\"Humming-Drum\": Sitting through a dull, boring lecture where the teacher sounds like a slow, humming drum."
+  },
+  "hyperbole": {
+    "meaning": "Exaggerated statements or claims not meant to be taken literally.",
+    "hindiMeaning": "Atishayokti",
+    "mnemonic": "\"Hyper-Bowl\": Claiming your small prototype script can \"save the entire universe\" — a massive hyperbole."
+  },
+  "hypocrite": {
+    "meaning": "A person who indulges in hypocrisy.",
+    "hindiMeaning": "Pakhandi / Dhongi",
+    "mnemonic": "\"Hyper-Critical-Fake\": A senior who lectures everyone on arriving early but always turns up late himself."
+  },
+  "hysterical": {
+    "meaning": "Deriving from or affected by uncontrolled extreme emotion.",
+    "hindiMeaning": "Unmadi / Be-qaabu",
+    "mnemonic": "\"History-Panic\": Screaming and running around the floor in uncontrolled extreme panic over a server alert."
+  },
+  "iconoclastic": {
+    "meaning": "Criticizing or attacking cherished beliefs or established institutions.",
+    "hindiMeaning": "Parampara-todne-wala",
+    "mnemonic": "\"Icon-Clasher\": A radical thinker who steps in to smash existing icons and rewrite old institutional systems."
+  },
+  "ideologue": {
+    "meaning": "An uncompromising adherent to an ideology.",
+    "hindiMeaning": "Siddhant-vaadi",
+    "mnemonic": "\"Idea-Locked\": A rigid theoretician whose mind is completely locked into one ideabook, ignoring real metrics."
+  },
+  "idiosyncratic": {
+    "meaning": "Peculiar to an individual; distinctive of one person's behavior or mindset.",
+    "hindiMeaning": "Ajeeb / Anokha",
+    "mnemonic": "\"Idiot-Sync\": A unique, peculiar tuning quirk in a developer's habit framework that belongs strictly to them."
+  },
+  "illusory": {
+    "meaning": "Based on illusion; not real.",
+    "hindiMeaning": "Bhramik / Jhootha",
+    "mnemonic": "\"Illusion-based\": A sudden metric spike that is fake and not real, disappearing on the next reload."
+  },
+  "imbroglio": {
+    "meaning": "An extremely confused, complicated, or embarrassing situation.",
+    "hindiMeaning": "Gatil-mamla / Jhamela",
+    "mnemonic": "\"I'm-Broke-IO\": An extremely messy corporate crisis caused by input-output errors where everything crashes."
+  },
+  "immaculate": {
+    "meaning": "Perfectly clean, neat, or tidy; free from flaws.",
+    "hindiMeaning": "Bedaag / Bilkul saaf",
+    "mnemonic": "\"I-Make-Accurate\": Writing an enterprise compilation build that is 100% clean and free from any bugs."
+  },
+  "imminent": {
+    "meaning": "About to happen.",
+    "hindiMeaning": "Turant hone wala / Sir par khada",
+    "mnemonic": "\"Immediate-Event\": A massive cloud configuration launch that is standing right over your head, ready to deploy."
+  },
+  "immure": {
+    "meaning": "Enclose or confine someone against their will.",
+    "hindiMeaning": "Qaid karna / Band karna",
+    "mnemonic": "\"I'm-Mured (Murti/Wall)\": Getting trapped inside four tight walls like a cold stone statue, unable to move."
+  },
+  "immutable": {
+    "meaning": "Unchanging over time or unable to be changed.",
+    "hindiMeaning": "Aparivartaniya",
+    "mnemonic": "\"Im-Mutable (Constant)\": A core software variable that is permanently constant and cannot be overwritten."
+  },
+  "impair": {
+    "meaning": "Weaken or damage something, especially a human faculty or function.",
+    "hindiMeaning": "Kharab karna",
+    "mnemonic": "\"Imbalance-a-Pair\": Damaging one vital part of an architecture, which breaks the balance and ruins performance."
+  },
+  "impede": {
+    "meaning": "Delay or prevent someone or something by obstructing them.",
+    "hindiMeaning": "Baadha daalna",
+    "mnemonic": "\"Im-Pedestrian\": Placing giant concrete stones on a fast highway to obstruct and slow down traffic."
+  },
+  "impediment": {
+    "meaning": "A hindrance or obstruction in doing something.",
+    "hindiMeaning": "Rukavat / Badha",
+    "mnemonic": "\"Impediment-Block\": A structural speed-breaker that acts as a major hindrance to your application speed."
+  },
+  "impenetrable": {
+    "meaning": "Impossible to pass through or enter; impossible to understand.",
+    "hindiMeaning": "Durgam / Durbodh",
+    "mnemonic": "\"Im-Penetrate-able\": A heavy encryption wall or complex code module that is impossible to break through."
+  },
+  "imperative": {
+    "meaning": "Of vital importance; crucial.",
+    "hindiMeaning": "Anivarya / Atyavashyak",
+    "mnemonic": "\"Important-Active\": A security patch execution that is crucially important to save your database framework."
+  },
+  "imperious": {
+    "meaning": "Assuming power or authority without justification; arrogant and domineering.",
+    "hindiMeaning": "Ghamandi / Shahi",
+    "mnemonic": "\"Emperor-like\": An arrogant co-worker who barks orders like a cruel emperor without holding any rank."
+  },
+  "impertinent": {
+    "meaning": "Not showing proper respect; rude.",
+    "hindiMeaning": "Dheet / Abhadra",
+    "mnemonic": "\"Im-Pertinent (Not Proper)\": An insolent junior intern who talks back rudely to the department director."
+  },
+  "imperturbable": {
+    "meaning": "Unable to be upset or excited; calm.",
+    "hindiMeaning": "Shant / Dheer",
+    "mnemonic": "\"Im-Disturb-able\": A rock-solid lead engineer who cannot be disturbed or panicked by any global live crash."
+  },
+  "impervious": {
+    "meaning": "Not allowing fluid to pass through; unable to be affected by.",
+    "hindiMeaning": "Apraveshya / Asar-heen",
+    "mnemonic": "\"Im-Paper-View\": A thick plastic shield that is completely waterproof and immune to outside damage."
+  },
+  "impetuous": {
+    "meaning": "Acting or done quickly and without thought or care.",
+    "hindiMeaning": "Utawala / Jaldbaaz",
+    "mnemonic": "\"Impulsive-Rush\": Jumping straight into deleting an entire cloud database directory without thinking twice."
+  },
+  "implacable": {
+    "meaning": "Unable to be placated or appeased.",
+    "hindiMeaning": "Nirdayi / Jise shant na kiya ja sake",
+    "mnemonic": "\"Im-Placable (No Peace)\": A fierce corporate rival who holds an unappeasable anger and refuses to settle down."
+  },
+  "implicit": {
+    "meaning": "Implied though not plainly expressed.",
+    "hindiMeaning": "Antarnihit / Paroksh",
+    "mnemonic": "\"Implied-Inside\": A basic structural requirement that is clearly understood without being written explicitly."
+  },
+  "impolitic": {
+    "meaning": "Failing to possess or display prudence; unwise.",
+    "hindiMeaning": "Murkhata-purna / A-samajhdar",
+    "mnemonic": "\"Im-Political (Bad Move)\": Making a blunt, angry comment to your investor — an extremely unwise strategic move."
+  },
+  "improvise": {
+    "meaning": "Create and perform spontaneously or without preparation.",
+    "hindiMeaning": "Bina taiyari ke kam chalana",
+    "mnemonic": "\"Improve-on-Spot\": Writing a patch script out of thin air on the live stage to fix an anomaly instantly."
+  },
+  "impudent": {
+    "meaning": "Not showing due respect for another person; impertinent.",
+    "hindiMeaning": "Besharm / Dheet",
+    "mnemonic": "\"Im-Prudent (Shameless)\": An insolent designer who mocks the senior product architect right to their face."
+  },
+  "impugn": {
+    "meaning": "Dispute the truth, validity, or honesty of (a statement or motive).",
+    "hindiMeaning": "Chunauti dena / Khandan karna",
+    "mnemonic": "\"Im-Pugn (Fight)\": Launching a formal argument to challenge the validity of a rival analyst's metric report."
+  },
+  "impulsive": {
+    "meaning": "Acting or done without forethought.",
+    "hindiMeaning": "Betaab / Bina soche karne wala",
+    "mnemonic": "\"Impulse-Buy\": Hitting the checkout key instantly based on sudden emotion without auditing your budget balance."
+  },
+  "inalienable": {
+    "meaning": "Unable to be taken away from or given away by the possessor.",
+    "hindiMeaning": "A-deya / Jise alag na kiya ja sake",
+    "mnemonic": "\"In-Alien-able\": Foundational rights or variables so deep that they cannot be separated from the owner."
+  },
+  "inborn": {
+    "meaning": "Natural to a person or animal as a fraction of their character since birth.",
+    "hindiMeaning": "Janam-jaat",
+    "mnemonic": "\"In-Born\": A sharp, natural logical faculty that has been present inside you since the day you were born."
+  },
+  "incendiary": {
+    "meaning": "Designed to cause fires; tending to stir up conflict.",
+    "hindiMeaning": "Aag-lagane-wala / Bhadkau",
+    "mnemonic": "\"Incinerate\": A provocative post explicitly designed to ignite a massive flame war across social channels."
+  },
+  "incessant": {
+    "meaning": "Continuing without pause or interruption.",
+    "hindiMeaning": "Nirantar / Lagatar",
+    "mnemonic": "\"In-Cease (Not Stop)\": Code processing errors or heavy rain loops that do not cease (stop) for 24 hours."
+  },
+  "inchoate": {
+    "meaning": "Just begun and so not fully formed or developed.",
+    "hindiMeaning": "Shuruati / Adhura",
+    "mnemonic": "\"In-Chore-Stage\": A raw startup vision that is still in its very initial, unformed blueprint phase."
+  },
+  "incidental": {
+    "meaning": "Happening as a minor accompaniment to something else.",
+    "hindiMeaning": "Aakasmik / Gaun",
+    "mnemonic": "\"Incident-Side\": Minor secondary data logs generated as a side element during main framework executions."
+  },
+  "incite": {
+    "meaning": "Encourage or stir up (violent or unlawful behavior).",
+    "hindiMeaning": "Uksana / Bhadkana",
+    "mnemonic": "\"In-Excite\": Intentionally pushing an angry crowd to excite them into committing vandalism."
+  },
+  "inclined": {
+    "meaning": "Having a tendency or disposition toward something.",
+    "hindiMeaning": "Jhuka hua / Pravritt",
+    "mnemonic": "\"Incline-Slope\": Your mental preference leaning down a specific slope toward full-stack AI orchestration."
+  },
+  "incongruous": {
+    "meaning": "Not in harmony or keeping with the surroundings.",
+    "hindiMeaning": "Be-mel / Asangat",
+    "mnemonic": "\"In-Congruent (Mismatch)\": Placing a neon party button right inside a highly formal corporate application suite."
+  },
+  "incontrovertible": {
+    "meaning": "Not able to be denied or disputed.",
+    "hindiMeaning": "Khandan-heen / Nirvivad",
+    "mnemonic": "\"In-Controvert-able\": Solid server logs providing 100% indisputable, ironclad proof of database entry times."
+  },
+  "incredulous": {
+    "meaning": "Unwilling or unable to believe something.",
+    "hindiMeaning": "A-vishwasi / Chakit",
+    "mnemonic": "\"In-Credible-Shock\": Staring at your monitor in absolute disbelief after seeing your deployment hit millions of users."
+  },
+  "indecorous": {
+    "meaning": "Not in keeping with good taste and propriety; improper.",
+    "hindiMeaning": "Maryada-heen / Ashisht",
+    "mnemonic": "\"In-Decorum\": Behavior that goes completely against proper decorum, causing embarrassment."
+  },
+  "indefatigable": {
+    "meaning": "Persisting tirelessly.",
+    "hindiMeaning": "Athak / Na thakne wala",
+    "mnemonic": "\"In-Defeat-able-Fatigue\": A developer whose energy cannot be defeated by fatigue, coding all night long."
+  },
+  "indefinite": {
+    "meaning": "Lasting for an unknown or unstated length of time.",
+    "hindiMeaning": "Anishchit",
+    "mnemonic": "\"In-Definite (No Limit)\": Postponing a deployment schedule for an unspecified, open-ended time frame."
+  },
+  "indictment": {
+    "meaning": "A formal charge or accusation of a serious crime.",
+    "hindiMeaning": "Dosharopan / Arop",
+    "mnemonic": "\"In-Dict (Dictum of Crime)\": An official court document that points a formal finger at a suspect for fraud."
+  },
+  "indignant": {
+    "meaning": "Feeling or showing anger or annoyance at what is perceived as unfair treatment.",
+    "hindiMeaning": "Gusse-mein / Asantusht",
+    "mnemonic": "\"In-Dignity-Hurt\": Getting deeply offended and angry because your honest project work was called trash."
+  },
+  "indiscriminate": {
+    "meaning": "Done at random or without careful judgment.",
+    "hindiMeaning": "Bina soche-samjhe / Andhadhundh",
+    "mnemonic": "\"In-Discriminate (No Filter)\": Blasting promotional alert notifications randomly to every user filter without check."
+  },
+  "indispensable": {
+    "meaning": "Absolutely necessary.",
+    "hindiMeaning": "Atyavashyak / Jiske bina kaam na chale",
+    "mnemonic": "\"In-Dispense-able (Cannot Lose)\": A brilliant lead coder who is absolutely essential to complete the repository sprint."
+  },
+  "indolent": {
+    "meaning": "Wanting to avoid activity or exertion; lazy.",
+    "hindiMeaning": "Aalasi / Kaam-chor",
+    "mnemonic": "\"In-Door-Lean\": A lazy student who just wants to lean indoors on the couch all day long, avoiding work."
+  },
+  "induce": {
+    "meaning": "Succeed in persuading or influencing someone to do something; cause.",
+    "hindiMeaning": "Prerit karna / Paida karna",
+    "mnemonic": "\"In-Reduce-to-Do\": Offering an intern a cash bonus to influence them to finish the module configuration."
+  },
+  "industrious": {
+    "meaning": "Diligent and hard-working.",
+    "hindiMeaning": "Mehanti / Kushal",
+    "mnemonic": "\"Industry-Worker\": Working with the intense, tireless diligence found inside a manufacturing plant."
+  },
+  "ineluctable": {
+    "meaning": "Unable to be resisted or avoided; inescapable.",
+    "hindiMeaning": "A-taly / Jisse bacha na ja sake",
+    "mnemonic": "\"In-Electable-Fate\": A technological shift that is completely inescapable and bound to happen."
+  },
+  "inept": {
+    "meaning": "Having or showing no skill; clumsy.",
+    "hindiMeaning": "A-kushal / Gavaar",
+    "mnemonic": "\"In-Expert\": A clumsy worker who deploys a completely broken file directory, showing zero expertise."
+  },
+  "infelicity": {
+    "meaning": "Inappropriateness; an unfortunate or inappropriate remark.",
+    "hindiMeaning": "Be-tuka-pan / Dukh",
+    "mnemonic": "\"In-Felicitous-Move\": A blunt, highly unfortunate and inappropriate comment made during a strict review."
+  },
+  "inform": {
+    "meaning": "Give character or essence to; inspire; give facts to.",
+    "hindiMeaning": "Gyan dena / Prabhavit karna",
+    "mnemonic": "\"In-Form (Shape)\": Core design philosophies that give shape and character to your entire software ecosystem."
+  },
+  "ingenious": {
+    "meaning": "Clever, original, and inventive.",
+    "hindiMeaning": "Tez-dimag / Aavishkari",
+    "mnemonic": "\"In-Genius\": Designing an AI researcher orchestration node setup — a completely brilliant and original build."
+  },
+  "ingenuous": {
+    "meaning": "Innocent and unsuspecting.",
+    "hindiMeaning": "Bhola-bhala / Seedha",
+    "mnemonic": "\"In-Genuine-Innocence\": A naive student who is so honest and simple they don't know how to deceive anyone."
+  },
+  "ingrained": {
+    "meaning": "Firmly fixed or established; difficult to change.",
+    "hindiMeaning": "Gahra / Jad-mein-baitha",
+    "mnemonic": "\"In-Grain\": Habits or styling elements that are carved so deep into the very grain of wood they won't leave."
+  },
+  "inhibit": {
+    "meaning": "Hinder, restrain, or prevent an action or process.",
+    "hindiMeaning": "Rokna / Baadha daalna",
+    "mnemonic": "\"Prohibit-Inhibit\": Acting like a mental speed-breaker that slows down or blocks operational progress."
+  },
+  "inimical": {
+    "meaning": "Tending to obstruct or harm; unfriendly.",
+    "hindiMeaning": "Hanikarak / Dushman-jaisa",
+    "mnemonic": "\"Enemy-like\": Workplace rules that are completely harmful and hostile to developer productivity."
+  },
+  "innocuous": {
+    "meaning": "Not harmful or offensive.",
+    "hindiMeaning": "Harmless / Seedha-saadha",
+    "mnemonic": "\"In-Nocuous (No Toxic)\": A simple, clean utility function that is 100% safe and won't cause any database crashes."
+  },
+  "inquisitive": {
+    "meaning": "Curious or inquiring.",
+    "hindiMeaning": "Jigyasu / Khoji",
+    "mnemonic": "\"In-Quizzing-Mind\": A student who keeps asking analytical questions because they want to understand the framework."
+  },
+  "inscrutable": {
+    "meaning": "Impossible to understand or interpret.",
+    "hindiMeaning": "Durbodh / Rahasya-mayi",
+    "mnemonic": "\"In-Script-table (Cryptic)\": A chaotic compilation error trace that is impossible to read or decode."
+  },
+  "insidious": {
+    "meaning": "Proceeding in a gradual, subtle way, but with harmful effects.",
+    "hindiMeaning": "Kapat-purna / Chhupa hua khatra",
+    "mnemonic": "\"Inside-Virus\": A silent memory leak tracking tool that slowly eats up system compute capacity without warning."
+  },
+  "insipid": {
+    "meaning": "Lacking flavor; lacking vigor or interest.",
+    "hindiMeaning": "Feeka / Nirasa",
+    "mnemonic": "\"In-Sip-Dull\": A cup of tea or a project pitch that is so dull and flavorless you drop it after one sip."
+  },
+  "insolent": {
+    "meaning": "Showing a rude and arrogant lack of respect.",
+    "hindiMeaning": "Besharm / Dheet",
+    "mnemonic": "\"Insult-ent\": A disrespectful junior developer who openly mocks the tech lead's feedback."
+  },
+  "insular": {
+    "meaning": "Ignorant of or uninterested in cultures, ideas, or peoples outside one's own.",
+    "hindiMeaning": "Kup-manduk / Seemit kshetra ka",
+    "mnemonic": "\"Insulated-Island\": Living isolated like you are on an island, completely blind to global updates."
+  },
+  "intelligible": {
+    "meaning": "Able to be understood; clear.",
+    "hindiMeaning": "Samajhne-yogya / Spasht",
+    "mnemonic": "\"Intelligent-Speech\": Documentation written so cleanly that the design flow is easily comprehensible to everyone."
+  },
+  "interchangeable": {
+    "meaning": "Apparently identical; very similar.",
+    "hindiMeaning": "Ek doosre ki jagah badle jaane yogya",
+    "mnemonic": "\"Inter-Change-able\": Modular components designed to be swapped with one another without breaking execution."
+  },
+  "intermediary": {
+    "meaning": "A person who acts as a link between people in order to bring about an agreement.",
+    "hindiMeaning": "Beech-wala / Bicholiya",
+    "mnemonic": "\"Intermediate-Node\": A middleman proxy tool that links client requests straight to the core database."
+  },
+  "interminable": {
+    "meaning": "Endless (often used hyperbolically).",
+    "hindiMeaning": "Anant / Kabhi na khatam hone wala",
+    "mnemonic": "\"In-Terminal-Loop\": An accidental software routine execution that gets stuck in an endless loop inside the terminal."
+  },
+  "intermittent": {
+    "meaning": "Occurring at irregular intervals; not continuous or steady.",
+    "hindiMeaning": "Ruk-ruk kar hone wala",
+    "mnemonic": "\"Inter-Mission-Cycles\": A weak network signal that keeps dropping and returning in irregular intervals."
+  },
+  "intertwined": {
+    "meaning": "Twist or twine together.",
+    "hindiMeaning": "Aapas mein juda hua",
+    "mnemonic": "\"Twin-Wires\": Two complex logic threads that are so deeply twisted together they must be audited as one."
+  },
+  "intimate": {
+    "meaning": "Closely acquainted; familiar; state or hint at.",
+    "hindiMeaning": "Gahra / Paroksh sanket dena",
+    "mnemonic": "\"Intimate-Hint\": Giving a very subtle, quiet hint to someone without saying the truth out loud."
+  },
+  "intransigent": {
+    "meaning": "Uncompromising; refusing to change one's views or to agree about something.",
+    "hindiMeaning": "Ziddi / Katter",
+    "mnemonic": "\"In-Transit-Stuck\": A stubborn project manager who refuses to shift their stand by even one millimeter."
+  },
+  "intrepid": {
+    "meaning": "Fearless; adventurous.",
+    "hindiMeaning": "Nidar / Sahasi",
+    "mnemonic": "\"In-Trap-Not-Afraid\": A brave engineer who dives straight into a critical code trap to fix a major emergency."
+  },
+  "intrigue": {
+    "meaning": "Arouse the curiosity or interest of; fascinate; secret planning.",
+    "hindiMeaning": "Dilchasp hona / Sazish",
+    "mnemonic": "\"Interesting-Plot\": A highly unique full-stack microservice blueprint that instantly captures your curiosity."
+  },
+  "intrinsic": {
+    "meaning": "Belonging naturally; essential.",
+    "hindiMeaning": "Aantarik / Vastavik",
+    "mnemonic": "\"Internal-Value\": The actual foundational value that sits naturally inside a project module or stock profile."
+  },
+  "intuitive": {
+    "meaning": "Using or based on what one feels to be true even without conscious reasoning; easy to use.",
+    "hindiMeaning": "Sehaj / Spasht",
+    "mnemonic": "\"Into-You-Natural\": A beautiful user interface layout so clean that figuring it out comes naturally to you."
+  },
+  "inundate": {
+    "meaning": "Overwhelm (someone) with things or people to be dealt with; flood.",
+    "hindiMeaning": "Baadh aana / Bhar jana",
+    "mnemonic": "\"In-Undate (Flood)\": Getting hit by a sudden massive flood of thousands of user reports all in one hour."
+  },
+  "invasive": {
+    "meaning": "Tending to spread aggressively and intrusively.",
+    "hindiMeaning": "Aakramak / Phailne wala",
+    "mnemonic": "\"In-Vase-Weed\": A wild weed that gets in your flower vase and chokes all the plants by spreading everywhere."
+  },
+  "inveigle": {
+    "meaning": "Persuade (someone) to do something by means of deception or flattery.",
+    "hindiMeaning": "Behlana-phuslana / Phansana",
+    "mnemonic": "\"In-Veil-Trick\": Hiding your true motives behind a veil of flattering words to trick an engineer into writing your script."
+  },
+  "inveterate": {
+    "meaning": "Having a particular habit, activity, or interest that is long-established and unlikely to change.",
+    "hindiMeaning": "Pakka / Aadi",
+    "mnemonic": "\"In-Veteran\": A seasoned veteran coder who carries the unshakeable, deep habit of adding semicolons."
+  },
+  "invidious": {
+    "meaning": "Likely to arouse or incur resentment or anger in others; unfair.",
+    "hindiMeaning": "Apmaan-janak / Eersha-janak",
+    "mnemonic": "\"Envy-deous\": Making a highly unfair comparison between two interns, which sparks deep corporate anger."
+  },
+  "invigorate": {
+    "meaning": "Give strength or energy to.",
+    "hindiMeaning": "Urja dena / Tazagi lana",
+    "mnemonic": "\"In-Vigor-Boost\": Drinking a hot cup of espresso that instantly pumps fresh energy and vigor into your brain."
+  },
+  "inviolate": {
+    "meaning": "Free or safe from injury or violation.",
+    "hindiMeaning": "Pavitra / Surakshit",
+    "mnemonic": "\"In-Violate-able\": A core production directory architecture that is locked down, staying completely safe from modification."
+  },
+  "irascible": {
+    "meaning": "Having or showing a tendency to be easily angered.",
+    "hindiMeaning": "Chidchida / Gussebaaz",
+    "mnemonic": "\"I-Erase-Able-Temper\": A hot-tempered system lead who snaps and fires off warnings over tiny formatting gaps."
+  },
+  "ire": {
+    "meaning": "Anger.",
+    "hindiMeaning": "Gussa / Krodh",
+    "mnemonic": "\"Iron-Rage\": Facing the intense, burning rage of an investor when they see a broken live presentation."
+  },
+  "irksome": {
+    "meaning": "Irritating; annoying.",
+    "hindiMeaning": "Pareshan karne wala / Ubaau",
+    "mnemonic": "\"Irk-some (Annoying)\": The highly tiresome, irritating task of tracking down a single missing punctuation mark."
+  },
+  "ironclad": {
+    "meaning": "Impossible to contradict, weaken, or evade.",
+    "hindiMeaning": "Pakka / A-tootya",
+    "mnemonic": "\"Iron-Clad-Shield\": An enterprise legal contract framework that is 100% unbreakable and absolute."
+  },
+  "irresolute": {
+    "meaning": "Showing or feeling hesitancy; uncertain.",
+    "hindiMeaning": "Anishchit / Dubdha mein",
+    "mnemonic": "\"In-Resolution-Fail\": Standing frozen in front of a system prompt, unable to make a definitive execution choice."
   }
 }

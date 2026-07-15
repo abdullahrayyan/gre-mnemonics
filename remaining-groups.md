@@ -3,7 +3,7 @@
 Words still using the generated (weaker) AI mnemonics, listed group by group.
 Copy a group into Gemini, paste the result back, and it gets imported.
 
-Curated: 250 / 1111 words. Remaining: 861.
+Curated: 500 / 1111 words. Remaining: 611.
 
 Regenerate this file with:
 
@@ -28,46 +28,6 @@ apprehension, apprise, approbation, appropriate, apropos, apt, arbitrary, arcane
 ## Group 5 (25)
 
 attenuate, attribute, audacious, augment, august, auspicious, austere, auxiliary, avaricious, aver, aversion, avert, avid, axiomatic, banal, banish, baroque, barrage, barren, base, bawdy, befuddled, beguile, beholden, belie
-
-## Group 16 (25)
-
-elusive, embellish, empathetic, empirical, emulate, enchant, encroach, encyclopedic, endemic, endow, enervate, engender, enigmatic, enmity, ennui, ensue, enthrall, entitled, entreat, entrenched, ephemeral, equanimity, equitable, equivocate, eradicate
-
-## Group 17 (25)
-
-erratic, erstwhile, erudite, escalate, eschew, esoteric, estimable, estranged, euphemism, euphoric, evade, evanescent, evasive, evoke, exacerbate, exacting, exasperated, excoriate, exculpate, exegesis, exhaustive, exhilarating, exhort, exigent, exonerate
-
-## Group 18 (25)
-
-exorbitant, exorcise, exotic, expatiate, expedient, expedite, explicable, exploitative, extant, extemporize, extenuating, extol, extraneous, extrapolate, extravagant, fabricate, facetious, facility, factious, fallacious, fallible, fallow, falter, fanciful, fastidious
-
-## Group 19 (25)
-
-fathom, fawn, feasible, feckless, fecund, feeble, feign, feint, felicitous, fervent, fervid, fervor, fester, fickle, figurative, finicky, fitful, flagrant, flamboyant, fledgling, florid, flout, flummoxed, flustered, foil
-
-## Group 20 (25)
-
-foment, foolhardy, forbear, forebode, foreseeable, forestall, forgo, forsake, fortitude, fortuitous, fractious, frailty, frank, fraught, frenetic, fret, fringe, frivolous, fruitful, fulcrum, fungible, furtive, futile, gaffe, gainsay
-
-## Group 21 (25)
-
-galvanize, garrulous, gauche, gawky, germane, glib, gloat, glum, goad, gratify, gratuitous, gregarious, grievance, grovel, grumble, gullible, hackneyed, hamper, haphazard, hapless, harangue, harbinger, harrowing, haughty, headstrong
-
-## Group 22 (25)
-
-heady, heed, heterodox, heterogeneous, hidebound, hinder, histrionic, hodgepodge, homogeneous, humdrum, hyperbole, hypocrite, hysterical, iconoclastic, ideologue, idiosyncratic, illusory, imbroglio, immaculate, imminent, immure, immutable, impair, impede, impediment
-
-## Group 23 (25)
-
-impenetrable, imperative, imperious, impertinent, imperturbable, impervious, impetuous, implacable, implicit, impolitic, improvise, impudent, impugn, impulsive, inalienable, inborn, incendiary, incessant, inchoate, incidental, incite, inclined, incongruous, incontrovertible, incredulous
-
-## Group 24 (25)
-
-indecorous, indefatigable, indefinite, indictment, indignant, indiscriminate, indispensable, indolent, induce, industrious, ineluctable, inept, infelicity, inform, ingenious, ingenuous, ingrained, inhibit, inimical, innocuous, inquisitive, inscrutable, insidious, insipid, insolent
-
-## Group 25 (25)
-
-insular, intelligible, interchangeable, intermediary, interminable, intermittent, intertwined, intimate, intransigent, intrepid, intrigue, intrinsic, intuitive, inundate, invasive, inveigle, inveterate, invidious, invigorate, inviolate, irascible, ire, irksome, ironclad, irresolute
 
 ## Group 26 (25)
 

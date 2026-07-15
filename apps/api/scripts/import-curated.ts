@@ -22,6 +22,7 @@ import type { CuratedEntry } from '../src/container/curated-mnemonics.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const jsonPath = resolve(here, '../src/container/curated-mnemonics.json');
+const corpusPath = resolve(here, '../src/container/demo-corpus.json');
 
 const batchFile = process.argv[2];
 if (!batchFile) throw new Error('Usage: import-curated.ts <batch-file>');
@@ -30,13 +31,29 @@ const existing: Record<string, CuratedEntry> = existsSync(jsonPath)
   ? (JSON.parse(readFileSync(jsonPath, 'utf8')) as Record<string, CuratedEntry>)
   : {};
 
+// Curated entries are looked up BY corpus word when words.json is built, so an
+// entry whose headword is not in the corpus can never reach the app. Reject
+// those on the way in — otherwise a misspelled headword imports "successfully"
+// and silently goes missing, which is far harder to notice than a failed row.
+const corpus = JSON.parse(readFileSync(corpusPath, 'utf8')) as { word: string }[];
+const known = new Set(corpus.map((entry) => entry.word.toLowerCase()));
+
 const before = Object.keys(existing).length;
 let added = 0;
 let updated = 0;
 const skipped: string[] = [];
+const unknown: string[] = [];
 
-/** Drop markdown emphasis and collapse the whitespace it leaves behind. */
-const clean = (cell: string) => cell.replace(/\*+/g, '').replace(/\s+/g, ' ').trim();
+/**
+ * Drop Gemini's `[cite: n]` markers and markdown emphasis, then collapse the
+ * whitespace they leave behind. Cites go first so a gloss still ends the cell.
+ */
+const clean = (cell: string) =>
+  cell
+    .replace(/\[cite:[^\]]*\]/gi, '')
+    .replace(/\*+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 
 /**
  * Pull a trailing "(hindi gloss)" off an English meaning. Anchored to the end so
@@ -76,6 +93,10 @@ for (const raw of readFileSync(batchFile, 'utf8').split(/\r?\n/)) {
   }
 
   const key = word.toLowerCase();
+  if (!known.has(key)) {
+    unknown.push(word);
+    continue;
+  }
   const entry: CuratedEntry = {
     meaning,
     ...(hindiMeaning ? { hindiMeaning } : {}),
@@ -94,4 +115,8 @@ console.log(`curated: ${before} -> ${Object.keys(sorted).length} (added ${added}
 if (skipped.length) {
   console.log(`skipped ${skipped.length} unparsable line(s):`);
   for (const line of skipped) console.log(`  - ${line}`);
+}
+if (unknown.length) {
+  console.log(`\nREJECTED ${unknown.length} word(s) not in the corpus — fix the spelling and re-run:`);
+  for (const word of unknown) console.log(`  - ${word}`);
 }
