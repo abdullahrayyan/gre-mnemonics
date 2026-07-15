@@ -11,6 +11,14 @@ export interface OpenAiProviderOptions {
 }
 
 /**
+ * Newer reasoning-style models (gpt-5, o-series) reject a custom `temperature` —
+ * they only accept the default. Omit the parameter for those.
+ */
+function supportsTemperature(model: string): boolean {
+  return !/^(gpt-5|o\d)/i.test(model);
+}
+
+/**
  * OpenAI implementation of the {@link AiProvider} port. Thin adapter: it
  * translates the vendor-neutral request/response, measures latency, surfaces
  * token usage, and maps SDK errors to {@link AiError}. No prompt or business
@@ -40,8 +48,8 @@ export class OpenAiProvider implements AiProvider {
         {
           model,
           messages: request.messages as OpenAI.Chat.Completions.ChatCompletionMessageParam[],
-          temperature: request.temperature ?? 0.8,
-          ...(request.maxTokens ? { max_tokens: request.maxTokens } : {}),
+          ...(supportsTemperature(model) ? { temperature: request.temperature ?? 0.8 } : {}),
+          ...(request.maxTokens ? { max_completion_tokens: request.maxTokens } : {}),
           ...(request.responseFormat === 'json'
             ? { response_format: { type: 'json_object' as const } }
             : {}),
@@ -75,7 +83,7 @@ export class OpenAiProvider implements AiProvider {
         {
           model,
           messages: request.messages as OpenAI.Chat.Completions.ChatCompletionMessageParam[],
-          temperature: request.temperature ?? 0.8,
+          ...(supportsTemperature(model) ? { temperature: request.temperature ?? 0.8 } : {}),
           stream: true,
         },
         { signal: request.signal },
