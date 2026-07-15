@@ -6,7 +6,10 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+      // out/ is the static export that actually gets deployed. It must be listed:
+      // an output turbo does not know about is not restored on a cache hit, so a
+      // cached build reports success and leaves no site behind.
+      "outputs": ["out/**", ".next/**", "!.next/cache/**"]
     },
     "dev": {
       "cache": false,
