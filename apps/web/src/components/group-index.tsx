@@ -11,10 +11,11 @@ export function GroupIndex({ groups, total }: { groups: GroupSummary[]; total: n
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">GRE Words</h1>
+      <div id="groups" className="scroll-mt-20">
+        <h2 className="text-2xl font-bold tracking-tight">All {groups.length} groups</h2>
         <p className="text-slate-500 dark:text-slate-400">
-          {total} words in {groups.length} groups of 25. Read a group, mark it done, then revise.
+          {total.toLocaleString()} words, 25 per group. Read a group, mark it done, then revise —
+          your progress saves automatically.
         </p>
       </div>
 

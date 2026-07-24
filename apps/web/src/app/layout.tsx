@@ -5,13 +5,31 @@ import { SiteHeader } from '@/components/site-header';
 import { Providers } from '@/providers/providers';
 import './globals.css';
 
+const SITE_URL = 'https://gremnemonics.netlify.app';
+const TITLE = 'GRE Words — 1,111 curated words with memory hooks';
+const DESCRIPTION =
+  'Learn 1,111 GRE vocabulary words, each with a memory hook and a Hindi meaning. Study in groups of 25, then revise. Free, no sign-up, works offline.';
+
 export const metadata: Metadata = {
-  title: 'GRE Words',
-  description: 'Read 1,100+ GRE words with memory hooks, group by group, then revise them.',
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
   manifest: '/manifest.webmanifest',
   applicationName: 'GRE Words',
   appleWebApp: { capable: true, title: 'GRE Words', statusBarStyle: 'black-translucent' },
   icons: { icon: '/icon.svg', apple: '/icon.svg' },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: 'GRE Words',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 export const viewport: Viewport = {
